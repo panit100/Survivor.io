@@ -31,11 +31,11 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 playerPosition = player.position;
 
-        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0);
+        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
 
-        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset);
+        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
         print($"x : {offScreenPosition}, y : {offScreenPosition}");
-        Instantiate(enemy,offScreenPosition,Quaternion.identity);
+        Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
     }
 }
