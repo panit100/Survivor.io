@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     public float maxHealth = 10f;
     public float currentHealth = 0f;
 
+    public int exp = 0;
+
     void Start()
     {
         currentHealth = maxHealth;

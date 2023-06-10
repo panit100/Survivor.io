@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemy;
 
+    public List<GameObject> enemyList = new List<GameObject>();
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E))
@@ -36,6 +38,15 @@ public class EnemySpawner : MonoBehaviour
         Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
         print($"x : {offScreenPosition}, y : {offScreenPosition}");
-        Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
+        GameObject _enemy = Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
+        enemyList.Add(_enemy);
+    }
+
+    public void DestroyAllEnemy()
+    {
+        foreach(GameObject _enemy in enemyList)
+        {
+            Destroy(_enemy);
+        }
     }
 }
