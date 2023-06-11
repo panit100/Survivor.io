@@ -25,17 +25,37 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Vector3 playerPosition = player.position;
+        // Vector3 playerPosition = player.position;
 
-        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
+        // Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
 
-        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
+        // Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
-        GameObject _enemy = Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
+        // GameObject _enemy = Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
+        
+        GameObject _enemy = Instantiate(enemy,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
+        
         enemyList.Add(_enemy);
     }
 
     void SpawnItem()
+    {
+        // Vector3 playerPosition = player.position;
+
+        // Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
+
+        // Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
+
+        
+
+        GameObject randomItem = items[Random.Range(0,items.Count)];
+
+        // GameObject _item = Instantiate(randomItem,offScreenPosition,Quaternion.identity); //spawn enemy
+
+        GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
+    }
+
+    Vector3 RandomSpawnPosition()
     {
         Vector3 playerPosition = player.position;
 
@@ -43,9 +63,7 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
-        GameObject randomItem = items[Random.Range(0,items.Count)];
-
-        GameObject _item = Instantiate(randomItem,offScreenPosition,Quaternion.identity); //spawn enemy
+        return offScreenPosition;
     }
     
 
