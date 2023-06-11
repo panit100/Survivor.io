@@ -1590,6 +1590,24 @@ MonoBehaviour:
   player: {fileID: 1938102963}
   enemy: {fileID: 1868130652}
   enemyList: []
+  gameTime: 0
+  enemySet:
+  - timeWave: 5
+    enemySetDetail:
+    - enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
+      enemySpawnCount: 3
+      enemySpawnTime: 3
+    - enemyPrefab: {fileID: 2925479885468574148, guid: debbcc66173113a4583527ccc95077d1, type: 3}
+      enemySpawnCount: 10
+      enemySpawnTime: 6
+  - timeWave: 60
+    enemySetDetail:
+    - enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
+      enemySpawnCount: 3
+      enemySpawnTime: 3
+    - enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
+      enemySpawnCount: 10
+      enemySpawnTime: 0
 --- !u!4 &2124543636
 Transform:
   m_ObjectHideFlags: 0

@@ -8,17 +8,23 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform player;
 
-    public GameObject enemy;
-
     public List<GameObject> enemyList = new List<GameObject>();
+    public float gameTime;
+    public List<EnemySet> enemySet = new List<EnemySet>();
+    int enemySetCount;
 
-    void Update()
+    void Start()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-            SpawnEnemy();
+        InvokeRepeating("SpawnSequence",1f ,1f);
     }
 
-    void SpawnEnemy()
+    void SpawnSequence()
+    {
+        CountTime();
+        CheckSpawnTime();
+    }
+
+    void SpawnEnemy(GameObject enemy)
     {
         // Camera mainCam = Camera.main;
 
@@ -42,6 +48,55 @@ public class EnemySpawner : MonoBehaviour
         enemyList.Add(_enemy);
     }
 
+    void CountTime()
+    {
+        gameTime += 1;
+        print(enemySetCount);
+    }
+
+    void CheckSpawnTime()
+    {
+        if(enemySet.Count - 1 == enemySetCount)
+        {
+            if(gameTime >= enemySet[enemySetCount].timeWave)
+            {
+                CheckSpawnValue();
+            }
+        }
+        else
+        {
+            if(gameTime >= enemySet[enemySetCount].timeWave 
+            && gameTime < enemySet[enemySetCount + 1].timeWave)
+            {
+                CheckSpawnValue();
+                CheckSetCountIncrease();
+            }
+        }
+    }
+    void CheckSpawnValue()
+    {
+        int setCountTemp = 0;
+
+        foreach(EnemySet enemySetTemp in enemySet)
+        {
+            if(gameTime % enemySet[enemySetCount].enemySetDetail[setCountTemp].enemySpawnTime == 0)
+            {
+                for (int i = 0; i < enemySet[enemySetCount].enemySetDetail[setCountTemp].enemySpawnCount; i++)
+                {
+                    SpawnEnemy(enemySet[enemySetCount].enemySetDetail[setCountTemp].enemyPrefab);
+                }
+            }
+            setCountTemp++;
+        }
+    }
+    void CheckSetCountIncrease()
+    {
+        if(gameTime + 1 == enemySet[enemySetCount + 1].timeWave)
+        {
+            enemySetCount++;
+        }
+    }
+
     public void DestroyAllEnemy()
     {
         foreach(GameObject _enemy in enemyList)
@@ -49,4 +104,18 @@ public class EnemySpawner : MonoBehaviour
             Destroy(_enemy);
         }
     }
+}
+
+[System.Serializable]
+public class EnemySet
+{
+    public float timeWave;
+    public List<EnemySetDetail> enemySetDetail;
+}
+[System.Serializable]
+public class EnemySetDetail
+{
+    public GameObject enemyPrefab;
+    public int enemySpawnCount;
+    public float enemySpawnTime;
 }
