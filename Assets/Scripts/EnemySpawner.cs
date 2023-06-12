@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
-        print($"x : {offScreenPosition}, y : {offScreenPosition}");
+        // print($"x : {offScreenPosition}, y : {offScreenPosition}");
         GameObject _enemy = Instantiate(enemy,offScreenPosition,Quaternion.identity); //spawn enemy
         enemyList.Add(_enemy);
     }
@@ -55,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
 
     void CheckSpawnTime()
     {
+        CheckSetCountIncrease();
         if(enemySet.Count - 1 == enemySetCount)
         {
             if(gameTime >= enemySet[enemySetCount].timeWave)
@@ -68,7 +69,6 @@ public class EnemySpawner : MonoBehaviour
             && gameTime < enemySet[enemySetCount + 1].timeWave)
             {
                 CheckSpawnValue();
-                CheckSetCountIncrease();
             }
         }
     }
@@ -80,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if(gameTime % enemySet[enemySetCount].enemySetDetail[setCountTemp].enemySpawnTime == 0)
             {
-                for (int i = 0; i < enemySet[enemySetCount].enemySetDetail[setCountTemp].enemySpawnCount; i++)
+                for (int i = 0; i < enemySet[enemySetCount].enemySetDetail[setCountTemp].enemySpawnCount ; i++)
                 {
                     SpawnEnemy(enemySet[enemySetCount].enemySetDetail[setCountTemp].enemyPrefab);
                 }
@@ -90,7 +90,8 @@ public class EnemySpawner : MonoBehaviour
     }
     void CheckSetCountIncrease()
     {
-        if(gameTime + 1 == enemySet[enemySetCount + 1].timeWave)
+        if(enemySet.Count - 1 == enemySetCount) { return; }
+        if(gameTime == enemySet[enemySetCount + 1].timeWave)
         {
             enemySetCount++;
         }
