@@ -34,7 +34,7 @@ public class EnemyScript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<PlayerScript>().currentHealth -= enemyDamage;
+            other.GetComponent<PlayerScript>().TakeDamage(enemyDamage);
             StopMove();
         }
     }
@@ -45,6 +45,7 @@ public class EnemyScript : MonoBehaviour
             ContinueMove();
         }
     }
+
 
     void StopMove()
     {

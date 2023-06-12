@@ -51,7 +51,6 @@ public class EnemySpawner : MonoBehaviour
     void CountTime()
     {
         gameTime += 1;
-        print(enemySetCount);
     }
 
     void CheckSpawnTime()
