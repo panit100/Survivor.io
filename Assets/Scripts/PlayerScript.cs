@@ -10,6 +10,9 @@ public class PlayerScript : MonoBehaviour
     public float currentHealth = 0f;
 
     public int exp = 0;
+    public int CurrentLevel = 1;
+
+    
 
     void Start()
     {
@@ -32,4 +35,6 @@ public class PlayerScript : MonoBehaviour
 
         // rigidbody2D.velocity = diraction * speed;
     }
+
+    
 }
