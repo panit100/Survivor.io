@@ -26,7 +26,6 @@ public class ThrowWeapon : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("hit");
         if (col.gameObject.CompareTag("Enemy"))
         {
             //Implement Enemy Taken Damage from player
