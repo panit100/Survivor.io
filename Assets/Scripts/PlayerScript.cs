@@ -11,6 +11,9 @@ public class PlayerScript : MonoBehaviour
     public GameObject canvasGameOver;
 
     public int exp = 0;
+    public int CurrentLevel = 1;
+
+    
 
     void Start()
     {
