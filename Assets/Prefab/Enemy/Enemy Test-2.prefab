@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9126947946215481695}
   m_Layer: 0
   m_Name: Enemy Test-2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,3 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 0.01
   enemyDamage: 0.1
+  expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
+  health: 10

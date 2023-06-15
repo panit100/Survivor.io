@@ -9,6 +9,9 @@ public class EnemyScript : MonoBehaviour
     public float enemyDamage;
     Transform playerTransform;
 
+    [SerializeField] GameObject expItem;
+    [SerializeField] float health = 10;
+
     void Start()
     {
         SetupComponent();
@@ -19,16 +22,26 @@ public class EnemyScript : MonoBehaviour
         enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
     }
 
-
     void Update()
     {
         MoveToPlayer();
     }
+
     void MoveToPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent);
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            Instantiate(expItem,transform.position,Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -45,7 +58,6 @@ public class EnemyScript : MonoBehaviour
             ContinueMove();
         }
     }
-
 
     void StopMove()
     {

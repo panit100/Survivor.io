@@ -9,6 +9,8 @@ public class BasicBullet : MonoBehaviour
 
     public GameObject Target;
     private Vector2 direction;
+
+    [SerializeField] float damage = 5;
     private void Update()
     {
         LeapToEnemy();
@@ -36,11 +38,10 @@ public class BasicBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("hit");
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
             //Implement Enemy Taken Damage from player
-            Destroy(col.gameObject);
+            col.GetComponent<EnemyScript>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
     }
