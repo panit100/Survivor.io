@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,21 @@ public class BasicAttack : MonoBehaviour
     public float Radius;
     public BasicBullet Bullet;
     private float timer;
-  
+    
+    private int weaponLevel;
 
-  
+    public int WeaponLevel
+    {
+        get => weaponLevel;
+        set => weaponLevel = value;
+    }
+
+    private void Awake()
+    {
+        if(!this.isActiveAndEnabled)weaponLevel = 0;
+    }
+
+
     void Update()
     {
         DoShoot();
@@ -44,5 +57,18 @@ public class BasicAttack : MonoBehaviour
            
            
         }
+    }
+    
+    public void UpgradeWeaponLevel()
+    {
+        Debug.Log("upgrade");
+        var tempRadius = Radius;
+        var temptimer = timer;
+        Radius = tempRadius*1.5f;
+        if (timer > 0.1)
+        {
+            timer = temptimer / 4;
+        }
+        weaponLevel++;
     }
 }

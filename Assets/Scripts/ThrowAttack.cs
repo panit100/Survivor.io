@@ -10,6 +10,17 @@ public class ThrowAttack : MonoBehaviour
     public int ThrowCount;
     public ThrowWeapon Axe;
     private float timer;
+    private int weaponLevel;
+
+    public int WeaponLevel
+    {
+        get => weaponLevel;
+        set => weaponLevel = value;
+    }
+    private void Awake()
+    {
+        if(!this.isActiveAndEnabled)weaponLevel = 0;
+    }
 
 
     private void Start()
@@ -41,6 +52,27 @@ public class ThrowAttack : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void UpgradeWeaponLevel()
+    {
+        if (weaponLevel == 0)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
+        {
+            var temptimer = timer;
+            if (ThrowCount < 5)
+            {
+                ThrowCount++;
+            }
+            if (timer > 0.1f)
+            {
+                timer = temptimer / 4;
+            }
+        }
+        weaponLevel++;
     }
    
 }

@@ -15,6 +15,18 @@ public class OrbitAttack : MonoBehaviour
     private bool loadAllOrbit = false;
     private float tempDuration;
     private Coroutine IECooldown;
+    
+    private int weaponLevel;
+
+    public int WeaponLevel
+    {
+        get => weaponLevel;
+        set => weaponLevel = value;
+    }
+    private void Awake()
+    {
+        if(!this.isActiveAndEnabled)weaponLevel = 0;
+    }
     void Start()
     {
         tempDuration = OrbitDuration;
@@ -29,7 +41,6 @@ public class OrbitAttack : MonoBehaviour
             OrbitDuration -= Time.deltaTime;
             if(OrbitDuration < 0)
             {
-                Debug.Log("Below");
                 foreach (Transform orbits in this.transform)
                 {
                     GameObject.Destroy(orbits.gameObject);
@@ -63,5 +74,24 @@ public class OrbitAttack : MonoBehaviour
         OrbitDuration = tempDuration;
         loadAllOrbit = true;
     
+    }
+    
+    public void UpgradeWeaponLevel()
+    {
+        if (weaponLevel == 0)
+        {
+            this.gameObject.SetActive(true);
+        }
+        else
+        {
+            weaponLevel++;
+            if ((OrbitCoolDown / 4) >= 0.1f)
+            {
+                OrbitCoolDown /= 4;
+            }
+            orbitCount++;
+            OrbitDuration *= 1.1f;
+        }
+        weaponLevel++;
     }
 }
