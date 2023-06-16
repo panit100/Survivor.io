@@ -1371,10 +1371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  maxHealth: 10
+  maxHealth: 20
   currentHealth: 0
-  canvasGameOver: {fileID: 0}
+  canvasGameOver: {fileID: 4510238441785497117, guid: b6460a5d977b072418e2fd9479dc2919, type: 3}
   exp: 0
+  CurrentLevel: 1
 --- !u!58 &1938102965
 CircleCollider2D:
   m_ObjectHideFlags: 0

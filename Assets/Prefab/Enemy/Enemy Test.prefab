@@ -137,6 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 0.03
-  enemyDamage: 0.1
+  enemyDamage: 10
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   health: 10

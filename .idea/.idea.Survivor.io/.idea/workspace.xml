@@ -4,16 +4,22 @@
     <list default="true" id="f1770df1-2f2e-4b6f-adfa-17c84af18afd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/poom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/poom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThrowWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThrowWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Demo/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Demo/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Prefab/Ranged_wepon_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Prefab/Ranged_wepon_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Prefab/Ranged_wepon_04.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Prefab/Ranged_wepon_04.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Sprites/Ranged_Weapons/Ranged_wepon_03.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/2D_WoodWeapons/Sprites/Ranged_Weapons/Ranged_wepon_03.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BasicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BasicAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BasicBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BasicBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OrbitAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OrbitAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ThrowAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ThrowAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/IRONY TITLE  empty.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/IRONY TITLE  empty.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium  parchment.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium  parchment.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium Set.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Fantasy Wooden GUI  Free/normal_ui_set A/UI board Medium Set.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/UpgradeCard.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -23,22 +29,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\THANAPHUMCHONRAT\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\THANAPHUMCHONRAT\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\THANAPHUMCHONRAT\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\THANAPHUMCHONRAT\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\THANAPHUMCHONRAT\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\THANAPHUMCHONRAT\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Program Files\unity\2021.3.17f1\Editor\Unity.exe" />
@@ -86,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686655896114</updated>
       <workItem from="1686655902368" duration="8956000" />
+      <workItem from="1686782302961" duration="4608000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI leveltext;
     public Image levelbar;
     public int MaxLevelCap;
+    public UpgradePanel upgradePanel;
     
    
 
@@ -33,6 +34,7 @@ public class LevelManager : MonoBehaviour
         if (Refplayer.exp >= MaxLevelCap)
         {
             MaxLevelCap = Mathf.RoundToInt(MaxLevelCap*1.25f) ;
+            upgradePanel.gameObject.SetActive(true);
             Refplayer.exp = 0;
             Refplayer.CurrentLevel += 1;
             levelbar.fillAmount = 0;
