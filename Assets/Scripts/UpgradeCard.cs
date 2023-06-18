@@ -10,6 +10,10 @@ public class UpgradeCard : MonoBehaviour
    public GameObject Weapon;
    public UpgradePanel upgradePanel;
 
+   [SerializeField]private BasicAttack _basicAttack;
+   [SerializeField]private OrbitAttack _orbitAttack;
+   [SerializeField]private ThrowAttack _throwAttack;
+
    private void Start()
    {
       upgradePanel = FindObjectOfType<UpgradePanel>();
@@ -17,22 +21,22 @@ public class UpgradeCard : MonoBehaviour
 
    public void BasicAttack()
    {
-      Weapon.GetComponent<BasicAttack>().UpgradeWeaponLevel();
-      Level.text = "LV. :" + (Weapon.GetComponent<BasicAttack>().WeaponLevel+1);
+      _basicAttack.UpgradeWeaponLevel();
+      Level.text = "LV. :" + (_basicAttack.WeaponLevel+1);
       upgradePanel.gameObject.SetActive(false);
    }
 
    public void OrbitAttack()
    {
-      Weapon.GetComponent<OrbitAttack>().UpgradeWeaponLevel();
-      Level.text = "LV. :" + (Weapon.GetComponent<OrbitAttack>().WeaponLevel+1);
+      _orbitAttack.UpgradeWeaponLevel();
+      Level.text = "LV. :" + (_orbitAttack.WeaponLevel+1);
       upgradePanel.gameObject.SetActive(false);
    }
 
    public void ThrowAttack()
    {
-      Weapon.GetComponent<ThrowAttack>().UpgradeWeaponLevel();
-      Level.text = "LV. :" + (Weapon.GetComponent<ThrowAttack>().WeaponLevel+1);
+      _throwAttack.UpgradeWeaponLevel();
+      Level.text = "LV. :" + (_throwAttack.WeaponLevel+1);
       upgradePanel.gameObject.SetActive(false);
    }
 }

@@ -10,8 +10,7 @@ public class ThrowWeapon : MonoBehaviour
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
-        thisRigidBody.AddForce(new Vector2(Random.Range(-1f,1f),1f) * Random.Range(270f,500f));
-        thisRigidBody.AddTorque(Random.Range(700f,1500f));
+        thisRigidBody.AddForce(new Vector2(Random.Range(-1f,1f),1f) * Random.Range(2f,10f),ForceMode2D.Impulse);
     }
 
     // Update is called once per frame

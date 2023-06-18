@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThrowAttackCoolDownspeed: 4
-  ThrowCount: 1
+  ThrowCount: 5
   Axe: {fileID: 1687365149546408427, guid: 14f0a58cf1480f94fb115243bd955da5, type: 3}
 --- !u!1 &167994567
 GameObject:
@@ -1511,6 +1511,7 @@ MonoBehaviour:
   OrbitDuration: 2
   OrbitCoolDown: 6
   orbitCount: 1
+  radial: 0
 --- !u!1 &762367558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,10 +1647,6 @@ PrefabInstance:
     - target: {fileID: 8304603673281720335, guid: 14f0a58cf1480f94fb115243bd955da5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121629253758699086, guid: 14f0a58cf1480f94fb115243bd955da5, type: 3}
-      propertyPath: m_Mass
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14f0a58cf1480f94fb115243bd955da5, type: 3}
@@ -1924,6 +1921,9 @@ MonoBehaviour:
   Level: {fileID: 918807122}
   Weapon: {fileID: 630574818}
   upgradePanel: {fileID: 0}
+  _basicAttack: {fileID: 630574820}
+  _orbitAttack: {fileID: 751483109}
+  _throwAttack: {fileID: 141928442}
 --- !u!1 &918807120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2424,9 @@ MonoBehaviour:
   Level: {fileID: 1415868799}
   Weapon: {fileID: 751483107}
   upgradePanel: {fileID: 0}
+  _basicAttack: {fileID: 630574820}
+  _orbitAttack: {fileID: 751483109}
+  _throwAttack: {fileID: 141928442}
 --- !u!1001 &1153419451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4004,6 +4007,9 @@ MonoBehaviour:
   Level: {fileID: 1629572262}
   Weapon: {fileID: 141928440}
   upgradePanel: {fileID: 0}
+  _basicAttack: {fileID: 630574820}
+  _orbitAttack: {fileID: 751483109}
+  _throwAttack: {fileID: 141928442}
 --- !u!1001 &1672563728
 PrefabInstance:
   m_ObjectHideFlags: 0

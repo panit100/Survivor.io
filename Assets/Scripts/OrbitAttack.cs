@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 public class OrbitAttack : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class OrbitAttack : MonoBehaviour
     public float OrbitDuration;
     public float OrbitCoolDown;
     public int orbitCount;
+    public float radial;
 
     private bool loadAllOrbit = false;
     private float tempDuration;
@@ -66,9 +68,10 @@ public class OrbitAttack : MonoBehaviour
         for (int i = 0; i < orbitCount; i++)
         {
             var NewOrbitObject = Instantiate(OrbitObject);
-            //NewOrbitObject.transform.position = Vector2.Lerp(this.transform.position, NewOrbitObject.transform.position, 0.45f);
+            NewOrbitObject.transform.position = Vector3.Lerp(this.transform.position, NewOrbitObject.transform.position, 0.4f);
             NewOrbitObject.transform.RotateAround(transform.position,Vector3.forward, anglestep*i);
             NewOrbitObject.transform.SetParent(this.transform);
+            Vector3 Direction = NewOrbitObject.transform.position - this.transform.position;
             yield return new WaitForEndOfFrame();
         }
         OrbitDuration = tempDuration;
