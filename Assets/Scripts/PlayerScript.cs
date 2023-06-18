@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour
 
     public float maxHealth = 10f;
     public float currentHealth = 0f;
+    public GameObject canvasGameOver;
 
     public int exp = 0;
     public int CurrentLevel = 1;
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         Move();
+        CheckHP();
     }
 
     void Move()
@@ -36,5 +38,24 @@ public class PlayerScript : MonoBehaviour
         // rigidbody2D.velocity = diraction * speed;
     }
 
-    
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+    }
+
+    bool isPlayerGameOver = false;
+    void CheckHP()
+    {
+        if(isPlayerGameOver == false && currentHealth <= 0)
+        {
+            GameOver();
+        }
+    }
+    void GameOver()
+    {
+        currentHealth = 0;
+        isPlayerGameOver = true;
+        Instantiate(canvasGameOver);
+        Time.timeScale = 0;
+    }
 }

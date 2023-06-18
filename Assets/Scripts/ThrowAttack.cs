@@ -50,8 +50,6 @@ public class ThrowAttack : MonoBehaviour
             Instantiate(Axe,this.transform.position,Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
         }
-
-        yield return null;
     }
 
     public void UpgradeWeaponLevel()

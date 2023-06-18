@@ -7,6 +7,7 @@ public class ThrowWeapon : MonoBehaviour
 {
     public float KillTime;
     private Rigidbody2D thisRigidBody;
+    [SerializeField] float damage = 5;
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
@@ -25,10 +26,10 @@ public class ThrowWeapon : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy"))
         {
             //Implement Enemy Taken Damage from player
-            Destroy(col.gameObject);
+            col.GetComponent<EnemyScript>().TakeDamage(damage);
             Destroy(this.gameObject);
         }
     }
