@@ -63,11 +63,11 @@ public class BasicAttack : MonoBehaviour
     {
         Debug.Log("upgrade");
         var tempRadius = Radius;
-        var temptimer = timer;
+        var temptimer = BasicAttackSpeed;
         Radius = tempRadius*1.5f;
-        if (timer > 0.1)
+        if (BasicAttackSpeed > 0.1f)
         {
-            timer = temptimer / 4;
+            BasicAttackSpeed = temptimer *0.95f;
         }
         weaponLevel++;
     }
