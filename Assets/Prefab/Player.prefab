@@ -250,7 +250,7 @@ MonoBehaviour:
   speed: 10
   maxHealth: 10
   currentHealth: 0
-  canvasGameOver: {fileID: 0}
+  canvasGameOver: {fileID: 4510238441785497117, guid: b6460a5d977b072418e2fd9479dc2919, type: 3}
   exp: 0
   CurrentLevel: 1
 --- !u!50 &3167595282665970573
@@ -270,9 +270,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &3167595282665970574
 CircleCollider2D:

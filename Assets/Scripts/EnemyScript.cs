@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
         enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         MoveToPlayer();
     }

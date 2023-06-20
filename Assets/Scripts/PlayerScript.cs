@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         currentHealth = maxHealth;
     }
 

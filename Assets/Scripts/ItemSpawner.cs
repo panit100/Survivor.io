@@ -12,20 +12,24 @@ public class ItemSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnItem",1f ,10f);
+        // InvokeRepeating("SpawnItem",1f ,10f);
+        StartCoroutine(SpawnItem());
     }
 
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-            SpawnItem();
-    }
+    // private void Update() 
+    // {
+        // if(Input.GetKeyDown(KeyCode.R))
+        //     SpawnItem();
+    // }
 
-    void SpawnItem()
+    IEnumerator SpawnItem()
     {
+        yield return new WaitForSeconds(10f);
         GameObject randomItem = itemList[Random.Range(0,itemList.Count)];
 
         GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
+
+        StartCoroutine(SpawnItem());
     }
 
     Vector3 RandomSpawnPosition()
