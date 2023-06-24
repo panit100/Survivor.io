@@ -177,11 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1664e0148291e48ac6648dd5758f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &234841775 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2092251791175261984, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-  m_PrefabInstance: {fileID: 3167595280728523067}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &239912835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1536,29 +1531,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3167595282665970572, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 943067374}
-    - target: {fileID: 3167595282665970572, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 943067374}
-    - target: {fileID: 3167595282665970575, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: audio
-      value: 
-      objectReference: {fileID: 3167595280728523068}
-    - target: {fileID: 3167595282665970575, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: Animator
-      value: 
-      objectReference: {fileID: 234841775}
-    - target: {fileID: 3167595282665970575, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 234841775}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
---- !u!82 &3167595280728523068 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1938102968, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-  m_PrefabInstance: {fileID: 3167595280728523067}
-  m_PrefabAsset: {fileID: 0}
