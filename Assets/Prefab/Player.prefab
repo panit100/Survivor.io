@@ -199,10 +199,11 @@ MonoBehaviour:
   speed: 10
   maxHealth: 100
   currentHealth: 0
-  canvasGameOver: {fileID: 4510238441785497117, guid: b6460a5d977b072418e2fd9479dc2919, type: 3}
   exp: 0
   CurrentLevel: 1
+  canvasGameOver: {fileID: 4510238441785497117, guid: b6460a5d977b072418e2fd9479dc2919, type: 3}
   animator: {fileID: 2092251791175261984}
+  audio: {fileID: 1938102968}
 --- !u!50 &3167595282665970573
 Rigidbody2D:
   serializedVersion: 4
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d937197dcb24c42ae59918bd14a77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBarImage: {fileID: 0}
 --- !u!82 &1938102968
 AudioSource:
   m_ObjectHideFlags: 0
