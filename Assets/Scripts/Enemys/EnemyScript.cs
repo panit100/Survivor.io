@@ -7,8 +7,9 @@ public class EnemyScript : MonoBehaviour
     public float enemyMoveSpeedDefault;
     float enemyMoveSpeedCurrent;
     public float enemyDamage;
-    Transform playerTransform;
 
+    [HideInInspector]
+    public Transform playerTransform;
     [SerializeField] GameObject expItem;
     [SerializeField] float health = 10;
 
