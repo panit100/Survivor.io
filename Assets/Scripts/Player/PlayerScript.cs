@@ -72,6 +72,14 @@ public class PlayerScript : MonoBehaviour
             animator.Play("WalkDown");
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+
+        if(currentHealth > maxHealth)
+            currentHealth = maxHealth;
+    }
+
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;

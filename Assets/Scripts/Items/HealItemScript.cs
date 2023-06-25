@@ -11,13 +11,8 @@ public class HealItemScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             PlayerScript player = other.GetComponent<PlayerScript>();
-            player.currentHealth += healAmount;
-
-            if(player.currentHealth > player.maxHealth)
-            {
-                player.currentHealth = player.maxHealth;
-            }
-
+            
+            player.Heal(healAmount);
             Destroy(this.gameObject);
         }
     }

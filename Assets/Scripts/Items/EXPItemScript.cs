@@ -24,7 +24,7 @@ public class EXPItemScript : MonoBehaviour
         }
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         if(isMoveToPlayer)
             LeapToPlayer();
@@ -32,10 +32,6 @@ public class EXPItemScript : MonoBehaviour
 
     public void LeapToPlayer()
     {
-        Vector2 direction = player.transform.position - transform.position;
-
-        transform.Translate(direction * 1.5f * Time.deltaTime);
-
-        // transform.position = Vector2.Lerp(transform.position,player.transform.position,Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, player.transform.position,0.1f);
     }
 }

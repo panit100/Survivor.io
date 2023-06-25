@@ -9,6 +9,7 @@ public class MagnetItemScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
            EXPItemScript[] expItems = FindObjectsOfType<EXPItemScript>();
+           
            foreach(EXPItemScript n in expItems)
            {
             n.GetComponent<EXPItemScript>().isMoveToPlayer = true;
