@@ -26,7 +26,7 @@ public class BasicBullet : MonoBehaviour
         else
         {
             transform.Translate((direction * BulletSpeed) * Time.deltaTime);
-            Invoke("DestroyThis",5f);
+            DestroyThis();
         }
         ;
     }
