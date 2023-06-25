@@ -12,22 +12,15 @@ public class ItemSpawner : MonoBehaviour
 
     void Start()
     {
-        // InvokeRepeating("SpawnItem",1f ,10f);
         StartCoroutine(SpawnItem());
     }
-
-    // private void Update() 
-    // {
-        // if(Input.GetKeyDown(KeyCode.R))
-        //     SpawnItem();
-    // }
 
     IEnumerator SpawnItem()
     {
         yield return new WaitForSeconds(10f);
         GameObject randomItem = itemList[Random.Range(0,itemList.Count)];
 
-        GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
+        GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity);
 
         StartCoroutine(SpawnItem());
     }
@@ -36,9 +29,9 @@ public class ItemSpawner : MonoBehaviour
     {
         Vector3 playerPosition = player.position;
 
-        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
+        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0);
 
-        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
+        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset);
 
         return offScreenPosition;
     }

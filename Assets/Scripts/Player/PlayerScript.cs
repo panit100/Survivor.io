@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    [Header("Movement")]
     public float speed = 10f;
+    Vector3 direction;
 
+    [Header("HP")]
     public float maxHealth = 10f;
     public float currentHealth = 0f;
-    public GameObject canvasGameOver;
 
+    [Header("LEVEL")]
     public int exp = 0;
     public int CurrentLevel = 1;
 
+    [Header("GameOver")]
+    public GameObject canvasGameOver;
+    bool isPlayerGameOver = false;
+    
+    [Header("PlayerComponent")]
     public Animator animator;
-    AudioSource audio;
+    public AudioSource audio;
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
-
         Time.timeScale = 1;
+
         currentHealth = maxHealth;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
+        MoveAnimation();
+        MoveSound();
         CheckHP();
     }
 
@@ -35,7 +44,14 @@ public class PlayerScript : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        if(horizontal == 0 && vertical == 0)
+        direction = new Vector2(horizontal,vertical).normalized;
+
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    void MoveSound()
+    {
+        if(direction == Vector3.zero)
         {
             animator.Play("Idle");
             audio.Stop();
@@ -44,19 +60,16 @@ public class PlayerScript : MonoBehaviour
 
         if(!audio.isPlaying)
             audio.Play();
-        
-        var diraction = new Vector2(horizontal,vertical).normalized;
+    }
 
-        if(diraction.x > 0)
+    void MoveAnimation()
+    {
+        if(direction.x > 0)
             animator.Play("WalkRight");
-        else if(diraction.x < 0)
+        else if(direction.x < 0)
             animator.Play("WalkLeft");
         else
             animator.Play("WalkDown");
-
-        transform.Translate(diraction * speed * Time.deltaTime);
-
-        // rigidbody2D.velocity = diraction * speed;
     }
 
     public void TakeDamage(float damage)
@@ -64,7 +77,6 @@ public class PlayerScript : MonoBehaviour
         currentHealth -= damage;
     }
 
-    bool isPlayerGameOver = false;
     void CheckHP()
     {
         if(isPlayerGameOver == false && currentHealth <= 0)
@@ -72,9 +84,9 @@ public class PlayerScript : MonoBehaviour
             GameOver();
         }
     }
+
     void GameOver()
     {
-        currentHealth = 0;
         isPlayerGameOver = true;
         Instantiate(canvasGameOver);
         Time.timeScale = 0;
