@@ -13,6 +13,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] GameObject expItem;
     [SerializeField] float health = 10;
 
+    [SerializeField] bool moveToPlayer = true;
+
     void Start()
     {
         SetupComponent();
@@ -25,7 +27,8 @@ public class EnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveToPlayer();
+        if(moveToPlayer)
+            MoveToPlayer();
     }
 
     void MoveToPlayer()
