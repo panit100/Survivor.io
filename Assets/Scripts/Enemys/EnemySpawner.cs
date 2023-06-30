@@ -94,20 +94,21 @@ public class EnemySpawner : MonoBehaviour
     
     void CheckSpawnValue()
     {
-        foreach(EnemySet enemySetTemp in enemySet)
-        {
-            foreach(EnemySetDetail enemySetDetail in enemySetTemp.enemySetDetail)
-            {
-                if(gameTime % enemySetDetail.enemySpawnTime == 0)
-                {
-                    for (int i = 0; i < enemySetDetail.enemySpawnCount ; i++)
-                    {
-                        SpawnEnemy(enemySetDetail.enemyPrefab);
-                    }
-                }
-            }
-        }
+        // foreach(EnemySet enemySetTemp in enemySet)
+        // {
+        //     foreach(EnemySetDetail enemySetDetail in enemySetTemp.enemySetDetail)
+        //     {
+        //         if(gameTime % enemySetDetail.enemySpawnTime == 0)
+        //         {
+        //             for (int i = 0; i < enemySetDetail.enemySpawnCount ; i++)
+        //             {
+        //                 SpawnEnemy(enemySetDetail.enemyPrefab);
+        //             }
+        //         }
+        //     }
+        // }
     }
+
     // void CheckSetCountIncrease()
     // {
     //     if(enemySet.Count - 1 == enemySetCount) { return; }
@@ -132,10 +133,12 @@ public class EnemySet
     public float timeWave;
     public List<EnemySetDetail> enemySetDetail;
 }
+
 [System.Serializable]
 public class EnemySetDetail
 {
-    public GameObject enemyPrefab;
+    // public GameObject enemyPrefab;
+    public string enemyTag;
     public int enemySpawnCount;
     public float enemySpawnTime;
 }

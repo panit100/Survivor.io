@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 1475168868888902470}
   - component: {fileID: 1475168868888902471}
   - component: {fileID: 1475168868888902465}
+  - component: {fileID: 1602552625}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1475168868888902470
 Transform:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475168868888902464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24f0b0a4e45c914c90d1bada536738a, type: 3}
   m_Name: 
@@ -93,3 +94,24 @@ MonoBehaviour:
   enemyList:
   - {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
   - {fileID: 2925479885468574148, guid: debbcc66173113a4583527ccc95077d1, type: 3}
+--- !u!114 &1602552625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475168868888902464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7553345be689cbc469fe348a776f8253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOffset: 30
+  player: {fileID: 0}
+  enemyPoolList:
+  - tag: A
+    enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
+    amount: 100
+  - tag: B
+    enemyPrefab: {fileID: 2925479885468574148, guid: debbcc66173113a4583527ccc95077d1, type: 3}
+    amount: 100
