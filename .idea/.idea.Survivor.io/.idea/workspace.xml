@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1770df1-2f2e-4b6f-adfa-17c84af18afd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Undead Survivor/Sprites/New Sprite Atlas.spriteatlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Undead Survivor/Sprites/New Sprite Atlas.spriteatlas.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Feel/FeelDemos/FeelTemplatesDemo.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v3.9/NiceVibrations-v-3-9-0.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Impacts/CFXR Impact Glowing HDR (Blue).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Impacts/CFXR Impact Glowing HDR (Blue).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/poom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/poom.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BasicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BasicAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BasicBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BasicBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite Asset/TopDown 2D RPG BE3/Sprites/Tiles.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite Asset/TopDown 2D RPG BE3/Sprites/Tiles.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b2a272e51214e2f91bbc4fb4f28eff8159400/86/6a376999/DisallowMultipleComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlackMagic/InfinityTile.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -96,6 +94,8 @@
       <workItem from="1686655902368" duration="8956000" />
       <workItem from="1686782302961" duration="4608000" />
       <workItem from="1687258557143" duration="7046000" />
+      <workItem from="1687681807199" duration="977000" />
+      <workItem from="1687791442132" duration="1270000" />
     </task>
     <servers />
   </component>
