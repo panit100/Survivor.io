@@ -13,16 +13,22 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] GameObject expItem;
     [SerializeField] float health = 10;
 
+    float currentHealth = 10;
+
     [SerializeField] bool moveToPlayer = true;
+
+    public EnemySpawnerPooling enemySpawner;
 
     void Start()
     {
-        SetupComponent();
-    }
-    void SetupComponent()
-    {
         playerTransform = GameObject.FindWithTag("Player").transform;
         enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
+
+        SetupComponent();
+    }
+    public void SetupComponent()
+    {
+        currentHealth = health;
     }
 
     void FixedUpdate()
@@ -38,12 +44,14 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        currentHealth -= damage;
 
-        if(health <= 0)
+        if(currentHealth <= 0)
         {
             Instantiate(expItem,transform.position,Quaternion.identity);
-            Destroy(this.gameObject);
+            enemySpawner.enemyContainer.Remove(this.gameObject);
+            gameObject.SetActive(false);
+            // Destroy(this.gameObject);
         }
     }
 

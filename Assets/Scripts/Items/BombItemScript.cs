@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BombItemScript : MonoBehaviour
 {
-    EnemySpawner enemySpawner;
+    // EnemySpawner enemySpawner;
+    EnemySpawnerPooling enemySpawner;
 
     void Start() 
     {
-        enemySpawner = FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>();    
+        // enemySpawner = FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>();   
+        enemySpawner = FindObjectOfType<EnemySpawnerPooling>().GetComponent<EnemySpawnerPooling>();    
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

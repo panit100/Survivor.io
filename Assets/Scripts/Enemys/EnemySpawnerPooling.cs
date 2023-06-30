@@ -2,39 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class EnemyPool
+{
+    public string tag;
+    public EnemyScript enemyPrefab;
+    public int amount;
+}
+
 public class EnemySpawnerPooling : MonoBehaviour
 {
-    [System.Serializable]
-    public class EnemyPool
-    {
-        public string tag;
-        public GameObject enemyPrefab;
-        public int amount;
-    }
-
     public float spawnOffset = 1f;
     public Transform player;
 
-    public List<EnemyPool> enemyPoolList;
-    public Dictionary<string,Queue<GameObject>> enemyPoolDictionary;
+    public float gameTime;
+    public List<EnemySet> enemySet = new List<EnemySet>();
 
+    [HideInInspector]
+    public List<GameObject> enemyContainer = new List<GameObject>();
+    float enemySpawnAmount; //when start new wave add enemySpawnAmount
+
+    public List<EnemyPool> enemyPoolList;
+    public Dictionary<string,Queue<EnemyScript>> enemyPoolDictionary;
+    
     void Start()
     {
         InitializePool();
+
+        enemySpawnAmount = 10;
+
+        InvokeRepeating("SpawnSequence",1f ,1f);
+    }
+
+    void CountTime()
+    {
+        gameTime += 1;
     }
 
     void InitializePool()
     {
-        enemyPoolDictionary = new Dictionary<string, Queue<GameObject>>();
+        enemyPoolDictionary = new Dictionary<string, Queue<EnemyScript>>();
     
         foreach(EnemyPool pool in enemyPoolList)
         {
-            Queue<GameObject> enemyPool = new Queue<GameObject>();
+            Queue<EnemyScript> enemyPool = new Queue<EnemyScript>();
 
             for(int i = 0; i < pool.amount; i++)
             {
-                GameObject enemy = Instantiate(pool.enemyPrefab);
-                enemy.SetActive(false);
+                EnemyScript enemy = Instantiate(pool.enemyPrefab);
+                enemy.enemySpawner = this;
+                enemy.gameObject.SetActive(false);
                 enemyPool.Enqueue(enemy);
             }
 
@@ -44,11 +61,15 @@ public class EnemySpawnerPooling : MonoBehaviour
 
     void SpawnEnemyFromPool(string tag)
     {
-        GameObject enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
+        EnemyScript enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
 
-        GameObject _enemy = Instantiate(enemyToSpawn,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
-    
+        enemyToSpawn.transform.position = RandomSpawnPosition();
+        enemyToSpawn.gameObject.SetActive(true);
+        enemyToSpawn.SetupComponent();
+
         enemyPoolDictionary[tag].Enqueue(enemyToSpawn);
+
+        enemyContainer.Add(enemyToSpawn.gameObject);
     }
 
     Vector3 RandomSpawnPosition()
@@ -60,5 +81,37 @@ public class EnemySpawnerPooling : MonoBehaviour
         Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
 
         return offScreenPosition;
+    }
+
+    void CheckSpawnValue()
+    {
+        foreach(EnemySet enemySetTemp in enemySet)
+        {
+            foreach(EnemySetDetail enemySetDetail in enemySetTemp.enemySetDetail)
+            {
+                if(gameTime % enemySetDetail.enemySpawnTime == 0)
+                {
+                    for (int i = 0; i < enemySetDetail.enemySpawnCount ; i++)
+                    {
+                        SpawnEnemyFromPool(enemySetDetail.enemyTag);
+                    }
+                }
+            }
+        }
+    }
+
+    void SpawnSequence()
+    {
+        CountTime();
+        // CheckSpawnTime();
+        CheckSpawnValue();
+    }
+
+    public void DestroyAllEnemy()
+    {
+        foreach(GameObject _enemy in enemyContainer)
+        {
+            _enemy.SetActive(false);
+        }
     }
 }
