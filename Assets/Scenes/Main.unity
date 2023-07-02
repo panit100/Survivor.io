@@ -184,17 +184,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1475168868888902464, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
-      propertyPath: m_Name
-      value: Spawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 1475168868888902465, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
+    - target: {fileID: 1602552625, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1938102963}
-    - target: {fileID: 1475168868888902465, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 1602552629, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1938102963}
+    - target: {fileID: 1475168868888902464, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
+      propertyPath: m_Name
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 1475168868888902470, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
       propertyPath: m_RootOrder
@@ -394,7 +394,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.51
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1095,32 +1095,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587096898}
   m_CullTransparentMesh: 1
---- !u!1 &1602552621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1475168868888902464, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
-  m_PrefabInstance: {fileID: 239912835}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1602552625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602552621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7553345be689cbc469fe348a776f8253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnOffset: 30
-  player: {fileID: 1938102963}
-  enemyPoolList:
-  - tag: A
-    enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
-    amount: 100
-  - tag: B
-    enemyPrefab: {fileID: 2925479885468574148, guid: debbcc66173113a4583527ccc95077d1, type: 3}
-    amount: 100
 --- !u!1 &1708941943
 GameObject:
   m_ObjectHideFlags: 0
