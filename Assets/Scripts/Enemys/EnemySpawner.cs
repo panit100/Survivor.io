@@ -139,6 +139,6 @@ public class EnemySetDetail
 {
     // public GameObject enemyPrefab;
     public string enemyTag;
-    public int enemySpawnCount;
-    public float enemySpawnTime;
+    public int enemySpawnTotal;
+    public float enemySpawnEverySecond;
 }

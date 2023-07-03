@@ -16,10 +16,10 @@ public class EnemySpawnerPooling : MonoBehaviour
     public Transform player;
 
     public float gameTime;
+    [SerializeField] private int enemySetCount;
     public List<EnemySet> enemySet = new List<EnemySet>();
 
-    [HideInInspector]
-    public List<GameObject> enemyContainer = new List<GameObject>();
+    [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
     float enemySpawnAmount; //when start new wave add enemySpawnAmount
 
     public List<EnemyPool> enemyPoolList;
@@ -32,11 +32,17 @@ public class EnemySpawnerPooling : MonoBehaviour
         enemySpawnAmount = 10;
 
         InvokeRepeating("SpawnSequence",1f ,1f);
+
+        SetTimeOfEnemySet();
     }
 
-    void CountTime()
+    private List<float> enemyWaveTimeList;
+    void SetTimeOfEnemySet()
     {
-        gameTime += 1;
+        foreach(EnemySet enemySetTemp in enemySet)
+        {
+            enemyWaveTimeList.Add(enemySetTemp.timeWave);
+        }
     }
 
     void InitializePool()
@@ -83,28 +89,43 @@ public class EnemySpawnerPooling : MonoBehaviour
         return offScreenPosition;
     }
 
-    void CheckSpawnValue()
+    private void SpawnSequence()
     {
-        foreach(EnemySet enemySetTemp in enemySet)
+        CountTime();
+        CheckSpawnWave();
+        CheckSpawnValue();
+    }
+    private void CountTime()
+    {
+        gameTime += 1;
+    }
+    private void CheckSpawnWave()
+    {
+        if(gameTime == enemySet[0].timeWave)
         {
-            foreach(EnemySetDetail enemySetDetail in enemySetTemp.enemySetDetail)
+            enemySetCount = 0;
+        }
+        else if(enemySetCount + 1 == enemySet.Count)
+        {
+            return;
+        }
+        else if(gameTime == enemySet[enemySetCount + 1].timeWave)
+        {
+            enemySetCount++;
+        }
+    }
+    private void CheckSpawnValue()
+    {
+        foreach(EnemySetDetail enemySetDetail in enemySet[enemySetCount].enemySetDetail)
+        {
+            if(gameTime % enemySetDetail.enemySpawnEverySecond == 0)
             {
-                if(gameTime % enemySetDetail.enemySpawnTime == 0)
+                for (int i = 0; i < enemySetDetail.enemySpawnTotal ; i++)
                 {
-                    for (int i = 0; i < enemySetDetail.enemySpawnCount ; i++)
-                    {
-                        SpawnEnemyFromPool(enemySetDetail.enemyTag);
-                    }
+                    SpawnEnemyFromPool(enemySetDetail.enemyTag);
                 }
             }
         }
-    }
-
-    void SpawnSequence()
-    {
-        CountTime();
-        // CheckSpawnTime();
-        CheckSpawnValue();
     }
 
     public void DestroyAllEnemy()
