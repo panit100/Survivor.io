@@ -32,17 +32,6 @@ public class EnemySpawnerPooling : MonoBehaviour
         enemySpawnAmount = 10;
 
         InvokeRepeating("SpawnSequence",1f ,1f);
-
-        SetTimeOfEnemySet();
-    }
-
-    private List<float> enemyWaveTimeList;
-    void SetTimeOfEnemySet()
-    {
-        foreach(EnemySet enemySetTemp in enemySet)
-        {
-            enemyWaveTimeList.Add(enemySetTemp.timeWave);
-        }
     }
 
     void InitializePool()
