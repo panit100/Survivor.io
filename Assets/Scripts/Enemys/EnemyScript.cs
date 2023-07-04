@@ -8,12 +8,11 @@ public class EnemyScript : MonoBehaviour
     float enemyMoveSpeedCurrent;
     public float enemyDamage;
 
-    [HideInInspector]
-    public Transform playerTransform;
+    [HideInInspector] public Transform playerTransform;
     [SerializeField] GameObject expItem;
     [SerializeField] float health = 10;
 
-    float currentHealth = 10;
+    [SerializeField] float currentHealth = 10;
 
     [SerializeField] bool moveToPlayer = true;
 
@@ -49,9 +48,11 @@ public class EnemyScript : MonoBehaviour
         if(currentHealth <= 0)
         {
             Instantiate(expItem,transform.position,Quaternion.identity);
-            enemySpawner.enemyContainer.Remove(this.gameObject);
+            if(LayerMask.LayerToName(gameObject.layer) != "Boss")
+            {
+                enemySpawner.enemyContainer.Remove(this.gameObject);
+            }
             gameObject.SetActive(false);
-            // Destroy(this.gameObject);
         }
     }
 

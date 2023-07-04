@@ -18,6 +18,7 @@ public class EnemySpawnerPooling : MonoBehaviour
     public float gameTime;
     [SerializeField] private int enemySetCount;
     public List<EnemySet> enemySet = new List<EnemySet>();
+    private bool isGameTimeActive = true;
 
     [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
     float enemySpawnAmount; //when start new wave add enemySpawnAmount
@@ -32,7 +33,44 @@ public class EnemySpawnerPooling : MonoBehaviour
         enemySpawnAmount = 10;
 
         InvokeRepeating("SpawnSequence",1f ,1f);
+   
+        SetTimeOfEnemySet();
     }
+
+    [SerializeField] private List<float> enemyWaveTimeList;
+    private void SetTimeOfEnemySet()
+    {
+        for(int i = 0; i < enemySet.Count; i++)
+        {
+            enemyWaveTimeList.Add(enemySet[i].timeWave);
+        }
+        CheckWaveTimeList();
+        ApplyTimeOfEnemySet();
+    }
+    private void CheckWaveTimeList()
+    {
+        for(int i = 0; i < enemyWaveTimeList.Count; i++)
+        {
+            if(i == 0)
+            {
+                continue;
+            }
+            else if(i > 0 && enemyWaveTimeList[i - 1] >= enemyWaveTimeList[i])
+            {
+                enemyWaveTimeList[i] = enemyWaveTimeList[i-1] + 60f;
+            }
+        }
+    }
+    private void ApplyTimeOfEnemySet()
+    {
+        int count = 0;
+        foreach(EnemySet enemySetTmep in enemySet)
+        {
+            enemySetTmep.timeWave = enemyWaveTimeList[count];
+            count++;
+        }
+    }
+
 
     void InitializePool()
     {
@@ -86,11 +124,14 @@ public class EnemySpawnerPooling : MonoBehaviour
     }
     private void CountTime()
     {
-        gameTime += 1;
+        if(isGameTimeActive)
+        {
+            gameTime += 1;
+        }
     }
     private void CheckSpawnWave()
     {
-        if(gameTime == enemySet[0].timeWave)
+        if(gameTime == enemyWaveTimeList[0])
         {
             enemySetCount = 0;
         }
@@ -98,7 +139,7 @@ public class EnemySpawnerPooling : MonoBehaviour
         {
             return;
         }
-        else if(gameTime == enemySet[enemySetCount + 1].timeWave)
+        else if(gameTime == enemyWaveTimeList[enemySetCount + 1])
         {
             enemySetCount++;
         }
@@ -115,6 +156,15 @@ public class EnemySpawnerPooling : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StopGameTime()
+    {
+        isGameTimeActive = false;
+    }
+    public void ContinueGameTime()
+    {
+        isGameTimeActive = true;
     }
 
     public void DestroyAllEnemy()
