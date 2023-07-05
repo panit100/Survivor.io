@@ -11,7 +11,7 @@ public class GameOverMenuScript : MonoBehaviour
     }
     public void QuitToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
     public void ExitGame()
     {
