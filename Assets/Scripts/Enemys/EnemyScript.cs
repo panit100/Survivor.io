@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] bool moveToPlayer = true;
 
     public EnemySpawnerPooling enemySpawner;
+    SpriteRenderer Sprite;
+    public bool flipModifier;
 
     void Start()
     {
@@ -28,17 +30,30 @@ public class EnemyScript : MonoBehaviour
     public void SetupComponent()
     {
         currentHealth = health;
+        Sprite = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
     {
         if(moveToPlayer)
             MoveToPlayer();
+            CheckEnemyFacing();
     }
 
     void MoveToPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent);
+    }
+    void CheckEnemyFacing()
+    {
+        if(transform.position.x > playerTransform.position.x)
+        {
+            Sprite.flipX = true;
+        }
+        else if(transform.position.x < playerTransform.position.x)
+        {
+            Sprite.flipX = false;
+        }
     }
 
     public void TakeDamage(float damage)

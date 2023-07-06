@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2925479885468574150}
   - component: {fileID: 2925479885468574149}
-  - component: {fileID: 2925479885468574200}
+  - component: {fileID: 2689240010426068334}
   - component: {fileID: 2925479885468574151}
   - component: {fileID: -9126947946215481695}
-  - component: {fileID: 7530522062399377020}
+  - component: {fileID: 4013953866440944538}
   m_Layer: 0
-  m_Name: Enemy Test
+  m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -493647738, guid: 3bcb7877229a5334da528f2f0872b5c3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2925479885468574200
-CircleCollider2D:
+--- !u!61 &2689240010426068334
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,9 +101,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.5, y: 0.8}
+  m_EdgeRadius: 0
 --- !u!50 &2925479885468574151
 Rigidbody2D:
   serializedVersion: 4
@@ -142,15 +152,27 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   health: 10
---- !u!114 &7530522062399377020
-MonoBehaviour:
+  currentHealth: 10
+  moveToPlayer: 1
+  enemySpawner: {fileID: 0}
+  flipModifier: 0
+--- !u!95 &4013953866440944538
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2925479885468574148}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec4d42f7c155c94fb748ff25b37d241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1883fc64999f6614487b9061090ce608, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
