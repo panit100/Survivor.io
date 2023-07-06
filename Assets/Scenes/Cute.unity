@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &33710713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3167595280601360065, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1664e0148291e48ac6648dd5758f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &48785122
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +402,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105917906}
   m_CullTransparentMesh: 1
+--- !u!114 &158913373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3167595281224224735, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6f27a1f64bee5458668cb3e68e5f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167171734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2048,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540800074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3167595281077090782, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f65fddd46aebdc4291385291fcffb9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1587096898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,9 +3004,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789486430}
     m_Modifications:
+    - target: {fileID: 412292230355398587, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: upgradeCardInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: d67cd1e8d4ee6c2488b098a5af54894f, type: 2}
     - target: {fileID: 1446166490007314572, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
       propertyPath: m_Name
       value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446166490007314572, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1446166490007314573, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
       propertyPath: m_Pivot.x
@@ -3059,6 +3100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1446166490007314610, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: playerWeapon
+      value: 
+      objectReference: {fileID: 3167595280728523068}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
 --- !u!1001 &3167595280728523067
@@ -3120,5 +3165,32 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 943067374}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 158913373}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 1540800074}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 33710713}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+--- !u!114 &3167595280728523068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b7e4810a04247b708e5d01677117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

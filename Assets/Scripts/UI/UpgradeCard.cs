@@ -7,56 +7,59 @@ using UnityEngine.UI;
 
 public class UpgradeCard : MonoBehaviour
 {
-   public UpgradeCardScriptableObject upgradeCardInfo;
    public Image image;
    public TMP_Text name;
    public TMP_Text info;
    public TMP_Text level;
+   public Button UpgradeButton;
    
-   
-   public GameObject Weapon;
    public UpgradePanel upgradePanel;
-
-   [SerializeField]private BasicAttack _basicAttack;
-   [SerializeField]private OrbitAttack _orbitAttack;
-   [SerializeField]private ThrowAttack _throwAttack;
 
    private void Start()
    {
       upgradePanel = FindObjectOfType<UpgradePanel>();
-
-      SetCardInfo();
    }
 
-   void SetCardInfo()
+   public void SetCardInfo(BaseAttack baseAttack)
    {
-      image.sprite = upgradeCardInfo.image;
+      UpgradeButton.onClick.RemoveAllListeners();
+
+      image.sprite = baseAttack.upgradeObject.image;
       image.SetNativeSize();
-      image.transform.localScale = upgradeCardInfo.imageSize;
-      name.text = upgradeCardInfo.name;
-      info.text = upgradeCardInfo.description;
-   }
+      image.transform.localScale = baseAttack.upgradeObject.imageSize;
+      name.text = baseAttack.upgradeObject.name;
+      info.text = baseAttack.upgradeObject.description;
+      level.text = "LV. :" + (baseAttack.WeaponLevel);
 
-   public void BasicAttack()
+      UpgradeButton.onClick.AddListener(baseAttack.UpgradeWeaponLevel);
+      UpgradeButton.onClick.AddListener(ClosePanel);
+   }
+   
+   void ClosePanel()
    {
-      _basicAttack.UpgradeWeaponLevel();
-      level.text = "LV. :" + (_basicAttack.WeaponLevel+1);
       upgradePanel.gameObject.SetActive(false);
    }
 
-   public void OrbitAttack()
-   {
-      _orbitAttack.UpgradeWeaponLevel();
-      level.text = "LV. :" + (_orbitAttack.WeaponLevel+1);
-      upgradePanel.gameObject.SetActive(false);
-   }
+   // public void BasicAttack()
+   // {
+   //    _basicAttack.UpgradeWeaponLevel();
+   //    level.text = "LV. :" + (_basicAttack.WeaponLevel+1);
+   //    upgradePanel.gameObject.SetActive(false);
+   // }
 
-   public void ThrowAttack()
-   {
-      _throwAttack.UpgradeWeaponLevel();
-      level.text = "LV. :" + (_throwAttack.WeaponLevel+1);
-      upgradePanel.gameObject.SetActive(false);
-   }
+   // public void OrbitAttack()
+   // {
+   //    _orbitAttack.UpgradeWeaponLevel();
+   //    level.text = "LV. :" + (_orbitAttack.WeaponLevel+1);
+   //    upgradePanel.gameObject.SetActive(false);
+   // }
+
+   // public void ThrowAttack()
+   // {
+   //    _throwAttack.UpgradeWeaponLevel();
+   //    level.text = "LV. :" + (_throwAttack.WeaponLevel+1);
+   //    upgradePanel.gameObject.SetActive(false);
+   // }
 
    public void Heal()
    {

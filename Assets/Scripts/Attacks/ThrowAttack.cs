@@ -3,20 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowAttack : MonoBehaviour
+public class ThrowAttack : BaseAttack
 {
     
     public float ThrowAttackCoolDownspeed;
     public int ThrowCount;
     public ThrowWeapon Axe;
     private float timer;
-    private int weaponLevel;
 
-    public int WeaponLevel
-    {
-        get => weaponLevel;
-        set => weaponLevel = value;
-    }
     private void Awake()
     {
         if(!this.isActiveAndEnabled)weaponLevel = 0;
@@ -52,7 +46,7 @@ public class ThrowAttack : MonoBehaviour
         }
     }
 
-    public void UpgradeWeaponLevel()
+    public override void UpgradeWeaponLevel()
     {
         if (weaponLevel == 0)
         {
