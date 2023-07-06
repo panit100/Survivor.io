@@ -31,7 +31,7 @@ namespace Goldmetal.UndeadSurvivor
 
         void Init()
         {
-            // ����� �÷��̾� �ʱ�ȭ
+            // ¹è°æÀ½ ÇÃ·¹ÀÌ¾î ÃÊ±âÈ­
             GameObject bgmObject = new GameObject("BgmPlayer");
             bgmObject.transform.parent = transform;
             bgmPlayer = bgmObject.AddComponent<AudioSource>();
@@ -41,7 +41,7 @@ namespace Goldmetal.UndeadSurvivor
             bgmPlayer.clip = bgmClip;
             bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
-            // ȿ���� �÷��̾� �ʱ�ȭ
+            // È¿°úÀ½ ÇÃ·¹ÀÌ¾î ÃÊ±âÈ­
             GameObject sfxObject = new GameObject("SfxPlayer");
             sfxObject.transform.parent = transform;
             sfxPlayers = new AudioSource[channels];
