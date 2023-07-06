@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5408626701140964583}
   - component: {fileID: 5357555566848469568}
   - component: {fileID: 2181216670719635514}
+  - component: {fileID: -3125839328076625322}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -191,3 +192,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-3125839328076625322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115889805951290242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec4d42f7c155c94fb748ff25b37d241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

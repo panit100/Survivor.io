@@ -14,13 +14,10 @@ public class LevelManager : MonoBehaviour
     public int MaxLevelCap;
     public UpgradePanel upgradePanel;
     
-   
-
     private void Start()
     {
         levelbar.fillAmount = 0;
     }
-
 
     private void Update()
     {

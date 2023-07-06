@@ -44,6 +44,8 @@ public class InfinityTile : MonoBehaviour
                             transform.Translate(ran + dist * 2);
                         }
                         break;
+                    case "Tree":
+                        break;
                 }
             
         }
