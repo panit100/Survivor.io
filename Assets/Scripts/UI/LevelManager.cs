@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
         if (Refplayer.exp >= MaxLevelCap)
         {
             MaxLevelCap = Mathf.RoundToInt(MaxLevelCap*1.25f) ;
-            upgradePanel.gameObject.SetActive(true);
+            upgradePanel.SetCard();
             Refplayer.exp = 0;
             Refplayer.CurrentLevel += 1;
             levelbar.fillAmount = 0;
