@@ -6266,6 +6266,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed07e0ef72c788498dd1fe26db4f366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1938102967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b7e4810a04247b708e5d01677117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1939231583 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1446166490007314573, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
@@ -6970,6 +6981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1446166490007314610, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: playerWeapon
+      value: 
+      objectReference: {fileID: 1938102967}
     - target: {fileID: 1446166491154640185, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
       propertyPath: Weapon
       value: 
@@ -6995,10 +7010,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 144075011752155627, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3167595282665970568, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7051,9 +7062,21 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 943067374}
-    - target: {fileID: 6119167994946890665, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 630574820}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 751483109}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 141928442}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}

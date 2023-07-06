@@ -1458,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1446166490007314572, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1446166490007314573, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1542,6 +1546,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1446166490007314610, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
+      propertyPath: playerWeapon
+      value: 
+      objectReference: {fileID: 3167595280728523068}
     - target: {fileID: 1446166491154640185, guid: 10b380e1aa6d7954187f4da90e03bfa4, type: 3}
       propertyPath: Weapon
       value: 
@@ -1619,5 +1627,32 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 943067374}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: 
+      objectReference: {fileID: 630574820}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: 
+      objectReference: {fileID: 751483109}
+    - target: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+      propertyPath: attacks.Array.data[2]
+      value: 
+      objectReference: {fileID: 141928442}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+--- !u!114 &3167595280728523068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2b7e4810a04247b708e5d01677117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
