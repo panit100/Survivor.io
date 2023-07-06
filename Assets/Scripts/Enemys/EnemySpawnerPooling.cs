@@ -26,6 +26,10 @@ public class EnemySpawnerPooling : MonoBehaviour
     public List<EnemyPool> enemyPoolList;
     public Dictionary<string,Queue<EnemyScript>> enemyPoolDictionary;
     
+    void Awake()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+    }
     void Start()
     {
         InitializePool();

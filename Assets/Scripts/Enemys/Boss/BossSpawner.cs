@@ -7,10 +7,9 @@ public class BossSpawner : MonoBehaviour
     public float spawnOffset = 1f;
     public Transform player;
     [SerializeField] List<BossSetDetail> bossSetList = new List<BossSetDetail>();
-    bool isContinueGameTime = true;
     GameObject bossEnemyObject;
-
     EnemySpawnerPooling EnemySpawner;
+
     void Start()
     {
         SetupComponent();
@@ -23,7 +22,6 @@ public class BossSpawner : MonoBehaviour
     void FixedUpdate()
     {
         SpawnBoss();
-        CheckBossActive();
     }
     void SpawnBoss()
     {
@@ -35,22 +33,11 @@ public class BossSpawner : MonoBehaviour
                 {
                     bossEnemyObject = Instantiate(n.bossPrefab,RandomSpawnPosition(),Quaternion.identity); //spawn enemy with random position function
                     n.isSpawned = true;
-                    isContinueGameTime = false;
-                    EnemySpawner.StopGameTime();
                 }
             }
         }
     }
-    void CheckBossActive()
-    {
-        if(bossEnemyObject == null) { return; }
-        if(isContinueGameTime == false 
-        && bossEnemyObject.activeInHierarchy == false)
-        {
-            isContinueGameTime = true;
-            EnemySpawner.ContinueGameTime();
-        }
-    }
+
 
     Vector3 RandomSpawnPosition()
     {
