@@ -94,16 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3651a9eca4d0341bd5da5c4725ad95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeCardInfo: {fileID: 0}
   image: {fileID: 4004229987770523249}
   name: {fileID: 4004229986705542056}
   info: {fileID: 4004229987637403102}
   level: {fileID: 4004229987006520173}
-  Weapon: {fileID: 0}
+  UpgradeButton: {fileID: 2924550726950325278}
   upgradePanel: {fileID: 0}
-  _basicAttack: {fileID: 0}
-  _orbitAttack: {fileID: 0}
-  _throwAttack: {fileID: 0}
 --- !u!1 &4004229986705542058
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,3 +862,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2236026843976733520, guid: 25262242dfd177740be09e5ec91519f7, type: 3}
   m_PrefabInstance: {fileID: 4004229987837452109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2924550726950325278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2236026843976733523, guid: 25262242dfd177740be09e5ec91519f7, type: 3}
+  m_PrefabInstance: {fileID: 4004229987837452109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
