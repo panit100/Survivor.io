@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b5c02ef3ee80ed44b5236a8acfcbb9a, type: 3}
-  m_Name: ShotgunAttack
+  m_Name: Sword Attack
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 62f27c0deadd618419622c4eaada5d56, type: 3}
-  imageSize: {x: 0.1, y: 0.1, z: 1}
-  name: Shotgun Attack
-  description: 'Stat : +Damage, +Total Bullet,-Cooldown'
+  image: {fileID: 21300000, guid: c8b8fe61b9b3f634b86f602f28c29938, type: 3}
+  imageSize: {x: 0.2, y: 0.2, z: 1}
+  name: Sword Attack
+  description: 'Stat : +Damage, +Speed'
