@@ -16,15 +16,20 @@ public class EnemySpawnerPooling : MonoBehaviour
     public Transform player;
 
     public float gameTime;
+    [SerializeField] private int enemySetCount;
     public List<EnemySet> enemySet = new List<EnemySet>();
+    private bool isGameTimeActive = true;
 
-    [HideInInspector]
-    public List<GameObject> enemyContainer = new List<GameObject>();
+    [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
     float enemySpawnAmount; //when start new wave add enemySpawnAmount
 
     public List<EnemyPool> enemyPoolList;
     public Dictionary<string,Queue<EnemyScript>> enemyPoolDictionary;
     
+    void Awake()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+    }
     void Start()
     {
         InitializePool();
@@ -32,12 +37,44 @@ public class EnemySpawnerPooling : MonoBehaviour
         enemySpawnAmount = 10;
 
         InvokeRepeating("SpawnSequence",1f ,1f);
+   
+        SetTimeOfEnemySet();
     }
 
-    void CountTime()
+    [SerializeField] private List<float> enemyWaveTimeList;
+    private void SetTimeOfEnemySet()
     {
-        gameTime += 1;
+        for(int i = 0; i < enemySet.Count; i++)
+        {
+            enemyWaveTimeList.Add(enemySet[i].timeWave);
+        }
+        CheckWaveTimeList();
+        ApplyTimeOfEnemySet();
     }
+    private void CheckWaveTimeList()
+    {
+        for(int i = 0; i < enemyWaveTimeList.Count; i++)
+        {
+            if(i == 0)
+            {
+                continue;
+            }
+            else if(i > 0 && enemyWaveTimeList[i - 1] >= enemyWaveTimeList[i])
+            {
+                enemyWaveTimeList[i] = enemyWaveTimeList[i-1] + 60f;
+            }
+        }
+    }
+    private void ApplyTimeOfEnemySet()
+    {
+        int count = 0;
+        foreach(EnemySet enemySetTmep in enemySet)
+        {
+            enemySetTmep.timeWave = enemyWaveTimeList[count];
+            count++;
+        }
+    }
+
 
     void InitializePool()
     {
@@ -83,28 +120,55 @@ public class EnemySpawnerPooling : MonoBehaviour
         return offScreenPosition;
     }
 
-    void CheckSpawnValue()
+    private void SpawnSequence()
     {
-        foreach(EnemySet enemySetTemp in enemySet)
+        CountTime();
+        CheckSpawnWave();
+        CheckSpawnValue();
+    }
+    private void CountTime()
+    {
+        if(isGameTimeActive)
         {
-            foreach(EnemySetDetail enemySetDetail in enemySetTemp.enemySetDetail)
+            gameTime += 1;
+        }
+    }
+    private void CheckSpawnWave()
+    {
+        if(gameTime == enemyWaveTimeList[0])
+        {
+            enemySetCount = 0;
+        }
+        else if(enemySetCount + 1 == enemySet.Count)
+        {
+            return;
+        }
+        else if(gameTime == enemyWaveTimeList[enemySetCount + 1])
+        {
+            enemySetCount++;
+        }
+    }
+    private void CheckSpawnValue()
+    {
+        foreach(EnemySetDetail enemySetDetail in enemySet[enemySetCount].enemySetDetail)
+        {
+            if(gameTime % enemySetDetail.enemySpawnEverySecond == 0)
             {
-                if(gameTime % enemySetDetail.enemySpawnTime == 0)
+                for (int i = 0; i < enemySetDetail.enemySpawnTotal ; i++)
                 {
-                    for (int i = 0; i < enemySetDetail.enemySpawnCount ; i++)
-                    {
-                        SpawnEnemyFromPool(enemySetDetail.enemyTag);
-                    }
+                    SpawnEnemyFromPool(enemySetDetail.enemyTag);
                 }
             }
         }
     }
 
-    void SpawnSequence()
+    public void StopGameTime()
     {
-        CountTime();
-        // CheckSpawnTime();
-        CheckSpawnValue();
+        isGameTimeActive = false;
+    }
+    public void ContinueGameTime()
+    {
+        isGameTimeActive = true;
     }
 
     public void DestroyAllEnemy()

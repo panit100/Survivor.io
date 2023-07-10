@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
-public class OrbitAttack : MonoBehaviour
+public class OrbitAttack : BaseAttack
 {
     public GameObject OrbitObject;
     public float OrbitSpeed;
@@ -18,13 +18,6 @@ public class OrbitAttack : MonoBehaviour
     private float tempDuration;
     private Coroutine IECooldown;
     
-    private int weaponLevel;
-
-    public int WeaponLevel
-    {
-        get => weaponLevel;
-        set => weaponLevel = value;
-    }
     private void Awake()
     {
         if(!this.isActiveAndEnabled)weaponLevel = 0;
@@ -79,7 +72,7 @@ public class OrbitAttack : MonoBehaviour
     
     }
     
-    public void UpgradeWeaponLevel()
+    public override void UpgradeWeaponLevel()
     {
         if (weaponLevel == 0)
         {

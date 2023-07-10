@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 493348993579866064}
   - component: {fileID: 493348993579866065}
   - component: {fileID: 493348993579866061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss-1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -151,9 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1832d8709a408424cbf9157c7bb6744e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMoveSpeedDefault: 0
+  enemyMoveSpeedDefault: 0.01
   enemyDamage: 0
   playerTransform: {fileID: 0}
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   health: 100
-  moveToPlayer: 0
+  currentHealth: 10
+  moveToPlayer: 1
+  enemySpawner: {fileID: 0}
