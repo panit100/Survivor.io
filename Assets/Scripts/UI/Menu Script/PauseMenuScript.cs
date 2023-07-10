@@ -23,7 +23,7 @@ public class PauseMenuScript : MonoBehaviour
 
     void CheckPauseGame()
     {
-        if(Time.timeScale == 1 && Player.currentHealth > 0)
+        if(Time.timeScale == 1 && Player.PlayerHealth.currentHealth > 0)
         {
             PauseGame();
         }
@@ -40,7 +40,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ResumeGame()
     {
         PauseGameUIGroup.SetActive(false);
-        Time.timeScale = 1;                     // Time ใช้จัดการเวลาใน Unity, timeScale ใช้กำหนดเวลาเกม 1 = เวลาปกติ, 0 = หยุดเวลา, 2 = เร็วขึ้นสองเท่า
+        Time.timeScale = 1;
     }
     public void RestartGame()
     {

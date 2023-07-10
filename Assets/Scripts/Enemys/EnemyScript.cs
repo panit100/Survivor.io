@@ -22,15 +22,15 @@ public class EnemyScript : MonoBehaviour
 
     void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").transform;
-        enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
-
         SetupComponent();
     }
     public void SetupComponent()
     {
         currentHealth = health;
+        enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
+
         Sprite = GetComponent<SpriteRenderer>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
     void FixedUpdate()
@@ -75,7 +75,7 @@ public class EnemyScript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<PlayerScript>().TakeDamage(enemyDamage);
+            other.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
             StopMove();
         }
     }

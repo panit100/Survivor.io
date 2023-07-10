@@ -7,7 +7,11 @@ public class EXPItemScript : MonoBehaviour
     int expAmount = 10;
     PlayerScript player;
 
+    public float lerpSpeed = 1f;
+
     public bool isMoveToPlayer = false; 
+
+    float time = 0f;
 
     void Start() 
     {
@@ -18,7 +22,7 @@ public class EXPItemScript : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            player.exp += expAmount;
+            player.PlayerLevel.GetExp(expAmount);
 
             Destroy(this.gameObject);
         }
@@ -27,11 +31,13 @@ public class EXPItemScript : MonoBehaviour
     private void FixedUpdate() 
     {
         if(isMoveToPlayer)
-            LeapToPlayer();
+            time = Time.deltaTime * lerpSpeed;
+            
+        LeapToPlayer();
     }
 
     public void LeapToPlayer()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position,0.1f);
+        transform.position = Vector3.Lerp(transform.position, player.transform.position,time);
     }
 }

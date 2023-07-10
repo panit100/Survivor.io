@@ -12,7 +12,7 @@ public class HealItemScript : MonoBehaviour
         {
             PlayerScript player = other.GetComponent<PlayerScript>();
             
-            player.Heal(healAmount);
+            player.PlayerHealth.Heal(healAmount);
             Destroy(this.gameObject);
         }
     }

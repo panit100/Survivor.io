@@ -40,27 +40,6 @@ public class UpgradeCard : MonoBehaviour
       upgradePanel.gameObject.SetActive(false);
    }
 
-   // public void BasicAttack()
-   // {
-   //    _basicAttack.UpgradeWeaponLevel();
-   //    level.text = "LV. :" + (_basicAttack.WeaponLevel+1);
-   //    upgradePanel.gameObject.SetActive(false);
-   // }
-
-   // public void OrbitAttack()
-   // {
-   //    _orbitAttack.UpgradeWeaponLevel();
-   //    level.text = "LV. :" + (_orbitAttack.WeaponLevel+1);
-   //    upgradePanel.gameObject.SetActive(false);
-   // }
-
-   // public void ThrowAttack()
-   // {
-   //    _throwAttack.UpgradeWeaponLevel();
-   //    level.text = "LV. :" + (_throwAttack.WeaponLevel+1);
-   //    upgradePanel.gameObject.SetActive(false);
-   // }
-
    public void Heal()
    {
 
