@@ -86,7 +86,6 @@ public class ShotgunAttack : BaseAttack
     public override void UpgradeWeaponLevel()
     {
         bulletTotal += 2;
-        
         shootCooldown *= 0.9f;
         weaponLevel++;
     }
