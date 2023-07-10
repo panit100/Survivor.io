@@ -18,7 +18,7 @@ public class EXPItemScript : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            player.exp += expAmount;
+            player.PlayerLevel.GetExp(expAmount);
 
             Destroy(this.gameObject);
         }

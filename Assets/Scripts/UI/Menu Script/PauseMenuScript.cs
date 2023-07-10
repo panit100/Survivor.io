@@ -23,7 +23,7 @@ public class PauseMenuScript : MonoBehaviour
 
     void CheckPauseGame()
     {
-        if(Time.timeScale == 1 && Player.currentHealth > 0)
+        if(Time.timeScale == 1 && Player.PlayerHealth.currentHealth > 0)
         {
             PauseGame();
         }

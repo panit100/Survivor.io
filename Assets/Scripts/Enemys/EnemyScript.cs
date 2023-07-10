@@ -75,7 +75,7 @@ public class EnemyScript : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<PlayerScript>().TakeDamage(enemyDamage);
+            other.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
             StopMove();
         }
     }
