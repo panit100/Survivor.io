@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBullet : MonoBehaviour
+public class ShurikenProjectile : MonoBehaviour
 {
     public float BulletSpeed;
 
