@@ -48,6 +48,7 @@ public class EnemySpawnerPooling : MonoBehaviour
         {
             enemyWaveTimeList.Add(enemySet[i].timeWave);
         }
+        
         CheckWaveTimeList();
         ApplyTimeOfEnemySet();
     }
