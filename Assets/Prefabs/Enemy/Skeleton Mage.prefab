@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9126947946215481695}
   - component: {fileID: 1089535525527979525}
   - component: {fileID: 3718709540966220192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skeleton Mage
   m_TagString: Enemy
   m_Icon: {fileID: 0}
