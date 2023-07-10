@@ -23,6 +23,11 @@ public class PlayerLevel : MonoBehaviour
         leveltext.text = currentLevel.ToString();
     }
 
+    private void Update()
+    {
+        UpdateLevelBarMonitor();
+    }
+
     public void LevelUp()
     {
         exp = 0;
@@ -44,14 +49,8 @@ public class PlayerLevel : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        UpdateLevelBarMonitor();
-    }
-
     private void UpdateLevelBarMonitor()
     {
-        float fillamount = (exp / maxExp) ;
-        levelbar.fillAmount = fillamount;
+        levelbar.fillAmount = (float)exp / (float)maxExp;
     }
 }

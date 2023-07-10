@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c509d969c257d499129cf1f78e1c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExp: 0
+  maxExp: 100
   leveltext: {fileID: 0}
   levelbar: {fileID: 0}
   upgradePanel: {fileID: 0}
