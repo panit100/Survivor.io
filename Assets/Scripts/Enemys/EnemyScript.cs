@@ -42,7 +42,7 @@ public class EnemyScript : MonoBehaviour
 
     void MoveToPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent * Time.deltaTime);
     }
     void CheckEnemyFacing()
     {
