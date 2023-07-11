@@ -8,7 +8,7 @@ public class BossSpawner : MonoBehaviour
     public Transform player;
     [SerializeField] List<BossSetDetail> bossSetList = new List<BossSetDetail>();
     GameObject bossEnemyObject;
-    EnemySpawnerPooling EnemySpawner;
+    EnemySpawner EnemySpawner;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class BossSpawner : MonoBehaviour
     }
     void SetupComponent()
     {
-        EnemySpawner = GetComponent<EnemySpawnerPooling>();
+        EnemySpawner = GetComponent<EnemySpawner>();
     }
 
     void FixedUpdate()

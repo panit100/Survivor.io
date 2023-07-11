@@ -1060,6 +1060,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1938102963}
     - target: {fileID: 1602552625, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
+      propertyPath: spawnOffset
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602552625, guid: 3f3804ca7a1212343bcc3d2f6a08d339, type: 3}
       propertyPath: enemySet.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -7042,7 +7046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2921688258538788486, guid: 79589a94f53f24c4fb3f9dacb83b85bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79589a94f53f24c4fb3f9dacb83b85bd, type: 3}
@@ -7059,7 +7063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2964939369351714156, guid: b91c133280b9fa14587dd6ea33ae6eff, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2964939369351714159, guid: b91c133280b9fa14587dd6ea33ae6eff, type: 3}
       propertyPath: m_RootOrder
@@ -7229,7 +7233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987419693512037868, guid: 4c98a898278ec894d9fd7a22c3c94085, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8987419693512037869, guid: 4c98a898278ec894d9fd7a22c3c94085, type: 3}
       propertyPath: m_RootOrder
