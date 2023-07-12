@@ -22,7 +22,7 @@ public class ThrowAttack : BaseAttack
         timer = ThrowAttackCoolDownspeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         DoShoot();
     }
