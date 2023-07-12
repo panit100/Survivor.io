@@ -30,16 +30,21 @@ public class EnemyScript : MonoBehaviour
     {
         currentHealth = health;
         enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
+    
+        if(GetComponent<SpriteRenderer>() != null)
+        {
+            Sprite = GetComponent<SpriteRenderer>();
+        }
 
-        Sprite = GetComponent<SpriteRenderer>();
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
+
 #endregion
 
 
 #region Enemy Moving System
 
-    void FixedUpdate()
+    void Update()
     {
         if(moveToPlayer)
             MoveToPlayer();
@@ -51,13 +56,27 @@ public class EnemyScript : MonoBehaviour
     }
     void CheckEnemyFacing()
     {
-        if(transform.position.x > playerTransform.position.x)
+        if(Sprite == null)
         {
-            Sprite.flipX = true;
+            if(transform.position.x > playerTransform.position.x)
+            {
+                transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y);
+            }
+            else if(transform.position.x < playerTransform.position.x)
+            {
+                transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            }
         }
-        else if(transform.position.x < playerTransform.position.x)
+        else
         {
-            Sprite.flipX = false;
+            if(transform.position.x > playerTransform.position.x)
+            {
+                Sprite.flipX = true;
+            }
+            else if(transform.position.x < playerTransform.position.x)
+            {
+                Sprite.flipX = false;
+            }
         }
     }
 #endregion
