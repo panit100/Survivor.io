@@ -30,7 +30,6 @@ public class ThrowWeapon : MonoBehaviour
         {
             //Implement Enemy Taken Damage from player
             col.GetComponent<EnemyScript>().TakeDamage(damage);
-            Destroy(this.gameObject);
         }
     }
 }

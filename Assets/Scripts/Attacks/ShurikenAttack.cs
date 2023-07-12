@@ -6,13 +6,16 @@ using UnityEngine;
 public class ShurikenAttack : BaseAttack
 {
     
-    public float BasicAttackSpeed;
+    public float ShurikenCooldown;
     public float Radius;
     public ShurikenProjectile Projectile;
+    [SerializeField] private GameObject WeaponPool;
     private float timer;
+    
     
     private void Awake()
     {
+        timer = ShurikenCooldown;
         if(!this.isActiveAndEnabled)weaponLevel = 0;
     }
 
@@ -25,10 +28,23 @@ public class ShurikenAttack : BaseAttack
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            var AllEnemyInsight = GetEnemyInArea;
+            Collider2D[] AllEnemyInsight = GetEnemyInArea;
+            Collider2D nearestCollider = null;
             for (int i = 0; i < AllEnemyInsight.Length; i++)
             {
-                ShootClosestEnemy(AllEnemyInsight[i]);
+                float minSqrDistance = Mathf.Infinity;
+                bool isEnemy = AllEnemyInsight[i].CompareTag("Enemy");
+                if(isEnemy)
+                {
+                    float sqrDistanceToCenter = (this.transform.position - AllEnemyInsight[i].transform.position).sqrMagnitude;
+                    if (sqrDistanceToCenter < minSqrDistance)
+                    {
+                        minSqrDistance = sqrDistanceToCenter;
+                        nearestCollider = AllEnemyInsight[i];
+                        spawnShuriken(nearestCollider.gameObject);
+                        return;
+                    }
+                }
             }
         }
     }
@@ -37,11 +53,11 @@ public class ShurikenAttack : BaseAttack
     {
         Debug.Log("upgrade");
         var tempRadius = Radius;
-        var temptimer = BasicAttackSpeed;
+        var temptimer = ShurikenCooldown;
         Radius = tempRadius*1.5f;
-        if (BasicAttackSpeed > 0.1f)
+        if (ShurikenCooldown > 0.1f)
         {
-            BasicAttackSpeed = temptimer *0.95f;
+            ShurikenCooldown = temptimer *0.95f;
         }
         weaponLevel++;
     }
@@ -56,28 +72,19 @@ public class ShurikenAttack : BaseAttack
             return Physics2D.OverlapCircleAll(this.transform.position, Radius);
         }
     }
+    
+    
     private void ShootClosestEnemy(Collider2D enemyInsight)
     {
-        Collider2D nearestCollider = null;
-        float minSqrDistance = Mathf.Infinity;
-        bool isEnemy = enemyInsight.CompareTag("Enemy");
-        if(isEnemy)
-        {
-            float sqrDistanceToCenter = (this.transform.position - enemyInsight.transform.position).sqrMagnitude;
-            if (sqrDistanceToCenter < minSqrDistance)
-            {
-                minSqrDistance = sqrDistanceToCenter;
-                nearestCollider = enemyInsight;
-                spawnShuriken(nearestCollider.gameObject);
-                return;
-            }
-        }
+       
+       
     }
     void spawnShuriken(GameObject target)
     {
         Projectile.Target = target;
-        Instantiate(Projectile,this.transform.position,Quaternion.identity);
-        timer = BasicAttackSpeed;
+        var projectile = Instantiate(Projectile,this.transform.position,Quaternion.identity);
+        projectile.transform.SetParent(WeaponPool.transform);
+        timer = ShurikenCooldown;
     }
 
     #endregion

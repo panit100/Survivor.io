@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class InfinityTile : MonoBehaviour
-    {
+public class ExitReposition : MonoBehaviour
+{
         Collider2D coll;
         private PlayerScript _playerScript;
-
+        public bool hasRepos;
         void Awake()
         {
             coll = GetComponent<Collider2D>();
@@ -42,11 +42,19 @@ public class InfinityTile : MonoBehaviour
                             Vector3 dist = playerPos - myPos;
                             Vector3 ran = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
                             transform.Translate(ran + dist * 2);
+                            StartCoroutine(TriggerRepos());
                         }
                         break;
                     case "Tree":
                         break;
                 }
             
+        }
+
+        IEnumerator TriggerRepos()
+        {
+            hasRepos = true;
+            yield return null;
+            hasRepos = false;
         }
     }
