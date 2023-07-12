@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(direction == Vector3.zero)
         {
-            animator.Play("Idle");
+            animator.SetBool("Walk", false);
             audio.Stop();
             return;
         }
@@ -48,10 +48,18 @@ public class PlayerMove : MonoBehaviour
     void MoveAnimation()
     {
         if(direction.x > 0)
-            animator.Play("WalkRight");
+        {
+            animator.SetBool("Walk", true);
+            animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x), animator.transform.localScale.y);
+        }
         else if(direction.x < 0)
-            animator.Play("WalkLeft");
+        {
+            animator.SetBool("Walk", true);
+            animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x) * -1, animator.transform.localScale.y);
+        }
         else
-            animator.Play("WalkDown");
+        {
+            animator.SetBool("Walk", true);
+        }
     }
 }
