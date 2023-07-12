@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 1
-  enemyDamage: 0
+  enemyDamage: 20
   playerTransform: {fileID: 0}
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   health: 100
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224175031752339460}
-  - component: {fileID: 4224666387635130263}
+  - component: {fileID: 3868522397954552294}
   m_Layer: 7
   m_Name: Boss Coliider
   m_TagString: Untagged
@@ -110,19 +110,32 @@ Transform:
   m_Father: {fileID: 493348993579866062}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4224666387635130263
-BoxCollider:
+--- !u!61 &3868522397954552294
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349103066217382754}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6134527241809965701
 GameObject:
   m_ObjectHideFlags: 0
