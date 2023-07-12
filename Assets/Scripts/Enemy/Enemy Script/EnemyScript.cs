@@ -39,7 +39,7 @@ public class EnemyScript : MonoBehaviour
 
 #region Enemy Moving System
 
-    void FixedUpdate()
+    void Update()
     {
         if(moveToPlayer)
             MoveToPlayer();
