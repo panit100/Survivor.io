@@ -52,7 +52,7 @@ public class EnemyScript : MonoBehaviour
     }
     void MoveToPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent * Time.deltaTime);
     }
     void CheckEnemyFacing()
     {
