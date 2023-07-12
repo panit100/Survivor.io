@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
     public AudioSource audio;
 
-    void FixedUpdate()
+    void Update()
     {
         GetDirection();
         Move();
