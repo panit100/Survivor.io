@@ -79,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
 
             for(int i = 0; i < pool.amount; i++)
             {
-                EnemyScript enemy = Instantiate(pool.enemyPrefab);
+                EnemyScript enemy = Instantiate(pool.enemyPrefab,transform);
                 enemy.enemySpawner = this;
                 enemy.gameObject.SetActive(false);
                 enemyPool.Enqueue(enemy);

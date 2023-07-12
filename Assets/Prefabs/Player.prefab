@@ -183,12 +183,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: 13ba6863aa33a6042b35006fe82a0f03, type: 2}
-  OrbitObject: {fileID: 5047495987536503392, guid: ad8a4a92d07781145a0deeb29be190eb, type: 3}
+  OrbitObject: {fileID: 5679344911654783891, guid: ad8a4a92d07781145a0deeb29be190eb, type: 3}
   OrbitSpeed: 200
-  OrbitDuration: 2
+  OrbitDuration: 3
   OrbitCoolDown: 6
-  orbitCount: 1
-  radial: 0
+  orbitCount: 3
+  radial: 5
 --- !u!1 &3167595281224224729
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 3167595281224224728}
   - component: {fileID: 3167595281224224735}
   m_Layer: 0
-  m_Name: Basic Attack
+  m_Name: Shuriken Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,9 +234,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: d67cd1e8d4ee6c2488b098a5af54894f, type: 2}
-  BasicAttackSpeed: 1
+  ShurikenCooldown: 0
   Radius: 3
-  Bullet: {fileID: 7504615245672454939, guid: 0c7ae2edfa504ad49b21fb6de8f5f025, type: 3}
+  Projectile: {fileID: 0}
+  WeaponPool: {fileID: 0}
 --- !u!1 &3167595282665970570
 GameObject:
   m_ObjectHideFlags: 0
