@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9126947946215481695}
   - component: {fileID: 4013953866440944538}
   - component: {fileID: 3310185638443501623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -128,8 +128,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1832d8709a408424cbf9157c7bb6744e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMoveSpeedDefault: 0.03
+  enemyMoveSpeedDefault: 1
   enemyDamage: 10
   playerTransform: {fileID: 0}
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}

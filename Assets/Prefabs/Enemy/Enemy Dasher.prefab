@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2354628862576393452}
   - component: {fileID: 676286779040498570}
   - component: {fileID: 591156881488219808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Dasher
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -142,8 +142,10 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   health: 10
+  currentHealth: 10
   moveToPlayer: 1
   enemySpawner: {fileID: 0}
+  flipModifier: 0
 --- !u!114 &591156881488219808
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,9 +16,11 @@ public class EnemyScript : MonoBehaviour
 
     [SerializeField] bool moveToPlayer = true;
 
-    public EnemySpawnerPooling enemySpawner;
+    public EnemySpawner enemySpawner;
     SpriteRenderer Sprite;
     public bool flipModifier;
+
+#region Start Setup
 
     void Start()
     {
@@ -32,6 +34,10 @@ public class EnemyScript : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
+#endregion
+
+
+#region Enemy Moving System
 
     void FixedUpdate()
     {
@@ -39,10 +45,9 @@ public class EnemyScript : MonoBehaviour
             MoveToPlayer();
             CheckEnemyFacing();
     }
-
     void MoveToPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent * Time.deltaTime);
     }
     void CheckEnemyFacing()
     {
@@ -55,6 +60,10 @@ public class EnemyScript : MonoBehaviour
             Sprite.flipX = false;
         }
     }
+#endregion
+
+
+#region Enemy Health System
 
     public void TakeDamage(float damage)
     {
@@ -70,6 +79,10 @@ public class EnemyScript : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+#endregion
+
+
+#region Collider System
 
     void OnTriggerEnter2D(Collider2D other) 
     {
@@ -86,7 +99,6 @@ public class EnemyScript : MonoBehaviour
             ContinueMove();
         }
     }
-
     void StopMove()
     {
         enemyMoveSpeedCurrent = 0;
@@ -95,4 +107,6 @@ public class EnemyScript : MonoBehaviour
     {
         enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
     }
+#endregion
+
 }

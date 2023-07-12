@@ -31,6 +31,8 @@ public class UpgradeCard : MonoBehaviour
       info.text = baseAttack.upgradeObject.description;
       level.text = "LV. :" + (baseAttack.WeaponLevel);
 
+      baseAttack.gameObject.SetActive(true);
+      
       UpgradeButton.onClick.AddListener(baseAttack.UpgradeWeaponLevel);
       UpgradeButton.onClick.AddListener(ClosePanel);
    }

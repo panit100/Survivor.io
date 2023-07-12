@@ -2,15 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class EnemyPool
-{
-    public string tag;
-    public EnemyScript enemyPrefab;
-    public int amount;
-}
-
-public class EnemySpawnerPooling : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     public float spawnOffset = 1f;
     public Transform player;
