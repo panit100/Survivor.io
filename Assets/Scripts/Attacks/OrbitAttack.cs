@@ -5,7 +5,8 @@ using System.Security.Cryptography;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
-public class OrbitAttack : BaseAttack
+namespace TA{
+    public class OrbitAttack : BaseAttack
 {
     public OrbitObject OrbitObject;
     public float OrbitSpeed;
@@ -89,4 +90,7 @@ public class OrbitAttack : BaseAttack
         }
         weaponLevel++;
     }
+}
+
+
 }

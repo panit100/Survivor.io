@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySkillShootProjectile : MonoBehaviour
+namespace TA
+{
+    public class EnemySkillShootProjectile : MonoBehaviour
 {
     EnemyScript enemyScript;
 
@@ -35,3 +37,5 @@ public class EnemySkillShootProjectile : MonoBehaviour
         projectile.direction = enemyScript.playerTransform.position - transform.position;
     }
 }
+}
+

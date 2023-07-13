@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ExitReposition : MonoBehaviour
+
+namespace TA
+{
+    public class ExitReposition : MonoBehaviour
 {
         Collider2D coll;
         private PlayerScript _playerScript;
@@ -58,3 +61,5 @@ public class ExitReposition : MonoBehaviour
             hasRepos = false;
         }
     }
+
+}

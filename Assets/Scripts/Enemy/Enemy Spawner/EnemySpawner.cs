@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class EnemySpawner : MonoBehaviour
 {
     public float spawnOffset = 1f;
@@ -172,3 +174,5 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
+}
+

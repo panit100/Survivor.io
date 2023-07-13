@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShurikenAttack : BaseAttack
+namespace TA
+{
+    public class ShurikenAttack : BaseAttack
 {
     
     public float ShurikenCooldown;
@@ -90,4 +92,6 @@ public class ShurikenAttack : BaseAttack
     #endregion
     
     
+}
+
 }

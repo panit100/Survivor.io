@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class PlayerMove : MonoBehaviour
 {
     public float speed = 10f;
@@ -63,3 +65,5 @@ public class PlayerMove : MonoBehaviour
         }
     }
 }
+}
+

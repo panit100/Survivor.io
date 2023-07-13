@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordOrbitAttack : BaseAttack
+namespace TA
+{
+    public class SwordOrbitAttack : BaseAttack
 {
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackCooldown = 1f;
@@ -55,4 +57,6 @@ public class SwordOrbitAttack : BaseAttack
         attackAnimationSpeed *= .9f;
         weaponLevel++;
     }
+}
+
 }

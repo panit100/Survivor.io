@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombItemScript : MonoBehaviour
+namespace TA
+{
+    public class BombItemScript : MonoBehaviour
 {
     EnemySpawner enemySpawner;
 
@@ -20,4 +22,6 @@ public class BombItemScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+}
+
 }

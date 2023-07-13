@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class CameraScript : MonoBehaviour
 {   
     public PlayerScript player;
@@ -11,4 +13,6 @@ public class CameraScript : MonoBehaviour
     {
         transform.position = new Vector3(player.transform.position.x,player.transform.position.y,transform.position.z);
     }
+}
+
 }

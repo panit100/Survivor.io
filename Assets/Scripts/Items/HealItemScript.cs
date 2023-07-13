@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealItemScript : MonoBehaviour
+namespace TA
+{
+    public class HealItemScript : MonoBehaviour
 {
     int healAmount = 10;
 
@@ -16,4 +18,5 @@ public class HealItemScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+}
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class EnemySkillDash : MonoBehaviour
 {
     public float skillCooldownTime = 5f;
@@ -30,4 +32,6 @@ public class EnemySkillDash : MonoBehaviour
         Vector2 dashDirection = EnemyScript.playerTransform.position - transform.position;
         Rigidbody2D.AddForce(dashDirection * dashForce);
     }
+}
+
 }

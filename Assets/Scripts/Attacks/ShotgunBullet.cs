@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotgunBullet : MonoBehaviour
+namespace TA
+{
+    public class ShotgunBullet : MonoBehaviour
 {
     [SerializeField] private float bulletDamage = 8f;
     [SerializeField] private float bulletSpeed = .5f;
@@ -36,4 +38,5 @@ public class ShotgunBullet : MonoBehaviour
     {
         enemy.GetComponent<EnemyScript>().TakeDamage(bulletDamage);
     }
+}
 }

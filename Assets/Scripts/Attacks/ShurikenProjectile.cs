@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShurikenProjectile : MonoBehaviour
+namespace TA
+{
+    public class ShurikenProjectile : MonoBehaviour
 {
     [Header("Shuriken Configuration")] 
     public float BulletSpeed;
@@ -105,4 +107,6 @@ public class ShurikenProjectile : MonoBehaviour
         NullTarget = null;
         yield return null;
     }
+}
+
 }
