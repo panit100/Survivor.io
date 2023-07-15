@@ -8,7 +8,7 @@ namespace TA
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject PauseGameUIGroup;        // หน้า pause game: พิมค้นหา "Pause Game UI Group" ในช่องค้นหาใน hierarchy
-    public PlayerScript Player;
+    public PlayerHealth playerHealth;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class PauseMenuScript : MonoBehaviour
 
     void CheckPauseGame()
     {
-        if(Time.timeScale == 1 && Player.PlayerHealth.currentHealth > 0)
+        if(Time.timeScale == 1 && playerHealth.currentHealth > 0)
         {
             PauseGame();
         }

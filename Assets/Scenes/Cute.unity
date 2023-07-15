@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657c038fabd0dcb4eade6924f837a838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1938102964}
+  player: {fileID: 1938102972}
 --- !u!114 &723910511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4904,17 +4904,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3167595282665970568, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
   m_PrefabInstance: {fileID: 3167595280728523067}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1938102964 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3167595282665970575, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
-  m_PrefabInstance: {fileID: 3167595280728523067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed07e0ef72c788498dd1fe26db4f366, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1938102967 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5222688679014674523, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
@@ -4924,6 +4913,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41d2b7e4810a04247b708e5d01677117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1938102972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2291741226939586372, guid: 5fd40192e9276e44eae68c78e1db42fb, type: 3}
+  m_PrefabInstance: {fileID: 3167595280728523067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d9de38f8d14da45b8c716ee7ec8a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &1939231583 stripped
@@ -5593,7 +5593,7 @@ PrefabInstance:
     - target: {fileID: 967281290411752209, guid: 025298e1544fd4e488bcf022740399cb, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1938102964}
+      objectReference: {fileID: 0}
     - target: {fileID: 967281290411752211, guid: 025298e1544fd4e488bcf022740399cb, type: 3}
       propertyPath: m_Name
       value: Pause UI

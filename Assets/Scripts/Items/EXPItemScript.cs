@@ -7,7 +7,7 @@ namespace TA
 public class EXPItemScript : MonoBehaviour
 {
     int expAmount = 10;
-    PlayerScript player;
+    PlayerLevel playerLevel;
 
     public float lerpSpeed = 1f;
 
@@ -17,14 +17,14 @@ public class EXPItemScript : MonoBehaviour
 
     void Start() 
     {
-        player = FindObjectOfType<PlayerScript>().GetComponent<PlayerScript>();    
+        playerLevel = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();    
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.CompareTag("Player"))
         {
-            player.PlayerLevel.GetExp(expAmount);
+            playerLevel.GetExp(expAmount);
 
             Destroy(this.gameObject);
         }
@@ -40,7 +40,7 @@ public class EXPItemScript : MonoBehaviour
 
     public void LeapToPlayer()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position,time);
+        transform.position = Vector3.Lerp(transform.position, playerLevel.transform.position,time);
     }
 }
     

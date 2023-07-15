@@ -7,12 +7,12 @@ namespace TA
     public class ExitReposition : MonoBehaviour
 {
         Collider2D coll;
-        private PlayerScript _playerScript;
+        private PlayerMove playerMove;
         public bool hasRepos;
         void Awake()
         {
             coll = GetComponent<Collider2D>();
-            _playerScript = FindObjectOfType<PlayerScript>();
+            playerMove = FindObjectOfType<PlayerMove>();
         }
 
         void OnTriggerExit2D(Collider2D collision)
@@ -21,7 +21,7 @@ namespace TA
             if (!collision.CompareTag("Area"))
                 return;
 
-            Vector3 playerPos = _playerScript.transform.position;
+            Vector3 playerPos = playerMove.transform.position;
                 Vector3 myPos = transform.position;
 
                 switch (transform.tag) {
