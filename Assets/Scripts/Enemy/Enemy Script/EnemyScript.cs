@@ -54,7 +54,8 @@ public class EnemyScript : MonoBehaviour
     }
     void MoveToPlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, enemyMoveSpeedCurrent * Time.deltaTime);
+        Vector2 direction = playerTransform.position - transform.position;
+        transform.Translate(direction.normalized * enemyMoveSpeedCurrent * Time.deltaTime);
     }
     void CheckEnemyFacing()
     {
