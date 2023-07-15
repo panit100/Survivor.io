@@ -36,7 +36,7 @@ namespace TA
     }
     private void DamageEnemy(GameObject enemy)
     {
-        enemy.GetComponent<EnemyScript>().TakeDamage(bulletDamage);
+        enemy.GetComponent<EnemyHealth>().TakeDamage(bulletDamage);
     }
 }
 }

@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 493348993579866062}
   - component: {fileID: 493348993579866064}
-  - component: {fileID: 493348993579866061}
+  - component: {fileID: 3061503351956683691}
+  - component: {fileID: 26330632273379621}
+  - component: {fileID: 2123240397041277620}
+  - component: {fileID: 1042949790232703699}
   m_Layer: 7
   m_Name: Boss-1
   m_TagString: Enemy
@@ -57,7 +60,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &493348993579866061
+--- !u!114 &3061503351956683691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,18 +69,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 493348993579866066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1832d8709a408424cbf9157c7bb6744e, type: 3}
+  m_Script: {fileID: 11500000, guid: 756f17232e3280d479a8e673118f7ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 1
-  enemyDamage: 20
   playerTransform: {fileID: 0}
-  expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
+--- !u!114 &26330632273379621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493348993579866066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516301ad8b94b4842b1c5b407a037d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 100
-  currentHealth: 10
-  moveToPlayer: 1
+  currentHealth: 0
+  expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
   enemySpawner: {fileID: 0}
-  flipModifier: 0
+--- !u!114 &2123240397041277620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493348993579866066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4211e3400d800d440ac983c3b569ca5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamage: 20
+--- !u!114 &1042949790232703699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493348993579866066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!1 &1349103066217382754
 GameObject:
   m_ObjectHideFlags: 0

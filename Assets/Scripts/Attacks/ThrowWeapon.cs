@@ -30,7 +30,7 @@ namespace TA
         if (col.CompareTag("Enemy"))
         {
             //Implement Enemy Taken Damage from player
-            col.GetComponent<EnemyScript>().TakeDamage(damage);
+            col.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
     }
 }

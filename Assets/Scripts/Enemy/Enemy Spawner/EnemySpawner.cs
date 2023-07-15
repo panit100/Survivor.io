@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     float enemySpawnAmount; //when start new wave add enemySpawnAmount
 
     public List<EnemyPool> enemyPoolList;
-    public Dictionary<string,Queue<EnemyScript>> enemyPoolDictionary;
+    public Dictionary<string,Queue<EnemyHealth>> enemyPoolDictionary;
     
     void Awake()
     {
@@ -73,18 +73,19 @@ public class EnemySpawner : MonoBehaviour
 
     void InitializePool()
     {
-        enemyPoolDictionary = new Dictionary<string, Queue<EnemyScript>>();
+        enemyPoolDictionary = new Dictionary<string, Queue<EnemyHealth>>();
     
         foreach(EnemyPool pool in enemyPoolList)
         {
-            Queue<EnemyScript> enemyPool = new Queue<EnemyScript>();
+            Queue<EnemyHealth> enemyPool = new Queue<EnemyHealth>();
 
             for(int i = 0; i < pool.amount; i++)
             {
-                EnemyScript enemy = Instantiate(pool.enemyPrefab,transform);
-                enemy.enemySpawner = this;
-                enemy.gameObject.SetActive(false);
-                enemyPool.Enqueue(enemy);
+                GameObject enemy = Instantiate(pool.enemyPrefab,transform);
+                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                enemyHealth.enemySpawner = this;
+                enemyHealth.gameObject.SetActive(false);
+                enemyPool.Enqueue(enemyHealth);
             }
 
             enemyPoolDictionary.Add(pool.tag,enemyPool);
@@ -93,11 +94,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemyFromPool(string tag)
     {
-        EnemyScript enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
+        EnemyHealth enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
 
         enemyToSpawn.transform.position = RandomSpawnPosition();
         enemyToSpawn.gameObject.SetActive(true);
-        enemyToSpawn.SetupComponent();
+        enemyToSpawn.currentHealth = enemyToSpawn.health;
 
         enemyPoolDictionary[tag].Enqueue(enemyToSpawn);
 

@@ -45,7 +45,9 @@ namespace TA
                             Vector3 dist = playerPos - myPos;
                             Vector3 ran = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
                             transform.Translate(ran + dist * 2);
-                            StartCoroutine(TriggerRepos());
+
+                            if(gameObject.activeInHierarchy)
+                                StartCoroutine(TriggerRepos());
                         }
                         break;
                     case "Tree":

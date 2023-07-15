@@ -6,7 +6,8 @@ namespace TA
 {
     public class EnemySkillShootProjectile : MonoBehaviour
 {
-    EnemyScript enemyScript;
+    EnemyAttack enemyAttack;
+    EnemyMove enemyMove;
 
     public Projectile projectilePrefab;
     
@@ -16,7 +17,8 @@ namespace TA
     
     void Start() 
     {
-        enemyScript = GetComponent<EnemyScript>();
+        enemyAttack = GetComponent<EnemyAttack>();
+        enemyMove = GetComponent<EnemyMove>();
     }
 
     void FixedUpdate()
@@ -33,8 +35,8 @@ namespace TA
     void Shoot()
     {
         Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.damage = enemyScript.enemyDamage;
-        projectile.direction = enemyScript.playerTransform.position - transform.position;
+        projectile.damage = enemyAttack.enemyDamage;
+        projectile.direction = enemyMove.playerTransform.position - transform.position;
     }
 }
 }

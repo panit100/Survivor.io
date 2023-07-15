@@ -9,8 +9,8 @@ public class EnemySkillDash : MonoBehaviour
     public float skillCooldownTime = 5f;
     public float dashForce;
     
-    Rigidbody2D Rigidbody2D;
-    EnemyScript EnemyScript;
+    Rigidbody2D rigidbody2D;
+    EnemyMove enemyMove;
 
     void Start()
     {
@@ -19,8 +19,8 @@ public class EnemySkillDash : MonoBehaviour
     }
     void SetComponent()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
-        EnemyScript = GetComponent<EnemyScript>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        enemyMove = GetComponent<EnemyMove>();
     }
     void EnemyActiveSkill()
     {
@@ -29,8 +29,8 @@ public class EnemySkillDash : MonoBehaviour
 
     void EnemyDash()
     {
-        Vector2 dashDirection = EnemyScript.playerTransform.position - transform.position;
-        Rigidbody2D.AddForce(dashDirection * dashForce);
+        Vector2 dashDirection = enemyMove.playerTransform.position - transform.position;
+        rigidbody2D.AddForce(dashDirection * dashForce);
     }
 }
 
