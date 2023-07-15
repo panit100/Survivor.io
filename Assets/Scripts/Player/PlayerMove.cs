@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class PlayerMove : MonoBehaviour
 {
     public float speed = 10f;
 
-    Vector3 direction;
+    Vector2 direction;
 
     public Animator animator;
     public AudioSource audio;
@@ -34,7 +36,7 @@ public class PlayerMove : MonoBehaviour
 
     void MoveSound()
     {
-        if(direction == Vector3.zero)
+        if(direction == Vector2.zero)
         {
             animator.SetBool("Walk", false);
             audio.Stop();
@@ -63,3 +65,5 @@ public class PlayerMove : MonoBehaviour
         }
     }
 }
+}
+

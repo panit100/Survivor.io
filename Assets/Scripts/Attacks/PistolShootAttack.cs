@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolShootAttack : BaseAttack
+namespace TA
+{
+    public class PistolShootAttack : BaseAttack
 {
     [SerializeField] private float attackCooldown = 3f;
     [SerializeField] private float attackDamage = 5f;
@@ -58,3 +60,5 @@ public class PistolShootAttack : BaseAttack
         weaponLevel++;
     }
 }
+}
+

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace TA
+{
 public class GameOverMenuScript : MonoBehaviour
 {
     public void RestartGame()
@@ -18,4 +20,5 @@ public class GameOverMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+}
 }

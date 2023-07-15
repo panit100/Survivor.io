@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossSpawner : MonoBehaviour
+namespace TA
+{
+    public class BossSpawner : MonoBehaviour
 {
     public float spawnOffset = 1f;
     public Transform player;
@@ -58,3 +60,5 @@ public class BossSpawner : MonoBehaviour
         public bool isSpawned;
     }
 }
+}
+

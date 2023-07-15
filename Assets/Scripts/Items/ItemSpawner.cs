@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class ItemSpawner : MonoBehaviour
 {
     public float spawnOffset = 1f;
@@ -36,3 +38,5 @@ public class ItemSpawner : MonoBehaviour
         return offScreenPosition;
     }
 }
+}
+

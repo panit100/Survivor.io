@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowAttack : BaseAttack
+namespace TA
+{
+    public class ThrowAttack : BaseAttack
 {
     
     public float ThrowAttackCoolDownspeed;
@@ -22,7 +24,7 @@ public class ThrowAttack : BaseAttack
         timer = ThrowAttackCoolDownspeed;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         DoShoot();
     }
@@ -68,3 +70,5 @@ public class ThrowAttack : BaseAttack
     }
    
 }
+}
+

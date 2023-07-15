@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class PlayerScript : MonoBehaviour
 {
     PlayerMove playerMove;
@@ -19,3 +21,5 @@ public class PlayerScript : MonoBehaviour
         playerLevel = GetComponent<PlayerLevel>();
     }
 }
+}
+

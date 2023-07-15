@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+namespace TA
+{
 public class PlayerLevel : MonoBehaviour
 {
     [Header("LEVEL")]
@@ -53,4 +55,6 @@ public class PlayerLevel : MonoBehaviour
     {
         levelbar.fillAmount = (float)exp / (float)maxExp;
     }
+}
+
 }

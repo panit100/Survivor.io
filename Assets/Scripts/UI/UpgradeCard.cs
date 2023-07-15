@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace TA
+{
 public class UpgradeCard : MonoBehaviour
 {
    public Image image;
@@ -47,3 +49,5 @@ public class UpgradeCard : MonoBehaviour
 
    }
 }
+}
+

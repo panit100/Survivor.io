@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class EXPItemScript : MonoBehaviour
 {
     int expAmount = 10;
@@ -40,4 +42,6 @@ public class EXPItemScript : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, player.transform.position,time);
     }
+}
+    
 }

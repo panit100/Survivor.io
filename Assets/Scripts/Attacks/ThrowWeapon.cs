@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class ThrowWeapon : MonoBehaviour
+namespace TA
+{
+    public class ThrowWeapon : MonoBehaviour
 {
     public float KillTime;
     private Rigidbody2D thisRigidBody;
@@ -30,7 +31,8 @@ public class ThrowWeapon : MonoBehaviour
         {
             //Implement Enemy Taken Damage from player
             col.GetComponent<EnemyScript>().TakeDamage(damage);
-            Destroy(this.gameObject);
         }
     }
+}
+
 }

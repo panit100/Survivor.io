@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace TA
+{
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject mainMenu;
@@ -26,4 +28,5 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+}
 }

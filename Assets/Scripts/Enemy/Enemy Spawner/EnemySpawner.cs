@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class EnemySpawner : MonoBehaviour
 {
     public float spawnOffset = 1f;
@@ -79,7 +81,7 @@ public class EnemySpawner : MonoBehaviour
 
             for(int i = 0; i < pool.amount; i++)
             {
-                EnemyScript enemy = Instantiate(pool.enemyPrefab);
+                EnemyScript enemy = Instantiate(pool.enemyPrefab,transform);
                 enemy.enemySpawner = this;
                 enemy.gameObject.SetActive(false);
                 enemyPool.Enqueue(enemy);
@@ -172,3 +174,5 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 }
+}
+

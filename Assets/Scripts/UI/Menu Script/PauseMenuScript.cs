@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace TA
+{
 public class PauseMenuScript : MonoBehaviour
 {
     public GameObject PauseGameUIGroup;        // หน้า pause game: พิมค้นหา "Pause Game UI Group" ในช่องค้นหาใน hierarchy
@@ -56,3 +58,5 @@ public class PauseMenuScript : MonoBehaviour
         Application.Quit();
     }
 }
+}
+

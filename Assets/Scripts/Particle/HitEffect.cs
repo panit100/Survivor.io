@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class HitEffect : MonoBehaviour
 {
     [SerializeField]private float timeloop;
@@ -26,3 +28,5 @@ public class HitEffect : MonoBehaviour
         }
     }
 }
+}
+
