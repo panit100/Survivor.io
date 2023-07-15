@@ -4,66 +4,30 @@ using UnityEngine;
 
 namespace TA
 {
-public class PlayerMove : MonoBehaviour
-{
-    public float speed = 10f;
-
-    Vector2 direction;
-
-    public Animator animator;
-    public AudioSource audio;
-
-    void Update()
+    public class PlayerMove : MonoBehaviour
     {
-        GetDirection();
-        Move();
-        MoveAnimation();
-        MoveSound();
-    }
+        public float speed = 10f;
 
-    void GetDirection()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        public Vector2 direction;
 
-        direction = new Vector2(horizontal,vertical).normalized;
-    }
-
-    void Move()
-    {
-        transform.Translate(direction * speed * Time.deltaTime);
-    }
-
-    void MoveSound()
-    {
-        if(direction == Vector2.zero)
+        void Update()
         {
-            animator.SetBool("Walk", false);
-            audio.Stop();
-            return;
+            GetDirection();
+            Move();
         }
 
-        if(!audio.isPlaying)
-            audio.Play();
-    }
+        void GetDirection()
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
-    void MoveAnimation()
-    {
-        if(direction.x > 0)
-        {
-            animator.SetBool("Walk", true);
-            animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x), animator.transform.localScale.y);
+            direction = new Vector2(horizontal,vertical).normalized;
         }
-        else if(direction.x < 0)
+
+        void Move()
         {
-            animator.SetBool("Walk", true);
-            animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x) * -1, animator.transform.localScale.y);
-        }
-        else
-        {
-            animator.SetBool("Walk", true);
+            transform.Translate(direction * speed * Time.deltaTime);
         }
     }
-}
 }
 
