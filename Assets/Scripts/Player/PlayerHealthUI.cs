@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-    public Image healthBarFill;
-
+    public GameObject playerHealthUI; 
+    Image healthBarFill;
     PlayerHealth PH;
 
     void Start()
     {
         SetupComponent();
+        SetupUI();
     }
     void SetupComponent()
     {
         PH = GetComponent<PlayerHealth>();
+    }
+    void SetupUI()
+    {
+        healthBarFill = playerHealthUI.transform.Find("Health Bar Fill").GetComponent<Image>();
     }
 
     void Update()
@@ -24,12 +29,6 @@ public class PlayerHealthUI : MonoBehaviour
     }
     void UpdateHP()
     {
-        if(healthBarFill == null) 
-        {
-            Debug.Log("ใส่หลอดเลือดด้วยจ้า");
-            return; 
-        }
-
         if(PH.currentHealth > 0)
         {
             healthBarFill.fillAmount = PH.currentHealth / PH.maxHealth;

@@ -6,22 +6,35 @@ using TMPro;
 
 namespace TA
 {
-public class PlayerLevel : MonoBehaviour
+public class PlayerLevelController : MonoBehaviour
 {
-    [Header("LEVEL")]
+    [Header("Level")]
     [SerializeField] int maxExp;
     int exp = 0;
     int currentLevel = 1;
 
     [Header("UI")]
-    public TextMeshProUGUI leveltext;
-    public Image levelbar;
+    public Transform playerLevelUI;
+    TextMeshProUGUI leveltext;
+    Image levelBarFill;
+
+    [Header("Upgrade Panel")]
     public UpgradePanel upgradePanel;
 
     void Start() 
     {
+        SetupUI();
+        SetupVariable();
+    }
+    void SetupUI()
+    {
+        leveltext = GameObject.Find("Level Text").GetComponent<TextMeshProUGUI>();
+        levelBarFill = GameObject.Find("EXP Bar FIll").GetComponent<Image>();        
+    }
+    void SetupVariable()
+    {
         exp = 0;   
-        levelbar.fillAmount = 0; 
+        levelBarFill.fillAmount = 0; 
         leveltext.text = currentLevel.ToString();
     }
 
@@ -34,10 +47,14 @@ public class PlayerLevel : MonoBehaviour
     {
         exp = 0;
         currentLevel++;
-        levelbar.fillAmount = 0;
+        levelBarFill.fillAmount = 0;
 
-        upgradePanel.SetCard();
         leveltext.text = currentLevel.ToString();
+        
+        if(upgradePanel != null)
+        {
+            upgradePanel.SetCard();
+        }
     }
 
     public void GetExp(int amount)
@@ -53,7 +70,7 @@ public class PlayerLevel : MonoBehaviour
 
     private void UpdateLevelBarMonitor()
     {
-        levelbar.fillAmount = (float)exp / (float)maxExp;
+        levelBarFill.fillAmount = (float)exp / (float)maxExp;
     }
 }
 

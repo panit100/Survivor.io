@@ -7,7 +7,7 @@ namespace TA
 public class EXPItemScript : MonoBehaviour
 {
     int expAmount = 10;
-    PlayerLevel playerLevel;
+    PlayerLevelController playerLevel;
 
     public float lerpSpeed = 1f;
 
@@ -17,7 +17,7 @@ public class EXPItemScript : MonoBehaviour
 
     void Start() 
     {
-        playerLevel = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();    
+        playerLevel = FindObjectOfType<PlayerLevelController>().GetComponent<PlayerLevelController>();    
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
