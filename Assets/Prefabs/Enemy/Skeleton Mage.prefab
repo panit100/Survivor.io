@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 2925479885468574149}
   - component: {fileID: 3537367176874509160}
   - component: {fileID: 2925479885468574151}
-  - component: {fileID: -9126947946215481695}
   - component: {fileID: 1089535525527979525}
   - component: {fileID: 3718709540966220192}
+  - component: {fileID: 56320108921916804}
+  - component: {fileID: 3806873830129374625}
+  - component: {fileID: 8095879074635596560}
+  - component: {fileID: 1472846162109601291}
   m_Layer: 6
   m_Name: Skeleton Mage
   m_TagString: Enemy
@@ -137,27 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-9126947946215481695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2925479885468574148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1832d8709a408424cbf9157c7bb6744e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMoveSpeedDefault: 0.8
-  enemyDamage: 10
-  playerTransform: {fileID: 0}
-  expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
-  health: 10
-  currentHealth: 10
-  moveToPlayer: 1
-  enemySpawner: {fileID: 0}
-  flipModifier: 0
 --- !u!95 &1089535525527979525
 Animator:
   serializedVersion: 5
@@ -190,6 +172,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec4d42f7c155c94fb748ff25b37d241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasRepos: 0
+--- !u!114 &56320108921916804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925479885468574148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+--- !u!114 &3806873830129374625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925479885468574148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756f17232e3280d479a8e673118f7ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMoveSpeedDefault: 0.8
+  playerTransform: {fileID: 0}
+--- !u!114 &8095879074635596560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925479885468574148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4211e3400d800d440ac983c3b569ca5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamage: 10
+--- !u!114 &1472846162109601291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925479885468574148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516301ad8b94b4842b1c5b407a037d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  currentHealth: 0
+  expItem: {fileID: 8346146591842550191, guid: 70764baa2142f214598bcb6d69fc30bc, type: 3}
+  enemySpawner: {fileID: 0}
 --- !u!1 &6414883528373668601
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ namespace TA
     {
         if(other.CompareTag("Player"))
         {
-            PlayerScript player = other.GetComponent<PlayerScript>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             
-            player.PlayerHealth.Heal(healAmount);
+            playerHealth.Heal(healAmount);
             Destroy(this.gameObject);
         }
     }

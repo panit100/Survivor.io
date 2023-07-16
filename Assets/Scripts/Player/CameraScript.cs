@@ -6,7 +6,7 @@ namespace TA
 {
 public class CameraScript : MonoBehaviour
 {   
-    public PlayerScript player;
+    public PlayerMove player;
     
     // Update is called once per frame
     void Update()

@@ -36,7 +36,7 @@ namespace TA
     {
         foreach(Collider2D enemy in enemies)
         {
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
             gunHolder.SetActive(true);
             gunLightHolder.SetActive(true);
             yield return new WaitForSeconds(0.05f);

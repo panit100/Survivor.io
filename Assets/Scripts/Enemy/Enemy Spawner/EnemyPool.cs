@@ -8,7 +8,7 @@ namespace TA
 public class EnemyPool
 {
     public string tag;
-    public EnemyScript enemyPrefab;
+    public GameObject enemyPrefab;
     public int amount;
 }
 }

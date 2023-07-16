@@ -44,7 +44,7 @@ namespace TA
     {
         if(enemy.tag == "Enemy")
         {
-            enemy.GetComponent<EnemyScript>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
     }
 
