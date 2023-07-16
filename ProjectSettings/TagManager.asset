@@ -8,6 +8,8 @@ TagManager:
   - Area
   - Ground
   - Tree
+  - FxTemporaire
+  - Canvas
   layers:
   - Default
   - TransparentFX
