@@ -23,6 +23,9 @@ namespace TA
             if(currentHealth <= 0)
             {
                 Instantiate(expItem,transform.position,Quaternion.identity);
+
+                //Destroy(this.gameObject) //ใช้ก่อนสอน pooling 
+
                 if(LayerMask.LayerToName(gameObject.layer) != "Boss")
                 {
                     enemySpawner.enemyContainer.Remove(this.gameObject);
