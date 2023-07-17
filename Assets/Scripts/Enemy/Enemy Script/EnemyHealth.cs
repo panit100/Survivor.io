@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TA
 {
@@ -11,6 +12,9 @@ namespace TA
         public GameObject expItem;
         public EnemySpawner enemySpawner;
 
+        [HideInInspector] public UnityEvent displayEffectEvent = new UnityEvent();
+
+
         void Start()
         {
             currentHealth = health;
@@ -19,6 +23,7 @@ namespace TA
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
+            displayEffectEvent.Invoke();
 
             if(currentHealth <= 0)
             {

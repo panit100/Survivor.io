@@ -15,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
     private bool isGameTimeActive = true;
 
     [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
-    float enemySpawnAmount; //when start new wave add enemySpawnAmount
 
     public List<EnemyPool> enemyPoolList;
     public Dictionary<string,Queue<EnemyHealth>> enemyPoolDictionary;
@@ -27,8 +26,6 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         InitializePool();
-
-        enemySpawnAmount = 10;
 
         InvokeRepeating("SpawnSequence",1f ,1f);
    
