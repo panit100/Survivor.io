@@ -44,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 8987419693504041229}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 93fdfc9bca7d7a14382ffee14660724c, type: 2}
+  m_Controller: {fileID: 9100000, guid: c0a7a15a4c8f46249885ab0d9e3d684c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110,13 +110,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8987419693512037868}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 727e6a8b5620fa041a84cdfb0c231aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSpriteHolder: {fileID: 8987419693504041229}
-  attackCooldown: 1
+  SpriteHolder: {fileID: 8987419693504041229}
+  attackAnimationCooldown: 1
   attackAnimationSpeed: 1
 --- !u!114 &2551093954668984808
 MonoBehaviour:
@@ -130,8 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45813e39860a2504ab73dd29b6048d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwordDamage: {fileID: 6447585977499567005}
-  SwordSwing: {fileID: 123417300638624596}
+  multiplier: 0
 --- !u!50 &8987419693512037871
 Rigidbody2D:
   serializedVersion: 4
