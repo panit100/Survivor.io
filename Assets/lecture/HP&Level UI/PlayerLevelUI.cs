@@ -11,12 +11,12 @@ namespace TA
         public TextMeshProUGUI leveltext;
         public Image levelBarFill;
 
-        PlayerLevelController playerLevelController;
+        PlayerLevel playerLevelController;
 
         // Start is called before the first frame update
         void Start()
         {
-            playerLevelController = FindObjectOfType<PlayerLevelController>().GetComponent<PlayerLevelController>();
+            playerLevelController = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();
 
             levelBarFill.fillAmount = 0; 
             leveltext.text = playerLevelController.currentLevel.ToString();

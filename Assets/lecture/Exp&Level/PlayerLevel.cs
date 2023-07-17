@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TA
 {
-    public class PlayerLevelController : MonoBehaviour
+    public class PlayerLevel : MonoBehaviour
     {
         [Header("Level")]
         public int maxExp;
