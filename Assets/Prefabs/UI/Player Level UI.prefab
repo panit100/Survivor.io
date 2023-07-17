@@ -297,6 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5695628801615996031}
+  - component: {fileID: 5695628800792077952}
   m_Layer: 5
   m_Name: Player Level UI
   m_TagString: Untagged
@@ -326,6 +327,20 @@ RectTransform:
   m_AnchoredPosition: {x: 60, y: 425.891}
   m_SizeDelta: {x: 829.101, y: 72.219}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5695628800792077952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695628801615996030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df6eb1502d388249bb9aaea60f045ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leveltext: {fileID: 5695628800327466974}
+  levelBarFill: {fileID: 5695628800678510932}
 --- !u!1 &5695628801756302142
 GameObject:
   m_ObjectHideFlags: 0

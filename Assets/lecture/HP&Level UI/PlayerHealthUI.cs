@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-    public GameObject playerHealthUI; 
     Image healthBarFill;
-    PlayerHealth PH;
+    PlayerHealth playerHealth;
 
     void Start()
     {
@@ -16,22 +15,23 @@ public class PlayerHealthUI : MonoBehaviour
     }
     void SetupComponent()
     {
-        PH = GetComponent<PlayerHealth>();
+        playerHealth = FindObjectOfType<PlayerHealth>().GetComponent<PlayerHealth>();
     }
     void SetupUI()
     {
-        healthBarFill = playerHealthUI.transform.Find("Health Bar Fill").GetComponent<Image>();
+        healthBarFill = transform.Find("Health Bar Fill").GetComponent<Image>();
     }
 
     void Update()
     {
         UpdateHP();
     }
+    
     void UpdateHP()
     {
-        if(PH.currentHealth > 0)
+        if(playerHealth.currentHealth > 0)
         {
-            healthBarFill.fillAmount = PH.currentHealth / PH.maxHealth;
+            healthBarFill.fillAmount = playerHealth.currentHealth / playerHealth.maxHealth;
         }
         else
         {
