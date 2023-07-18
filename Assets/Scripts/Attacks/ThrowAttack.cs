@@ -6,69 +6,71 @@ using UnityEngine;
 namespace TA
 {
     public class ThrowAttack : BaseAttack
-{
-    
-    public float ThrowAttackCoolDownspeed;
-    public int ThrowCount;
-    public ThrowWeapon Axe;
-    private float timer;
-
-    private void Awake()
     {
-        if(!this.isActiveAndEnabled)weaponLevel = 0;
-    }
+        public float damage = 5;
+        public float ThrowAttackCoolDownspeed;
+        public int ThrowCount;
+        public ThrowWeapon Axe;
+        
+        private float timer;
 
-
-    private void Start()
-    {
-        timer = ThrowAttackCoolDownspeed;
-    }
-
-    void FixedUpdate()
-    {
-        DoShoot();
-    }
-    void DoShoot()
-    {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        private void Awake()
         {
-            StartCoroutine(SpawnAxes());
+            if(!this.isActiveAndEnabled)weaponLevel = 0;
+        }
+
+
+        private void Start()
+        {
             timer = ThrowAttackCoolDownspeed;
-            return;
         }
-    }
 
-    IEnumerator SpawnAxes()
-    {
-        for (int i = 0; i < ThrowCount; i++)
+        void FixedUpdate()
         {
-            Instantiate(Axe,this.transform.position,Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
+            DoShoot();
         }
-    }
-
-    public override void UpgradeWeaponLevel()
-    {
-        if (weaponLevel == 0)
+        void DoShoot()
         {
-            this.gameObject.SetActive(true);
-        }
-        else
-        {
-            var temptimer = timer;
-            if (ThrowCount < 5)
+            timer -= Time.deltaTime;
+            if (timer < 0)
             {
-                ThrowCount++;
-            }
-            if (timer > 0.1f)
-            {
-                timer = temptimer / 4;
+                StartCoroutine(SpawnAxes());
+                timer = ThrowAttackCoolDownspeed;
+                return;
             }
         }
-        weaponLevel++;
+
+        IEnumerator SpawnAxes()
+        {
+            for (int i = 0; i < ThrowCount; i++)
+            {
+                ThrowWeapon throwWeapon = Instantiate(Axe,this.transform.position,Quaternion.identity);
+                throwWeapon.SetDamage(damage);
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        // public override void UpgradeWeaponLevel()
+        // {
+        //     if (weaponLevel == 0)
+        //     {
+        //         this.gameObject.SetActive(true);
+        //     }
+        //     else
+        //     {
+        //         var temptimer = timer;
+        //         if (ThrowCount < 5)
+        //         {
+        //             ThrowCount++;
+        //         }
+        //         if (timer > 0.1f)
+        //         {
+        //             timer = temptimer / 4;
+        //         }
+        //     }
+        //     weaponLevel++;
+        // }
+    
     }
-   
-}
 }
 
