@@ -10,8 +10,11 @@ namespace TA
         private DamageTrigger _damage;
         private WeaponAnimation _speed;
         public float multiplier;
-        private void Start()
+        
+        
+        protected override void Start()
         {
+            base.Start();
             _damage = GetComponent<DamageTrigger>();
             _speed = GetComponent<WeaponAnimation>();
         }

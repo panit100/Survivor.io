@@ -6,7 +6,7 @@ namespace TA
 {
 public class EXPItemScript : MonoBehaviour
 {
-    int expAmount = 10;
+    public int expAmount = 10;
     PlayerLevel playerLevel;
 
     public float lerpSpeed = 1f;

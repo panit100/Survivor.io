@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TA
@@ -8,6 +9,7 @@ public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] List<UpgradeCard> cards = new List<UpgradeCard>();
     [SerializeField] PlayerWeapon playerWeapon;
+    [SerializeField] private UpgradeCardScriptableObject Hp;
 
     List<SetStat> tempRandomAttacks;
 
@@ -26,12 +28,28 @@ public class UpgradePanel : MonoBehaviour
             {
                 cards[i].gameObject.SetActive(true);
             }
+
+            foreach (var VARIABLE in cards.ToList())
+            {
+                if (!VARIABLE.gameObject.activeSelf)
+                {
+                    cards.Remove(VARIABLE);
+                }
+            }
         }
       
         RandomUpgradeWeapon();
         for(int i = 0; i < cards.Count; i++)
         {
-            cards[i].SetCardInfo(tempRandomAttacks[i]);
+            if (tempRandomAttacks[i].currentlevel < tempRandomAttacks[i].Maxlevel)
+            {
+                cards[i].SetCardInfo(tempRandomAttacks[i]);
+            }
+            else
+            {
+                cards[i].SetCardHP(Hp);
+            }
+          
         }
     }
 

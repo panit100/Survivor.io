@@ -17,8 +17,11 @@ public class UpgradeCard : MonoBehaviour
    
    public UpgradePanel upgradePanel;
 
+   private PlayerHealth _health;
+
    private void Start()
    {
+      _health = FindObjectOfType<PlayerHealth>();
       upgradePanel = FindObjectOfType<UpgradePanel>();
    }
 
@@ -31,11 +34,24 @@ public class UpgradeCard : MonoBehaviour
       image.transform.localScale = baseAttack.WeaponInfo.imageSize;
       name.text = baseAttack.WeaponInfo.name;
       info.text = baseAttack.WeaponInfo.description;
-      level.text = "LV. :" + (baseAttack.WeaponInfo);
+      level.text = "LV. :" + (baseAttack.currentlevel);
       
       baseAttack.gameObject.SetActive(true);
       
       UpgradeButton.onClick.AddListener(baseAttack.StatSet);
+      UpgradeButton.onClick.AddListener(ClosePanel);
+   }
+
+   public void SetCardHP(UpgradeCardScriptableObject hpcardINFO)
+   {
+      UpgradeButton.onClick.RemoveAllListeners();
+      image.sprite = hpcardINFO.image;
+      image.SetNativeSize();
+      image.transform.localScale = hpcardINFO.imageSize;
+      name.text =hpcardINFO.name;
+      info.text = hpcardINFO.description;
+      level.text = "";
+      UpgradeButton.onClick.AddListener(Heal);
       UpgradeButton.onClick.AddListener(ClosePanel);
    }
    
@@ -46,7 +62,7 @@ public class UpgradeCard : MonoBehaviour
 
    public void Heal()
    {
-
+      _health.Heal(Mathf.Clamp(_health.maxHealth/2f,0,_health.maxHealth));
    }
 }
 }
