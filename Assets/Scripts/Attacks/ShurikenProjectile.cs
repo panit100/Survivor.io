@@ -8,9 +8,9 @@ namespace TA
     public class ShurikenProjectile : MonoBehaviour
 {
     [Header("Shuriken Configuration")] 
-    public float BulletSpeed;
-    public GameObject Target;
-    public float damage = 5;
+    private float BulletSpeed;
+    private GameObject Target;
+    private float damage = 5;
 
     [Header("Animation Adjustment")] 
     [SerializeField] private float Fadetime;
@@ -106,6 +106,21 @@ namespace TA
         DestroyThis();
         NullTarget = null;
         yield return null;
+    }
+
+    public void SetDamage(float _damage)
+    {
+        damage = _damage;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        BulletSpeed = speed;
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        Target = target;
     }
 }
 

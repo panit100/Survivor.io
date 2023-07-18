@@ -8,7 +8,7 @@ namespace TA
 {
     public float KillTime;
     private Rigidbody2D thisRigidBody;
-    [SerializeField] float damage = 5;
+    float damage;
     void Start()
     {
         thisRigidBody = GetComponent<Rigidbody2D>();
@@ -32,6 +32,11 @@ namespace TA
             //Implement Enemy Taken Damage from player
             col.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
+    }
+
+    public void SetDamage(float _damage)
+    {
+        damage = _damage;
     }
 }
 

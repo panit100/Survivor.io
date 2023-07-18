@@ -6,10 +6,10 @@ namespace TA
 {
     public class PistolShootAttack : BaseAttack
 {
-    [SerializeField] private float attackCooldown = 3f;
-    [SerializeField] private float attackDamage = 5f;
-    [SerializeField] private float attackRange = 1f;
-    [SerializeField] private float shootInterval = 0.5f;
+    public float attackCooldown = 3f;
+    public float attackDamage = 5f;
+    public float attackRange = 1f;
+    public float shootInterval = 0.5f;
     [SerializeField] private LayerMask targetLayerMask;
     [SerializeField] private GameObject gunHolder;
     [SerializeField] private GameObject gunLightHolder;
@@ -52,13 +52,13 @@ namespace TA
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    public override void UpgradeWeaponLevel()
-    {
-        attackRange *= 1.1f;
-        attackDamage *= 1.2f;
-        attackCooldown *= 0.9f;
-        weaponLevel++;
-    }
+    // public override void UpgradeWeaponLevel()
+    // {
+    //     attackRange *= 1.1f;
+    //     attackDamage *= 1.2f;
+    //     attackCooldown *= 0.9f;
+    //     weaponLevel++;
+    // }
 }
 }
 
