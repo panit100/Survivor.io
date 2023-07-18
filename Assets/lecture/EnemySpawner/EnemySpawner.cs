@@ -4,173 +4,179 @@ using UnityEngine;
 
 namespace TA
 {
-public class EnemySpawner : MonoBehaviour
-{
-    public float spawnOffset = 1f;
-    public Transform player;
-
-    public float gameTime;
-    [SerializeField] private int enemySetCount;
-    public List<EnemySet> enemySet = new List<EnemySet>();
-    private bool isGameTimeActive = true;
-
-    [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
-
-    public List<EnemyPool> enemyPoolList;
-    public Dictionary<string,Queue<EnemyHealth>> enemyPoolDictionary;
-    
-    void Awake()
+    public class EnemySpawner : MonoBehaviour
     {
-        player = GameObject.FindWithTag("Player").transform;
-    }
-    void Start()
-    {
-        InitializePool();
+        public float spawnOffset = 1f;
+        public Transform player;
 
-        InvokeRepeating("SpawnSequence",1f ,1f);
-   
-        SetTimeOfEnemySet();
-    }
+        public float gameTime;
+        [SerializeField] private int enemySetCount;
+        public List<EnemySet> enemySet = new List<EnemySet>();
+        private bool isGameTimeActive = true;
 
-    [SerializeField] private List<float> enemyWaveTimeList;
-    private void SetTimeOfEnemySet()
-    {
-        for(int i = 0; i < enemySet.Count; i++)
-        {
-            enemyWaveTimeList.Add(enemySet[i].timeWave);
-        }
+        [HideInInspector] public List<GameObject> enemyContainer = new List<GameObject>();
+
+        public List<EnemyPool> enemyPoolList;
+        public Dictionary<string,Queue<EnemyHealth>> enemyPoolDictionary;
         
-        CheckWaveTimeList();
-        ApplyTimeOfEnemySet();
-    }
-    private void CheckWaveTimeList()
-    {
-        for(int i = 0; i < enemyWaveTimeList.Count; i++)
+        void Awake()
         {
-            if(i == 0)
-            {
-                continue;
-            }
-            else if(i > 0 && enemyWaveTimeList[i - 1] >= enemyWaveTimeList[i])
-            {
-                enemyWaveTimeList[i] = enemyWaveTimeList[i-1] + 60f;
-            }
+            player = GameObject.FindWithTag("Player").transform;
         }
-    }
-    private void ApplyTimeOfEnemySet()
-    {
-        int count = 0;
-        foreach(EnemySet enemySetTmep in enemySet)
+        void Start()
         {
-            enemySetTmep.timeWave = enemyWaveTimeList[count];
-            count++;
-        }
-    }
+            InitializePool();
 
-
-    void InitializePool()
-    {
-        enemyPoolDictionary = new Dictionary<string, Queue<EnemyHealth>>();
+            InvokeRepeating("SpawnSequence",1f ,1f);
     
-        foreach(EnemyPool pool in enemyPoolList)
-        {
-            Queue<EnemyHealth> enemyPool = new Queue<EnemyHealth>();
+            SetTimeOfEnemySet();
+        }
 
-            for(int i = 0; i < pool.amount; i++)
+        [SerializeField] private List<float> enemyWaveTimeList;
+        private void SetTimeOfEnemySet()
+        {
+            for(int i = 0; i < enemySet.Count; i++)
             {
-                GameObject enemy = Instantiate(pool.enemyPrefab,transform);
-                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-                enemyHealth.enemySpawner = this;
-                enemyHealth.gameObject.SetActive(false);
-                enemyPool.Enqueue(enemyHealth);
+                enemyWaveTimeList.Add(enemySet[i].timeWave);
             }
-
-            enemyPoolDictionary.Add(pool.tag,enemyPool);
+            
+            CheckWaveTimeList();
+            ApplyTimeOfEnemySet();
         }
-    }
-
-    void SpawnEnemyFromPool(string tag)
-    {
-        EnemyHealth enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
-
-        enemyToSpawn.transform.position = RandomSpawnPosition();
-        enemyToSpawn.gameObject.SetActive(true);
-        enemyToSpawn.currentHealth = enemyToSpawn.health;
-
-        enemyPoolDictionary[tag].Enqueue(enemyToSpawn);
-
-        enemyContainer.Add(enemyToSpawn.gameObject);
-    }
-
-    Vector3 RandomSpawnPosition()
-    {
-        Vector3 playerPosition = player.position;
-
-        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
-
-        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
-
-        return offScreenPosition;
-    }
-
-    private void SpawnSequence()
-    {
-        CountTime();
-        CheckSpawnWave();
-        CheckSpawnValue();
-    }
-    private void CountTime()
-    {
-        if(isGameTimeActive)
+        private void CheckWaveTimeList()
         {
-            gameTime += 1;
-        }
-    }
-    private void CheckSpawnWave()
-    {
-        if(gameTime == enemyWaveTimeList[0])
-        {
-            enemySetCount = 0;
-        }
-        else if(enemySetCount + 1 == enemySet.Count)
-        {
-            return;
-        }
-        else if(gameTime == enemyWaveTimeList[enemySetCount + 1])
-        {
-            enemySetCount++;
-        }
-    }
-    private void CheckSpawnValue()
-    {
-        foreach(EnemySetDetail enemySetDetail in enemySet[enemySetCount].enemySetDetail)
-        {
-            if(gameTime % enemySetDetail.enemySpawnEverySecond == 0)
+            for(int i = 0; i < enemyWaveTimeList.Count; i++)
             {
-                for (int i = 0; i < enemySetDetail.enemySpawnTotal ; i++)
+                if(i == 0)
                 {
-                    SpawnEnemyFromPool(enemySetDetail.enemyTag);
+                    continue;
+                }
+                else if(i > 0 && enemyWaveTimeList[i - 1] >= enemyWaveTimeList[i])
+                {
+                    enemyWaveTimeList[i] = enemyWaveTimeList[i-1] + 60f;
                 }
             }
         }
-    }
-
-    public void StopGameTime()
-    {
-        isGameTimeActive = false;
-    }
-    public void ContinueGameTime()
-    {
-        isGameTimeActive = true;
-    }
-
-    public void DestroyAllEnemy()
-    {
-        foreach(GameObject _enemy in enemyContainer)
+        private void ApplyTimeOfEnemySet()
         {
-            _enemy.SetActive(false);
+            int count = 0;
+            foreach(EnemySet enemySetTmep in enemySet)
+            {
+                enemySetTmep.timeWave = enemyWaveTimeList[count];
+                count++;
+            }
+        }
+
+
+        void InitializePool()
+        {
+            enemyPoolDictionary = new Dictionary<string, Queue<EnemyHealth>>();
+        
+            foreach(EnemyPool pool in enemyPoolList)
+            {
+                Queue<EnemyHealth> enemyPool = new Queue<EnemyHealth>();
+
+                for(int i = 0; i < pool.amount; i++)
+                {
+                    GameObject enemy = Instantiate(pool.enemyPrefab,transform);
+                    EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+                    enemyHealth.enemySpawner = this;
+                    enemyHealth.gameObject.SetActive(false);
+                    enemyPool.Enqueue(enemyHealth);
+                }
+
+                enemyPoolDictionary.Add(pool.tag,enemyPool);
+            }
+        }
+
+        void SpawnEnemyFromPool(string tag)
+        {
+            EnemyHealth enemyToSpawn = enemyPoolDictionary[tag].Dequeue();
+
+            enemyToSpawn.transform.position = RandomSpawnPosition();
+            enemyToSpawn.gameObject.SetActive(true);
+            enemyToSpawn.currentHealth = enemyToSpawn.health;
+
+            enemyPoolDictionary[tag].Enqueue(enemyToSpawn);
+
+            enemyContainer.Add(enemyToSpawn.gameObject);
+        }
+
+        Vector3 RandomSpawnPosition()
+        {
+            Vector3 playerPosition = player.position;
+
+            Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0); //random diraction that enemy will spawn
+
+            Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset); // position that enemy will spawn
+
+            return offScreenPosition;
+        }
+
+        private void SpawnSequence()
+        {
+            CountTime();
+            CheckSpawnWave();
+            CheckSpawnValue();
+        }
+        private void CountTime()
+        {
+            if(isGameTimeActive)
+            {
+                gameTime += 1;
+            }
+        }
+        private void CheckSpawnWave()
+        {
+            if(gameTime == enemyWaveTimeList[0])
+            {
+                enemySetCount = 0;
+            }
+            else if(enemySetCount + 1 == enemySet.Count)
+            {
+                return;
+            }
+            else if(gameTime == enemyWaveTimeList[enemySetCount + 1])
+            {
+                enemySetCount++;
+            }
+        }
+        private void CheckSpawnValue()
+        {
+            foreach(EnemySetDetail enemySetDetail in enemySet[enemySetCount].enemySetDetail)
+            {
+                if(gameTime % enemySetDetail.enemySpawnEverySecond == 0)
+                {
+                    for (int i = 0; i < enemySetDetail.enemySpawnTotal ; i++)
+                    {
+                        SpawnEnemyFromPool(enemySetDetail.enemyTag);
+                    }
+                }
+            }
+        }
+
+        public void StopGameTime()
+        {
+            isGameTimeActive = false;
+        }
+        public void ContinueGameTime()
+        {
+            isGameTimeActive = true;
+        }
+
+        public void DestroyAllEnemy()
+        {
+            foreach(GameObject _enemy in enemyContainer)
+            {
+                _enemy.SetActive(false);
+            }
+        }
+
+        private void OnDrawGizmos() 
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(player.position, spawnOffset);
         }
     }
-}
 }
 
