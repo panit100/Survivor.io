@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+namespace TA
 {
-    public float enemyDamage;
-
-    void OnTriggerEnter2D(Collider2D other) 
+    public class EnemyAttack : MonoBehaviour
     {
-        if(other.tag == "Player")
+        public float enemyDamage;
+
+        void OnTriggerEnter2D(Collider2D other) 
         {
-            other.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
+            if(other.tag == "Player")
+            {
+                other.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
+            }
         }
     }
 }
