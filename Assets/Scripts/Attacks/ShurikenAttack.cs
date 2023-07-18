@@ -7,7 +7,8 @@ namespace TA
 {
     public class ShurikenAttack : BaseAttack
 {
-    
+    public float damage = 5;
+    public float bulletSpeed = 10;
     public float ShurikenCooldown;
     public float Radius;
     public ShurikenProjectile Projectile;
@@ -51,18 +52,18 @@ namespace TA
         }
     }
     
-    public override void UpgradeWeaponLevel()
-    {
-        Debug.Log("upgrade");
-        var tempRadius = Radius;
-        var temptimer = ShurikenCooldown;
-        Radius = tempRadius*1.5f;
-        if (ShurikenCooldown > 0.1f)
-        {
-            ShurikenCooldown = temptimer *0.95f;
-        }
-        weaponLevel++;
-    }
+    // public override void UpgradeWeaponLevel()
+    // {
+    //     Debug.Log("upgrade");
+    //     var tempRadius = Radius;
+    //     var temptimer = ShurikenCooldown;
+    //     Radius = tempRadius*1.5f;
+    //     if (ShurikenCooldown > 0.1f)
+    //     {
+    //         ShurikenCooldown = temptimer *0.95f;
+    //     }
+    //     weaponLevel++;
+    // }
     
     //Advance Method Logic 
 
@@ -81,11 +82,17 @@ namespace TA
        
        
     }
+
     void spawnShuriken(GameObject target)
     {
-        Projectile.Target = target;
+        Projectile.SetTarget(target);
+
         var projectile = Instantiate(Projectile,this.transform.position,Quaternion.identity);
         projectile.transform.SetParent(WeaponPool.transform);
+
+        projectile.SetDamage(damage);
+        projectile.SetSpeed(bulletSpeed);
+
         timer = ShurikenCooldown;
     }
 
