@@ -5,9 +5,10 @@ using System.Security.Cryptography;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
-public class OrbitAttack : BaseAttack
+namespace TA{
+    public class OrbitAttack : BaseAttack
 {
-    public GameObject OrbitObject;
+    public OrbitObject OrbitObject;
     public float OrbitSpeed;
     public float OrbitDuration;
     public float OrbitCoolDown;
@@ -36,6 +37,7 @@ public class OrbitAttack : BaseAttack
             OrbitDuration -= Time.deltaTime;
             if(OrbitDuration < 0)
             {
+              
                 foreach (Transform orbits in this.transform)
                 {
                     GameObject.Destroy(orbits.gameObject);
@@ -61,15 +63,13 @@ public class OrbitAttack : BaseAttack
         for (int i = 0; i < orbitCount; i++)
         {
             var NewOrbitObject = Instantiate(OrbitObject);
-            NewOrbitObject.transform.position = Vector3.Lerp(this.transform.position, NewOrbitObject.transform.position, 0.4f);
+            NewOrbitObject.transform.position = (NewOrbitObject.transform.position - this.transform.position).normalized * radial + this.transform.position ;
             NewOrbitObject.transform.RotateAround(transform.position,Vector3.forward, anglestep*i);
             NewOrbitObject.transform.SetParent(this.transform);
-            Vector3 Direction = NewOrbitObject.transform.position - this.transform.position;
             yield return new WaitForEndOfFrame();
         }
         OrbitDuration = tempDuration;
         loadAllOrbit = true;
-    
     }
     
     public override void UpgradeWeaponLevel()
@@ -90,4 +90,7 @@ public class OrbitAttack : BaseAttack
         }
         weaponLevel++;
     }
+}
+
+
 }

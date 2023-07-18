@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace TA
+{
 public class UpgradePanel : MonoBehaviour
 {
     [SerializeField] List<UpgradeCard> cards = new List<UpgradeCard>();
@@ -49,3 +51,5 @@ public class UpgradePanel : MonoBehaviour
         Time.timeScale = 1;
     }
 }
+}
+

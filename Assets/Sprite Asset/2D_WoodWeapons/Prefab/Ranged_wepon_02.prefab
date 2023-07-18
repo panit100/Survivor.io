@@ -117,6 +117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpeed: 10
   Target: {fileID: 0}
+  damage: 10
+  Fadetime: 0
+  Targetisdead: 0
 --- !u!95 &8850792871322204184
 Animator:
   serializedVersion: 5

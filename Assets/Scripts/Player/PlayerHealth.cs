@@ -5,68 +5,27 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("HP")]
     public float maxHealth = 10f;
     public float currentHealth = 0f;
 
-    [Header("GameOver")]
-    public GameObject canvasGameOver;
-    bool isPlayerGameOver = false;
-
-    [Header("UI")]
-    public Image healthBarImage;
-
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         Time.timeScale = 1;
-
-    }
-
-    void Update() 
-    {
-        UpdateHP();
-    }
-
-    void FixedUpdate()
-    {
-        CheckHP();
-    }
-
-    public void Heal(float amount)
-    {
-        currentHealth += amount;
-
-        if(currentHealth > maxHealth)
-            currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
+        // เพิ่มการคำนวณความเสียหาย: HP ของผู้เล่นถูกลดด้วยพลังโจมตีศัตรู
         currentHealth -= damage;
     }
 
-    void CheckHP()
+    public void Heal(float amount)
     {
-        if(isPlayerGameOver == false && currentHealth <= 0)
-        {
-            GameOver();
-        }
-    }
+        // เพิ่มพลังชีวิตขึ้นมาด้วย
+        currentHealth += amount;
 
-    void UpdateHP()
-    {
-        if(currentHealth > 0)
-            healthBarImage.fillAmount = currentHealth / maxHealth;
-        else
-            healthBarImage.fillAmount = 0;
-    }
-
-    void GameOver()
-    {
-        isPlayerGameOver = true;
-        Instantiate(canvasGameOver);
-        Time.timeScale = 0;
+        if(currentHealth > maxHealth)
+            currentHealth = maxHealth;
     }
 }

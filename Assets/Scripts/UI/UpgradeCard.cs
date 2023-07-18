@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace TA
+{
 public class UpgradeCard : MonoBehaviour
 {
    public Image image;
@@ -31,6 +33,8 @@ public class UpgradeCard : MonoBehaviour
       info.text = baseAttack.upgradeObject.description;
       level.text = "LV. :" + (baseAttack.WeaponLevel);
 
+      baseAttack.gameObject.SetActive(true);
+      
       UpgradeButton.onClick.AddListener(baseAttack.UpgradeWeaponLevel);
       UpgradeButton.onClick.AddListener(ClosePanel);
    }
@@ -45,3 +49,5 @@ public class UpgradeCard : MonoBehaviour
 
    }
 }
+}
+
