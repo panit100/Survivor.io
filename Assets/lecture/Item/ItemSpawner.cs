@@ -4,39 +4,45 @@ using UnityEngine;
 
 namespace TA
 {
-public class ItemSpawner : MonoBehaviour
-{
-    public float spawnOffset = 1f;
-
-    public Transform player;
-
-    public List<GameObject> itemList = new List<GameObject>();    
-
-    void Start()
+    public class ItemSpawner : MonoBehaviour
     {
-        StartCoroutine(SpawnItem());
+        public float spawnOffset = 1f;
+
+        public Transform player;
+
+        public List<GameObject> itemList = new List<GameObject>();    
+
+        void Start()
+        {
+            StartCoroutine(SpawnItem());
+        }
+
+        IEnumerator SpawnItem()
+        {
+            yield return new WaitForSeconds(10f);
+            GameObject randomItem = itemList[Random.Range(0,itemList.Count)];
+
+            GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity);
+
+            StartCoroutine(SpawnItem());
+        }
+
+        Vector3 RandomSpawnPosition()
+        {
+            Vector3 playerPosition = player.position;
+
+            Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0);
+
+            Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset);
+
+            return offScreenPosition;
+        }
+
+        private void OnDrawGizmos() 
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(player.position, spawnOffset);
+        }
     }
-
-    IEnumerator SpawnItem()
-    {
-        yield return new WaitForSeconds(10f);
-        GameObject randomItem = itemList[Random.Range(0,itemList.Count)];
-
-        GameObject _item = Instantiate(randomItem,RandomSpawnPosition(),Quaternion.identity);
-
-        StartCoroutine(SpawnItem());
-    }
-
-    Vector3 RandomSpawnPosition()
-    {
-        Vector3 playerPosition = player.position;
-
-        Vector3 randomDiraction = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0);
-
-        Vector3 offScreenPosition = playerPosition + (randomDiraction.normalized * spawnOffset);
-
-        return offScreenPosition;
-    }
-}
 }
 
