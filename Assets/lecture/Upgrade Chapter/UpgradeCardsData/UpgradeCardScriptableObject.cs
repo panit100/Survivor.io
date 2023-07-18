@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TA;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "cardInfo",menuName = "UpgradeCard")]

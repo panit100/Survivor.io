@@ -6,7 +6,7 @@ namespace TA
 {
 public class PlayerWeapon : MonoBehaviour
 {
-    public List<BaseAttack> attacks = new List<BaseAttack>();
+    public List<SetStat> attacks = new List<SetStat>();
 }
 
 }

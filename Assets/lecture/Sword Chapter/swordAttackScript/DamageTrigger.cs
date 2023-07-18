@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace TA
 {
-    public class SwordDamage : MonoBehaviour
+    public class DamageTrigger : MonoBehaviour
     {
         public float Damage = 10f;
+      
         private void OnTriggerEnter2D(Collider2D enemy)
         {
             Debug.Log("hit");
