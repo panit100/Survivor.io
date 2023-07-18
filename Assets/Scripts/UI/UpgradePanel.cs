@@ -9,14 +9,26 @@ public class UpgradePanel : MonoBehaviour
     [SerializeField] List<UpgradeCard> cards = new List<UpgradeCard>();
     [SerializeField] PlayerWeapon playerWeapon;
 
-    List<BaseAttack> tempRandomAttacks;
+    List<SetStat> tempRandomAttacks;
 
     public void SetCard()
     {
         gameObject.SetActive(true);
 
+       
+        if (playerWeapon.attacks.Count < cards.Count)
+        {
+            foreach (var VARIABLE in cards)
+            {
+                VARIABLE.gameObject.SetActive(false);
+            }
+            for (int i = 0; i < playerWeapon.attacks.Count; i++)
+            {
+                cards[i].gameObject.SetActive(true);
+            }
+        }
+      
         RandomUpgradeWeapon();
-        
         for(int i = 0; i < cards.Count; i++)
         {
             cards[i].SetCardInfo(tempRandomAttacks[i]);
@@ -25,18 +37,18 @@ public class UpgradePanel : MonoBehaviour
 
     void RandomUpgradeWeapon()
     {
-        tempRandomAttacks = new List<BaseAttack>();
-
+        tempRandomAttacks = new List<SetStat>();
+    
         for(int i = 0; i < cards.Count; i++)
         {
-            BaseAttack randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count)];
+            SetStat randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
             
             while(tempRandomAttacks.Count < cards.Count)
             {
                 if(!tempRandomAttacks.Contains(randomAttack))
                     tempRandomAttacks.Add(randomAttack);
                 else
-                    randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count)];
+                    randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
             }
         }
     }

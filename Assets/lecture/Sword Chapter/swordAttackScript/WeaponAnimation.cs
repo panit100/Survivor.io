@@ -12,6 +12,7 @@ public class WeaponAnimation : MonoBehaviour
     void Start()
     {
         SetupComponent();
+        SwingSword();
     }
     private void SetupComponent()
     {

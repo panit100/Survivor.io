@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ namespace TA
 {
     public class SetStat : MonoBehaviour
     {
-        public float multiplier;
+        public UpgradeCardScriptableObject WeaponInfo;
         public virtual void StatSet()
         {
         

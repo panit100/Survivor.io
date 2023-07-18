@@ -22,20 +22,20 @@ public class UpgradeCard : MonoBehaviour
       upgradePanel = FindObjectOfType<UpgradePanel>();
    }
 
-   public void SetCardInfo(BaseAttack baseAttack)
+   public void SetCardInfo(SetStat baseAttack)
    {
       UpgradeButton.onClick.RemoveAllListeners();
-
-      image.sprite = baseAttack.upgradeObject.image;
+      
+      image.sprite = baseAttack.WeaponInfo.image;
       image.SetNativeSize();
-      image.transform.localScale = baseAttack.upgradeObject.imageSize;
-      name.text = baseAttack.upgradeObject.name;
-      info.text = baseAttack.upgradeObject.description;
-      level.text = "LV. :" + (baseAttack.WeaponLevel);
-
+      image.transform.localScale = baseAttack.WeaponInfo.imageSize;
+      name.text = baseAttack.WeaponInfo.name;
+      info.text = baseAttack.WeaponInfo.description;
+      level.text = "LV. :" + (baseAttack.WeaponInfo);
+      
       baseAttack.gameObject.SetActive(true);
       
-      UpgradeButton.onClick.AddListener(baseAttack.UpgradeWeaponLevel);
+      UpgradeButton.onClick.AddListener(baseAttack.StatSet);
       UpgradeButton.onClick.AddListener(ClosePanel);
    }
    

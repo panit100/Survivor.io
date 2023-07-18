@@ -65,8 +65,8 @@ GameObject:
   - component: {fileID: 8987419693512037869}
   - component: {fileID: 6447585977499567005}
   - component: {fileID: 123417300638624596}
-  - component: {fileID: 2551093954668984808}
   - component: {fileID: 8987419693512037871}
+  - component: {fileID: 4639364128030465326}
   m_Layer: 0
   m_Name: SwordAttack(Blank)
   m_TagString: Untagged
@@ -118,19 +118,6 @@ MonoBehaviour:
   SpriteHolder: {fileID: 8987419693504041229}
   attackAnimationCooldown: 1
   attackAnimationSpeed: 1
---- !u!114 &2551093954668984808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8987419693512037868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45813e39860a2504ab73dd29b6048d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiplier: 0
 --- !u!50 &8987419693512037871
 Rigidbody2D:
   serializedVersion: 4
@@ -152,6 +139,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4639364128030465326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987419693512037868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f1f3eea67168a498c09041e2e70fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponInfo: {fileID: 0}
+  multiplier: 0
 --- !u!1 &8987419694325644748
 GameObject:
   m_ObjectHideFlags: 0

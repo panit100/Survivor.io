@@ -2,9 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1770df1-2f2e-4b6f-adfa-17c84af18afd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Sprite Asset/Undead Survivor/Complete Pack.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SwordSetStat.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SwordUpgrade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SwordUpgrade.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/lecture/Sword Chapter/SwordAttack(Blank).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lecture/Sword Chapter/SwordAttack(Blank).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attacks/swordAttack/SetStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attacks/swordAttack/SetStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Upgrade Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Upgrade Card.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Upgrade Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Upgrade Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Heal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Heal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Heal.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Heal.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Orbit Attack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Orbit Attack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Orbit Attack.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Orbit Attack.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Pistol Attack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Pistol Attack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Pistol Attack.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Pistol Attack.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Shotgun Attack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Shotgun Attack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Shotgun Attack.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Shotgun Attack.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Shuriken.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Shuriken.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Shuriken.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Shuriken.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Sword Attack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Sword Attack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Sword Attack.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Sword Attack.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Throw Attack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Throw Attack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/Throw Attack.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/Throw Attack.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/UpgradeCardScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/UpgradeCardScriptableObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradeCards/UpgradeCardScriptableObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/UpgradeCardsData/UpgradeCardScriptableObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UpgradePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/SwordAttack(Blank).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/SwordAttack(Blank).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SetStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SetStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SetStat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SetStat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SwordDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/DamageTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SwordDamage.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/DamageTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SwordSetStat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/SwordSetStat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SwordSetStat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/WeaponAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Sword Chapter/swordAttackScript/WeaponAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SimpleUpgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SimpleUpgrade.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +51,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b2a272e51214e2f91bbc4fb4f28eff8159400/31/79a841a1/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b2a272e51214e2f91bbc4fb4f28eff8159400/42/50d0ce90/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b2a272e51214e2f91bbc4fb4f28eff8159400/86/6a376999/DisallowMultipleComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attacks/swordAttack/SwordSetStat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attacks/swordAttack/WeaponAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/EntityRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SetStat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/lecture/Upgrade Chapter/SwordUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,6 +135,9 @@
       <workItem from="1688453288313" duration="2162000" />
       <workItem from="1688544401238" duration="791000" />
       <workItem from="1688624620163" duration="593000" />
+      <workItem from="1689589547728" duration="3075000" />
+      <workItem from="1689601360092" duration="4602000" />
+      <workItem from="1689658410645" duration="3974000" />
     </task>
     <servers />
   </component>
