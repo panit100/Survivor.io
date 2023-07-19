@@ -33,7 +33,7 @@ namespace TA
             }
             else
             {
-                animator.SetBool("Walk", true);
+                animator.SetBool("Walk", false);
             }
         }
     }
