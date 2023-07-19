@@ -5,28 +5,28 @@ using UnityEngine.SceneManagement;
 
 namespace TA
 {
-public class MainMenuScript : MonoBehaviour
-{
-    public GameObject mainMenu;
-    public GameObject exitWindow;
-    
-    void Start()
+    public class MainMenuScript : MonoBehaviour
     {
-        SetupUI();
-    }
-    void SetupUI()
-    {
-        mainMenu.SetActive(true);
-        exitWindow.SetActive(false);
-    }
+        public GameObject mainMenu;
+        public GameObject exitWindow;
+        
+        void Start()
+        {
+            SetupUI();
+        }
+        void SetupUI()
+        {
+            mainMenu.SetActive(true);
+            exitWindow.SetActive(false);
+        }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
+        public void StartGame()
+        {
+            SceneManager.LoadScene(1);
+        }
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-}
 }

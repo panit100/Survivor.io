@@ -5,81 +5,81 @@ using UnityEngine;
 
 namespace TA
 {
-public class UpgradePanel : MonoBehaviour
-{
-    [SerializeField] List<UpgradeCard> cards = new List<UpgradeCard>();
-    [SerializeField] PlayerWeapon playerWeapon;
-    [SerializeField] private UpgradeCardScriptableObject Hp;
-
-    List<SetStat> tempRandomAttacks;
-
-    public void SetCard()
+    public class UpgradePanel : MonoBehaviour
     {
-        gameObject.SetActive(true);
+        [SerializeField] List<UpgradeCard> cards = new List<UpgradeCard>();
+        [SerializeField] PlayerWeapon playerWeapon;
+        [SerializeField] private UpgradeCardScriptableObject Hp;
 
-       
-        if (playerWeapon.attacks.Count < cards.Count)
+        List<SetStat> tempRandomAttacks;
+
+        public void SetCard()
         {
-            foreach (var VARIABLE in cards)
-            {
-                VARIABLE.gameObject.SetActive(false);
-            }
-            for (int i = 0; i < playerWeapon.attacks.Count; i++)
-            {
-                cards[i].gameObject.SetActive(true);
-            }
+            gameObject.SetActive(true);
 
-            foreach (var VARIABLE in cards.ToList())
+        
+            if (playerWeapon.attacks.Count < cards.Count)
             {
-                if (!VARIABLE.gameObject.activeSelf)
+                foreach (var VARIABLE in cards)
                 {
-                    cards.Remove(VARIABLE);
+                    VARIABLE.gameObject.SetActive(false);
+                }
+                for (int i = 0; i < playerWeapon.attacks.Count; i++)
+                {
+                    cards[i].gameObject.SetActive(true);
+                }
+
+                foreach (var VARIABLE in cards.ToList())
+                {
+                    if (!VARIABLE.gameObject.activeSelf)
+                    {
+                        cards.Remove(VARIABLE);
+                    }
+                }
+            }
+        
+            RandomUpgradeWeapon();
+            for(int i = 0; i < cards.Count; i++)
+            {
+                if (tempRandomAttacks[i].currentlevel < tempRandomAttacks[i].Maxlevel)
+                {
+                    cards[i].SetCardInfo(tempRandomAttacks[i]);
+                }
+                else
+                {
+                    cards[i].SetCardHP(Hp);
+                }
+            
+            }
+        }
+
+        void RandomUpgradeWeapon()
+        {
+            tempRandomAttacks = new List<SetStat>();
+        
+            for(int i = 0; i < cards.Count; i++)
+            {
+                SetStat randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
+                
+                while(tempRandomAttacks.Count < cards.Count)
+                {
+                    if(!tempRandomAttacks.Contains(randomAttack))
+                        tempRandomAttacks.Add(randomAttack);
+                    else
+                        randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
                 }
             }
         }
-      
-        RandomUpgradeWeapon();
-        for(int i = 0; i < cards.Count; i++)
+
+        private void OnEnable()
         {
-            if (tempRandomAttacks[i].currentlevel < tempRandomAttacks[i].Maxlevel)
-            {
-                cards[i].SetCardInfo(tempRandomAttacks[i]);
-            }
-            else
-            {
-                cards[i].SetCardHP(Hp);
-            }
-          
+            Time.timeScale = 0;
+        }
+
+        private void OnDisable()
+        {
+            Time.timeScale = 1;
         }
     }
-
-    void RandomUpgradeWeapon()
-    {
-        tempRandomAttacks = new List<SetStat>();
-    
-        for(int i = 0; i < cards.Count; i++)
-        {
-            SetStat randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
-            
-            while(tempRandomAttacks.Count < cards.Count)
-            {
-                if(!tempRandomAttacks.Contains(randomAttack))
-                    tempRandomAttacks.Add(randomAttack);
-                else
-                    randomAttack = playerWeapon.attacks[Random.Range(0,playerWeapon.attacks.Count-1)];
-            }
-        }
-    }
-
-    private void OnEnable()
-    {
-        Time.timeScale = 0;
-    }
-
-    private void OnDisable()
-    {
-        Time.timeScale = 1;
-    }
-}
 }
 

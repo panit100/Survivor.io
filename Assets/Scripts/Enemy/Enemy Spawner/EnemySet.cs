@@ -5,9 +5,9 @@ using UnityEngine;
 namespace TA
 {
     [System.Serializable]
-public class EnemySet
-{
-    public float timeWave;
-    public List<EnemySetDetail> enemySetDetail;
-}
+    public class EnemySet
+    {
+        public float timeWave;
+        public List<EnemySetDetail> enemySetDetail;
+    }
 }

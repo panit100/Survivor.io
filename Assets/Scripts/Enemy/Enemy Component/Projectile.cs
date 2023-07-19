@@ -5,38 +5,38 @@ using UnityEngine;
 namespace TA
 {
     public class Projectile : MonoBehaviour
-{   
-    public float speed = 10;
-    [HideInInspector]
-    public float damage;
+    {   
+        public float speed = 10;
+        [HideInInspector]
+        public float damage;
 
-    [HideInInspector]
-    public Vector3 direction;
+        [HideInInspector]
+        public Vector3 direction;
 
-    void Start() 
-    {
-        StartCoroutine(DestroyProjectile());    
-    }
-
-    void FixedUpdate() 
-    {
-        transform.position = transform.position + (direction.normalized * speed * Time.deltaTime) ;
-    }
-
-    IEnumerator DestroyProjectile()
-    {
-        yield return new WaitForSeconds(5f);
-        Destroy(this.gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if(other.CompareTag("Player"))
+        void Start() 
         {
-            other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            StartCoroutine(DestroyProjectile());    
+        }
+
+        void FixedUpdate() 
+        {
+            transform.position = transform.position + (direction.normalized * speed * Time.deltaTime) ;
+        }
+
+        IEnumerator DestroyProjectile()
+        {
+            yield return new WaitForSeconds(5f);
             Destroy(this.gameObject);
-        }    
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) 
+        {
+            if(other.CompareTag("Player"))
+            {
+                other.GetComponent<PlayerHealth>().TakeDamage(damage);
+                Destroy(this.gameObject);
+            }    
+        }
     }
-}
 }
 

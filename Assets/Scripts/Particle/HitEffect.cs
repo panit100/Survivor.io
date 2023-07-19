@@ -4,29 +4,29 @@ using UnityEngine;
 
 namespace TA
 {
-public class HitEffect : MonoBehaviour
-{
-    [SerializeField]private float timeloop;
-    private float temptime;
-
-    private ParticleSystem thiseffect;
-    // Start is called before the first frame update
-    void Start()
+    public class HitEffect : MonoBehaviour
     {
-        thiseffect = GetComponent<ParticleSystem>();
-        temptime = timeloop;
-    }
+        [SerializeField]private float timeloop;
+        private float temptime;
 
-    // Update is called once per frame
-    void Update()
-    {
-        temptime -= Time.deltaTime;
-        if (temptime <= 0)
+        private ParticleSystem thiseffect;
+        // Start is called before the first frame update
+        void Start()
         {
-            thiseffect.Play();
+            thiseffect = GetComponent<ParticleSystem>();
             temptime = timeloop;
         }
+
+        // Update is called once per frame
+        void Update()
+        {
+            temptime -= Time.deltaTime;
+            if (temptime <= 0)
+            {
+                thiseffect.Play();
+                temptime = timeloop;
+            }
+        }
     }
-}
 }
 
