@@ -21,6 +21,8 @@ namespace TA
 
         public override void StatSet()
         {
+            if(currentlevel>=Maxlevel) return;
+            currentlevel += 1;
             _damage.Damage *= multiplier;
             _damage.Damage = Mathf.Clamp(_damage.Damage,10f,20f);
             _speed.attackAnimationSpeed *= multiplier;

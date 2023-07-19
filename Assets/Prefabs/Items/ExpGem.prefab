@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e83722eaad82c4aac30d272eacd609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expAmount: 50
   lerpSpeed: 1.5
   isMoveToPlayer: 0
 --- !u!1001 &7548042277077842975
