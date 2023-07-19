@@ -2,38 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponAnimation : MonoBehaviour
+namespace TA
 {
-    [SerializeField] private GameObject SpriteHolder;
-    public float attackAnimationCooldown = 1f;
-    public float attackAnimationSpeed = 1f;
-    private Animator Animator;
-  
-    void Start()
+    public class WeaponAnimation : MonoBehaviour
     {
-        SetupComponent();
-        SwingSword();
-    }
-    private void SetupComponent()
-    {
-        Animator = SpriteHolder.GetComponent<Animator>();
-        SpriteHolder.SetActive(false);
-        Animator.speed = attackAnimationSpeed;
-    }
-    private void SwingSword()
-    {
-        StopAllCoroutines();
-        StartCoroutine(SwingSwordSequence());
-    }
-    private IEnumerator SwingSwordSequence()
-    {
-        SpriteHolder.SetActive(true);
+        [SerializeField] private GameObject SpriteHolder;
+        public float attackAnimationCooldown = 1f;
+        public float attackAnimationSpeed = 1f;
+        private Animator Animator;
+    
+        void Start()
+        {
+            SetupComponent();
+            SwingSword();
+        }
+        private void SetupComponent()
+        {
+            Animator = SpriteHolder.GetComponent<Animator>();
+            SpriteHolder.SetActive(false);
+            Animator.speed = attackAnimationSpeed;
+        }
+        private void SwingSword()
+        {
+            StopAllCoroutines();
+            StartCoroutine(SwingSwordSequence());
+        }
+        private IEnumerator SwingSwordSequence()
+        {
+            SpriteHolder.SetActive(true);
 
-        yield return new WaitForSeconds(attackAnimationSpeed);
-        SpriteHolder.SetActive(false);
+            yield return new WaitForSeconds(attackAnimationSpeed);
+            SpriteHolder.SetActive(false);
 
-        yield return new WaitForSeconds(attackAnimationCooldown);
-        SwingSword();
+            yield return new WaitForSeconds(attackAnimationCooldown);
+            SwingSword();
+        }
     }
-
 }

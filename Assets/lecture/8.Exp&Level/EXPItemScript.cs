@@ -4,44 +4,43 @@ using UnityEngine;
 
 namespace TA
 {
-public class EXPItemScript : MonoBehaviour
-{
-    public int expAmount = 10;
-    PlayerLevel playerLevel;
-
-    public float lerpSpeed = 1f;
-
-    public bool isMoveToPlayer = false; 
-
-    float time = 0f;
-
-    void Start() 
+    public class EXPItemScript : MonoBehaviour
     {
-        playerLevel = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();    
-    }
+        public int expAmount = 10;
+        PlayerLevel playerLevel;
 
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if(other.CompareTag("Player"))
+        public float lerpSpeed = 1f;
+
+        public bool isMoveToPlayer = false; 
+
+        float time = 0f;
+
+        void Start() 
         {
-            playerLevel.GetExp(expAmount);
+            playerLevel = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();    
+        }
 
-            Destroy(this.gameObject);
+        private void OnTriggerEnter2D(Collider2D other) 
+        {
+            if(other.CompareTag("Player"))
+            {
+                playerLevel.GetExp(expAmount);
+
+                Destroy(this.gameObject);
+            }
+        }
+
+        private void FixedUpdate() 
+        {
+            if(isMoveToPlayer)
+                time = Time.deltaTime * lerpSpeed;
+                
+            LeapToPlayer();
+        }
+
+        public void LeapToPlayer()
+        {
+            transform.position = Vector3.Lerp(transform.position, playerLevel.transform.position,time);
         }
     }
-
-    private void FixedUpdate() 
-    {
-        if(isMoveToPlayer)
-            time = Time.deltaTime * lerpSpeed;
-            
-        LeapToPlayer();
-    }
-
-    public void LeapToPlayer()
-    {
-        transform.position = Vector3.Lerp(transform.position, playerLevel.transform.position,time);
-    }
-}
-    
 }

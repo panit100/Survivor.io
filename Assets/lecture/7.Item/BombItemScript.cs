@@ -5,23 +5,23 @@ using UnityEngine;
 namespace TA
 {
     public class BombItemScript : MonoBehaviour
-{
-    EnemySpawner enemySpawner;
-
-    void Start() 
     {
-        enemySpawner = FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>();    
-    }
+        EnemySpawner enemySpawner;
 
-    private void OnTriggerEnter2D(Collider2D other) 
-    {
-        if(other.CompareTag("Player"))
+        void Start() 
         {
-            enemySpawner.DestroyAllEnemy();
+            enemySpawner = FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>();    
+        }
 
-            Destroy(this.gameObject);
+        private void OnTriggerEnter2D(Collider2D other) 
+        {
+            if(other.CompareTag("Player"))
+            {
+                enemySpawner.DestroyAllEnemy();
+
+                Destroy(this.gameObject);
+            }
         }
     }
-}
 
 }

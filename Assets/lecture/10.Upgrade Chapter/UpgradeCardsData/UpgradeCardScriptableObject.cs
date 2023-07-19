@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using TA;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "cardInfo",menuName = "UpgradeCard")]
-public class UpgradeCardScriptableObject : ScriptableObject
+namespace TA
 {
-    public Sprite image;
-    public Vector3 imageSize;
-    public string name;
-    public string description;
+    [CreateAssetMenu(fileName = "cardInfo",menuName = "UpgradeCard")]
+    public class UpgradeCardScriptableObject : ScriptableObject
+    {
+        public Sprite image;
+        public Vector3 imageSize;
+        public string name;
+        public string description;
+    }
 }

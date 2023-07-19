@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace TA
 {
-public class MagnetItemScript : MonoBehaviour
-{
-    private void OnTriggerEnter2D(Collider2D other) 
+    public class MagnetItemScript : MonoBehaviour
     {
-        if(other.CompareTag("Player"))
+        private void OnTriggerEnter2D(Collider2D other) 
         {
-           EXPItemScript[] expItems = FindObjectsOfType<EXPItemScript>();
-           
-           foreach(EXPItemScript n in expItems)
-           {
-            n.GetComponent<EXPItemScript>().isMoveToPlayer = true;
-           }
-            Destroy(this.gameObject);
+            if(other.CompareTag("Player"))
+            {
+            EXPItemScript[] expItems = FindObjectsOfType<EXPItemScript>();
+            
+            foreach(EXPItemScript n in expItems)
+            {
+                n.GetComponent<EXPItemScript>().isMoveToPlayer = true;
+            }
+                Destroy(this.gameObject);
+            }
         }
     }
-}
 
 }
