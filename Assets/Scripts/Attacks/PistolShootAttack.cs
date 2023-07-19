@@ -5,60 +5,60 @@ using UnityEngine;
 namespace TA
 {
     public class PistolShootAttack : BaseAttack
-{
-    public float attackCooldown = 3f;
-    public float attackDamage = 5f;
-    public float attackRange = 1f;
-    public float shootInterval = 0.5f;
-    [SerializeField] private LayerMask targetLayerMask;
-    [SerializeField] private GameObject gunHolder;
-    [SerializeField] private GameObject gunLightHolder;
+    {
+        public float attackCooldown = 3f;
+        public float attackDamage = 5f;
+        public float attackRange = 1f;
+        public float shootInterval = 0.5f;
+        [SerializeField] private LayerMask targetLayerMask;
+        [SerializeField] private GameObject gunHolder;
+        [SerializeField] private GameObject gunLightHolder;
 
-    private void Start()
-    {
-        ActiveWeapon();
-    }
-    private void ActiveWeapon()
-    {
-        GetEnemyInCircle();
-        gunHolder.SetActive(false);
-        gunLightHolder.SetActive(false);
-    }
-
-    private void GetEnemyInCircle()
-    {
-        Collider2D[] enemyInCircleRange;
-        enemyInCircleRange = Physics2D.OverlapCircleAll(transform.position, attackRange, targetLayerMask);
-        StopAllCoroutines();
-        StartCoroutine(DamageEnemyInCircle(enemyInCircleRange));
-    }
-    private IEnumerator DamageEnemyInCircle(Collider2D[] enemies)
-    {
-        foreach(Collider2D enemy in enemies)
+        private void Start()
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-            gunHolder.SetActive(true);
-            gunLightHolder.SetActive(true);
-            yield return new WaitForSeconds(0.05f);
-            gunLightHolder.SetActive(false);
-            yield return new WaitForSeconds(shootInterval);
-            gunHolder.SetActive(false);
+            ActiveWeapon();
         }
-        yield return new WaitForSeconds(attackCooldown);
-        GetEnemyInCircle();
-    }
-    private void OnDrawGizmos() 
-    {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-    }
+        private void ActiveWeapon()
+        {
+            GetEnemyInCircle();
+            gunHolder.SetActive(false);
+            gunLightHolder.SetActive(false);
+        }
 
-    // public override void UpgradeWeaponLevel()
-    // {
-    //     attackRange *= 1.1f;
-    //     attackDamage *= 1.2f;
-    //     attackCooldown *= 0.9f;
-    //     weaponLevel++;
-    // }
-}
+        private void GetEnemyInCircle()
+        {
+            Collider2D[] enemyInCircleRange;
+            enemyInCircleRange = Physics2D.OverlapCircleAll(transform.position, attackRange, targetLayerMask);
+            StopAllCoroutines();
+            StartCoroutine(DamageEnemyInCircle(enemyInCircleRange));
+        }
+        private IEnumerator DamageEnemyInCircle(Collider2D[] enemies)
+        {
+            foreach(Collider2D enemy in enemies)
+            {
+                enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+                gunHolder.SetActive(true);
+                gunLightHolder.SetActive(true);
+                yield return new WaitForSeconds(0.05f);
+                gunLightHolder.SetActive(false);
+                yield return new WaitForSeconds(shootInterval);
+                gunHolder.SetActive(false);
+            }
+            yield return new WaitForSeconds(attackCooldown);
+            GetEnemyInCircle();
+        }
+        private void OnDrawGizmos() 
+        {
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
+
+        // public override void UpgradeWeaponLevel()
+        // {
+        //     attackRange *= 1.1f;
+        //     attackDamage *= 1.2f;
+        //     attackCooldown *= 0.9f;
+        //     weaponLevel++;
+        // }
+    }
 }
 

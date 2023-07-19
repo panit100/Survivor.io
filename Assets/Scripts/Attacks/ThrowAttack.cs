@@ -49,28 +49,6 @@ namespace TA
                 yield return new WaitForSeconds(0.5f);
             }
         }
-
-        // public override void UpgradeWeaponLevel()
-        // {
-        //     if (weaponLevel == 0)
-        //     {
-        //         this.gameObject.SetActive(true);
-        //     }
-        //     else
-        //     {
-        //         var temptimer = timer;
-        //         if (ThrowCount < 5)
-        //         {
-        //             ThrowCount++;
-        //         }
-        //         if (timer > 0.1f)
-        //         {
-        //             timer = temptimer / 4;
-        //         }
-        //     }
-        //     weaponLevel++;
-        // }
-    
     }
 }
 

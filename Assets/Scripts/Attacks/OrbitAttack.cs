@@ -5,92 +5,89 @@ using System.Security.Cryptography;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
-namespace TA{
-    public class OrbitAttack : BaseAttack
+namespace TA
 {
-    public OrbitObject OrbitObject;
-    public float OrbitSpeed;
-    public float OrbitDuration;
-    public float OrbitCoolDown;
-    public int orbitCount;
-    public float radial;
+    public class OrbitAttack : BaseAttack
+    {
+        public OrbitObject OrbitObject;
+        public float OrbitSpeed;
+        public float OrbitDuration;
+        public float OrbitCoolDown;
+        public int orbitCount;
+        public float radial;
 
-    private bool loadAllOrbit = false;
-    private float tempDuration;
-    private Coroutine IECooldown;
-    
-    private void Awake()
-    {
-        if(!this.isActiveAndEnabled)weaponLevel = 0;
-    }
-    void Start()
-    {
-        tempDuration = OrbitDuration;
-        StartCoroutine(SurroundOrbitSpawn());
-    }
-
-    private void Update()
-    {
-        if (loadAllOrbit)
+        private bool loadAllOrbit = false;
+        private float tempDuration;
+        private Coroutine IECooldown;
+        
+        private void Awake()
         {
-            this.transform.RotateAround(this.transform.position,Vector3.forward,OrbitSpeed*Time.deltaTime);
-            OrbitDuration -= Time.deltaTime;
-            if(OrbitDuration < 0)
+            if(!this.isActiveAndEnabled)weaponLevel = 0;
+        }
+        void Start()
+        {
+            tempDuration = OrbitDuration;
+            StartCoroutine(SurroundOrbitSpawn());
+        }
+
+        private void Update()
+        {
+            if (loadAllOrbit)
             {
-              
-                foreach (Transform orbits in this.transform)
+                this.transform.RotateAround(this.transform.position,Vector3.forward,OrbitSpeed*Time.deltaTime);
+                OrbitDuration -= Time.deltaTime;
+                if(OrbitDuration < 0)
                 {
-                    GameObject.Destroy(orbits.gameObject);
+                
+                    foreach (Transform orbits in this.transform)
+                    {
+                        GameObject.Destroy(orbits.gameObject);
+                    }
+                    if (IECooldown == null) IECooldown = StartCoroutine(WaitForCoolDown());
+                    loadAllOrbit = false;
                 }
-                if (IECooldown == null) IECooldown = StartCoroutine(WaitForCoolDown());
-                loadAllOrbit = false;
             }
         }
-    }
 
-
-
-    IEnumerator WaitForCoolDown()
-    {
-        yield return new WaitForSeconds(OrbitCoolDown);
-        StartCoroutine(SurroundOrbitSpawn());
-        IECooldown = null;
-    }
-
-    IEnumerator SurroundOrbitSpawn()
-    {
-        float anglestep = 360.0f / orbitCount;
-        for (int i = 0; i < orbitCount; i++)
+        IEnumerator WaitForCoolDown()
         {
-            var NewOrbitObject = Instantiate(OrbitObject);
-            NewOrbitObject.transform.position = (NewOrbitObject.transform.position - this.transform.position).normalized * radial + this.transform.position ;
-            NewOrbitObject.transform.RotateAround(transform.position,Vector3.forward, anglestep*i);
-            NewOrbitObject.transform.SetParent(this.transform);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(OrbitCoolDown);
+            StartCoroutine(SurroundOrbitSpawn());
+            IECooldown = null;
         }
-        OrbitDuration = tempDuration;
-        loadAllOrbit = true;
-    }
-    
-    public override void UpgradeWeaponLevel()
-    {
-        if (weaponLevel == 0)
+
+        IEnumerator SurroundOrbitSpawn()
         {
-            this.gameObject.SetActive(true);
-        }
-        else
-        {
-            weaponLevel++;
-            if ((OrbitCoolDown / 4) >= 0.1f)
+            float anglestep = 360.0f / orbitCount;
+            for (int i = 0; i < orbitCount; i++)
             {
-                OrbitCoolDown /= 4;
+                var NewOrbitObject = Instantiate(OrbitObject);
+                NewOrbitObject.transform.position = (NewOrbitObject.transform.position - this.transform.position).normalized * radial + this.transform.position ;
+                NewOrbitObject.transform.RotateAround(transform.position,Vector3.forward, anglestep*i);
+                NewOrbitObject.transform.SetParent(this.transform);
+                yield return new WaitForEndOfFrame();
             }
-            orbitCount++;
-            OrbitDuration *= 1.1f;
+            OrbitDuration = tempDuration;
+            loadAllOrbit = true;
         }
-        weaponLevel++;
+        
+        public override void UpgradeWeaponLevel()
+        {
+            if (weaponLevel == 0)
+            {
+                this.gameObject.SetActive(true);
+            }
+            else
+            {
+                weaponLevel++;
+                if ((OrbitCoolDown / 4) >= 0.1f)
+                {
+                    OrbitCoolDown /= 4;
+                }
+                orbitCount++;
+                OrbitDuration *= 1.1f;
+            }
+            weaponLevel++;
+        }
     }
-}
-
-
 }

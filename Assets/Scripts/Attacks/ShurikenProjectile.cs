@@ -6,122 +6,121 @@ using UnityEngine;
 namespace TA
 {
     public class ShurikenProjectile : MonoBehaviour
-{
-    [Header("Shuriken Configuration")] 
-    private float BulletSpeed;
-    private GameObject Target;
-    private float damage = 5;
-
-    [Header("Animation Adjustment")] 
-    [SerializeField] private float Fadetime;
-    
-    //private variable 
-    private Vector2 direction;
-    private SpriteRenderer thisSprite;
-    private Color tempColor;
-    private Vector3 lastdirection;
-    private Vector3 StartPos;
-    private Coroutine NullTarget;
-    private ExitReposition targetRepos;
-    [SerializeField ]private bool Targetisdead = false;
-
-    private void Start()
     {
-        targetRepos = Target.GetComponent<ExitReposition>();
-        StartPos = transform.position;
-        lastdirection =  transform.position -Target.transform.position;
-        SetUpSpriteColor();
-        StartCoroutine(FadeIn());
-    }
+        [Header("Shuriken Configuration")] 
+        private float BulletSpeed;
+        private GameObject Target;
+        private float damage = 5;
 
-    private void SetUpSpriteColor()
-    {
-        thisSprite = GetComponent<SpriteRenderer>();
-        tempColor = thisSprite.color;
-        tempColor.a = 0;
-        thisSprite.color = tempColor;
-    }
+        [Header("Animation Adjustment")] 
+        [SerializeField] private float Fadetime;
+        
+        //private variable 
+        private Vector2 direction;
+        private SpriteRenderer thisSprite;
+        private Color tempColor;
+        private Vector3 lastdirection;
+        private Vector3 StartPos;
+        private Coroutine NullTarget;
+        private ExitReposition targetRepos;
+        [SerializeField ]private bool Targetisdead = false;
 
-    private void Update()
-    {
-        if (targetRepos.hasRepos)
+        private void Start()
         {
-            Targetisdead = true;
+            targetRepos = Target.GetComponent<ExitReposition>();
+            StartPos = transform.position;
+            lastdirection =  transform.position -Target.transform.position;
+            SetUpSpriteColor();
+            StartCoroutine(FadeIn());
         }
-        LeapToEnemy();
-    }
 
-    public void LeapToEnemy()
-    {
-        if (Target.activeInHierarchy && !Targetisdead)
+        private void SetUpSpriteColor()
         {
-            direction =  Target.transform.position -StartPos ;
-            transform.Translate(direction.normalized*BulletSpeed*Time.deltaTime);
+            thisSprite = GetComponent<SpriteRenderer>();
+            tempColor = thisSprite.color;
+            tempColor.a = 0;
+            thisSprite.color = tempColor;
         }
-        else
+
+        private void Update()
         {
-            if (NullTarget == null) NullTarget = StartCoroutine(FadeOutAndDestroy());
-            transform.position -=lastdirection.normalized * BulletSpeed * Time.deltaTime;
+            if (targetRepos.hasRepos)
+            {
+                Targetisdead = true;
+            }
+            LeapToEnemy();
         }
-        ;
-    }
 
-    void DestroyThis()
-    {
-        Destroy(this.gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Enemy"))
+        public void LeapToEnemy()
         {
-            //Implement Enemy Taken Damage from player
-            col.GetComponent<EnemyHealth>().TakeDamage(damage);
+            if (Target.activeInHierarchy && !Targetisdead)
+            {
+                direction =  Target.transform.position -StartPos ;
+                transform.Translate(direction.normalized*BulletSpeed*Time.deltaTime);
+            }
+            else
+            {
+                if (NullTarget == null) NullTarget = StartCoroutine(FadeOutAndDestroy());
+                transform.position -=lastdirection.normalized * BulletSpeed * Time.deltaTime;
+            }
+        }
+
+        void DestroyThis()
+        {
             Destroy(this.gameObject);
         }
-    }
 
-    IEnumerator FadeIn()
-    {
-        while(thisSprite.color.a <1)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            tempColor.a = Mathf.Clamp01(tempColor.a+Time.deltaTime*2.5f) ;
-            thisSprite.color = tempColor;
+            if (col.CompareTag("Enemy"))
+            {
+                //Implement Enemy Taken Damage from player
+                col.GetComponent<EnemyHealth>().TakeDamage(damage);
+                Destroy(this.gameObject);
+            }
+        }
+
+        IEnumerator FadeIn()
+        {
+            while(thisSprite.color.a <1)
+            {
+                tempColor.a = Mathf.Clamp01(tempColor.a+Time.deltaTime*2.5f) ;
+                thisSprite.color = tempColor;
+                yield return null;
+            }
+        }
+
+        IEnumerator FadeOutAndDestroy()
+        {
+            float a = thisSprite.color.a;
+            tempColor = thisSprite.color;
+            while(a>0f)
+            {
+                a -=Time.deltaTime*0.5f ;
+                tempColor.a = Mathf.Clamp01(a);
+                thisSprite.color = tempColor;
+                Debug.Log("Alpha"+ a);
+                yield return null;
+            }
+            
+            DestroyThis();
+            NullTarget = null;
             yield return null;
         }
-    }
 
-    IEnumerator FadeOutAndDestroy()
-    {
-        float a = thisSprite.color.a;
-        tempColor = thisSprite.color;
-        while(a>0f)
+        public void SetDamage(float _damage)
         {
-            a -=Time.deltaTime*0.5f ;
-            tempColor.a = Mathf.Clamp01(a);
-            thisSprite.color = tempColor;
-            Debug.Log("Alpha"+ a);
-            yield return null;
+            damage = _damage;
         }
-        DestroyThis();
-        NullTarget = null;
-        yield return null;
-    }
 
-    public void SetDamage(float _damage)
-    {
-        damage = _damage;
-    }
+        public void SetSpeed(float speed)
+        {
+            BulletSpeed = speed;
+        }
 
-    public void SetSpeed(float speed)
-    {
-        BulletSpeed = speed;
+        public void SetTarget(GameObject target)
+        {
+            Target = target;
+        }
     }
-
-    public void SetTarget(GameObject target)
-    {
-        Target = target;
-    }
-}
-
 }
