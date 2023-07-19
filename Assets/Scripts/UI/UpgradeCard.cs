@@ -34,7 +34,7 @@ public class UpgradeCard : MonoBehaviour
       image.transform.localScale = baseAttack.WeaponInfo.imageSize;
       name.text = baseAttack.WeaponInfo.name;
       info.text = baseAttack.WeaponInfo.description;
-      level.text = "LV. :" + (baseAttack.currentlevel);
+      level.text = "LV. :" + (baseAttack.currentlevel+1);
       
       baseAttack.gameObject.SetActive(true);
       
