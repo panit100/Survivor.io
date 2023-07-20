@@ -36,6 +36,7 @@ namespace TA
 
         void Update()
         {
+            //ใช้สอน
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 CheckPauseGame();
@@ -55,11 +56,13 @@ namespace TA
 
         void PauseGame()
         {
+            // พิมตาม เว้นตาม
             pauseGameUI.gameObject.SetActive(true);
             Time.timeScale = 0;                     // Time ใช้จัดการเวลาใน Unity, timeScale ใช้กำหนดเวลาเกม 1 = เวลาปกติ, 0 = หยุดเวลา, 2 = เร็วขึ้นสองเท่า
         }
         void ResumeGame()
         {
+            // พิมตาม เว้นตาม
             pauseGameUI.gameObject.SetActive(false);
             Time.timeScale = 1;
         }

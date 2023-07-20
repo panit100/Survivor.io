@@ -9,7 +9,7 @@ public class DamageSword : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-          Destroy(other.gameObject);
+          other.GetComponent<TA.EnemyHealth>().TakeDamage(5f);
         }
         
     }

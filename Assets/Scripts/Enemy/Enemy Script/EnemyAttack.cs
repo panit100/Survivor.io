@@ -12,7 +12,7 @@ namespace TA
         {
             if(other.tag == "Player")
             {
-                other.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
+                other.GetComponent<TA.PlayerHealth>().TakeDamage(enemyDamage); // สอนพิม
             }
         }
     }
