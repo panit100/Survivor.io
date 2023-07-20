@@ -6,54 +6,51 @@ namespace TA
 {
     public class EnemyMove : MonoBehaviour
     {
-        public float enemyMoveSpeedDefault;
-        float enemyMoveSpeedCurrent;
-
+        public float enemyMoveSpeed;
+        private float currentEnemyMoveSpeed;
         public Transform playerTransform;
-
-        bool moveToPlayer = true;
 
         void Start()
         {
-            enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
-
-            playerTransform = GameObject.FindWithTag("Player").transform;
+            currentEnemyMoveSpeed = enemyMoveSpeed;
+            playerTransform = FindObjectOfType<PlayerMove>().transform;
         }
 
         void Update()
         {
-            if(moveToPlayer)
-                MoveToPlayer();
+            MoveToPlayer();
         }
 
         void MoveToPlayer()
         {
             Vector2 direction = playerTransform.position - transform.position;
-            transform.Translate(direction.normalized * enemyMoveSpeedCurrent * Time.deltaTime);
+            transform.Translate(direction.normalized * currentEnemyMoveSpeed * Time.deltaTime);
         }
 
-        void OnTriggerEnter2D(Collider2D other) 
+        void StopMove()
+        {
+            currentEnemyMoveSpeed = 0;
+        }
+
+        void ContinueMove()
+        {
+            currentEnemyMoveSpeed = enemyMoveSpeed;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) 
         {
             if(other.tag == "Player")
             {
                 StopMove();
             }
         }
-        void OnTriggerExit2D(Collider2D other) 
+
+        private void OnTriggerExit2D(Collider2D other) 
         {
             if(other.tag == "Player")
             {
                 ContinueMove();
             }
-        }
-
-        void StopMove()
-        {
-            enemyMoveSpeedCurrent = 0;
-        }
-        void ContinueMove()
-        {
-            enemyMoveSpeedCurrent = enemyMoveSpeedDefault;
         }
     }
 }

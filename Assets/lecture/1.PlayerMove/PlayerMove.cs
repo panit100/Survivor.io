@@ -6,10 +6,8 @@ namespace TA
 {
     public class PlayerMove : MonoBehaviour
     {
-        public float speed = 10f;
-
+        public float speed;
         public Vector2 direction;
-
         void Update()
         {
             GetDirection();
@@ -21,7 +19,7 @@ namespace TA
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            direction = new Vector2(horizontal,vertical).normalized;
+            direction = new Vector2(horizontal,vertical);
         }
 
         void Move()
