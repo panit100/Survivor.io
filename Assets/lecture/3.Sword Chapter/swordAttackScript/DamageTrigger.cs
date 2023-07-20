@@ -20,6 +20,7 @@ namespace TA
         private void DoDamageToenemy(Collider2D enemy)
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(Damage);
+            //Destroy(enemy.gameObject); Pre HP implement
         }
     }
 }
