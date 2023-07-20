@@ -24,11 +24,12 @@ namespace TA
 
         public void Heal(float amount)
         {
-            // เพิ่มพลังชีวิตขึ้นมาด้วย
             currentHealth += amount;
 
             if(currentHealth > maxHealth)
+            {
                 currentHealth = maxHealth;
+            }
         }
     }
 }
