@@ -13,8 +13,13 @@ namespace TA
     
         void Start()
         {
-            SetupComponent();
+              SetupComponent();
             SwingSword();
+        }
+
+         private void Update() {
+             Animator.speed = attackAnimationSpeed;
+    
         }
         private void SetupComponent()
         {
@@ -31,7 +36,7 @@ namespace TA
         {
             SpriteHolder.SetActive(true);
 
-            yield return new WaitForSeconds(attackAnimationSpeed);
+            yield return new WaitForSeconds(attackAnimationCooldown);
             SpriteHolder.SetActive(false);
 
             yield return new WaitForSeconds(attackAnimationCooldown);
