@@ -13,14 +13,13 @@ namespace TA
             Debug.Log("hit");
             if(enemy.tag == "Enemy")
             {
-                DoDamageToenemy(enemy);
+                DoDamageToEnemy(enemy);
             }
         }
 
-        private void DoDamageToenemy(Collider2D enemy)
+        private void DoDamageToEnemy(Collider2D enemy)
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(Damage);
-            //Destroy(enemy.gameObject); Pre HP implement
+            //
         }
     }
 }

@@ -19,16 +19,13 @@ namespace TA
         public void TakeDamage(float damage)
         {
             // เพิ่มการคำนวณความเสียหาย: HP ของผู้เล่นถูกลดด้วยพลังโจมตีศัตรู
-            currentHealth -= damage;
+            // 
         }
 
         public void Heal(float amount)
         {
             // เพิ่มพลังชีวิตขึ้นมาด้วย
-            currentHealth += amount;
-
-            if(currentHealth > maxHealth)
-                currentHealth = maxHealth;
+            // 
         }
     }
 }
