@@ -16,10 +16,12 @@ namespace TA
         // Start is called before the first frame update
         void Start()
         {
-            playerLevelController = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();
+            //Uncomment When PlayerLevel Finish
 
-            levelBarFill.fillAmount = 0; 
-            leveltext.text = playerLevelController.currentLevel.ToString();
+            // playerLevelController = FindObjectOfType<PlayerLevel>().GetComponent<PlayerLevel>();
+
+            // levelBarFill.fillAmount = 0; 
+            // leveltext.text = playerLevelController.currentLevel.ToString();
         }
 
         private void Update()
@@ -29,8 +31,10 @@ namespace TA
 
         private void UpdateLevelBarMonitor()
         {
-            leveltext.text = playerLevelController.currentLevel.ToString();
-            levelBarFill.fillAmount = (float)playerLevelController.exp / (float)playerLevelController.maxExp;
+             //Uncomment When PlayerLevel Finish
+             
+            // leveltext.text = playerLevelController.currentLevel.ToString();
+            // levelBarFill.fillAmount = (float)playerLevelController.exp / (float)playerLevelController.maxExp;
         }
     }
 }
