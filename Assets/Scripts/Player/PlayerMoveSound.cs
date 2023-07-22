@@ -21,14 +21,16 @@ namespace TA
 
         void MoveSound()
         {
-            if(playerMove.direction == Vector2.zero)
-            {
-                audio.Stop();
-                return;
-            }
+            //Uncomment when PlayerMove.cs Finish
+            
+            // if(playerMove.direction == Vector2.zero)
+            // {
+            //     audio.Stop();
+            //     return;
+            // }
 
-            if(!audio.isPlaying)
-                audio.Play();
+            // if(!audio.isPlaying)
+            //     audio.Play();
         }
     }
 }

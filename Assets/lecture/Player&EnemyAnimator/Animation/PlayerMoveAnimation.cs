@@ -21,20 +21,22 @@ namespace TA
 
         void MoveAnimation()
         {
-            if(playerMove.direction.x > 0)
-            {
-                animator.SetBool("Walk", true);
-                animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x), animator.transform.localScale.y);
-            }
-            else if(playerMove.direction.x < 0)
-            {
-                animator.SetBool("Walk", true);
-                animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x) * -1, animator.transform.localScale.y);
-            }
-            else
-            {
-                animator.SetBool("Walk", false);
-            }
+            //Uncomment when PlayerMove.cs Finish
+
+            // if(playerMove.direction.x > 0)
+            // {
+            //     animator.SetBool("Walk", true);
+            //     animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x), animator.transform.localScale.y);
+            // }
+            // else if(playerMove.direction.x < 0)
+            // {
+            //     animator.SetBool("Walk", true);
+            //     animator.transform.localScale = new Vector2(Mathf.Abs(animator.transform.localScale.x) * -1, animator.transform.localScale.y);
+            // }
+            // else
+            // {
+            //     animator.SetBool("Walk", false);
+            // }
         }
     }
 }
