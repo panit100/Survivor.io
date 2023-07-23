@@ -23,8 +23,8 @@ namespace TA
         {
             if(currentlevel>=Maxlevel) return;
             currentlevel += 1;
-            _damage.Damage *= multiplier;
-            _damage.Damage = Mathf.Clamp(_damage.Damage,10f,20f);
+            // _damage.Damage *= multiplier;
+            // _damage.Damage = Mathf.Clamp(_damage.Damage,10f,20f);
             _speed.attackAnimationSpeed *= multiplier;
             _speed.attackAnimationSpeed = Mathf.Clamp(_speed.attackAnimationSpeed,0.1f,2f);
             _speed.attackAnimationCooldown -= _speed.attackAnimationCooldown * 0.75f;

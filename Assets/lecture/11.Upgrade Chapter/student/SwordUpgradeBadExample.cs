@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace TA
 {
-    public class SwordUpgrade : MonoBehaviour
+    public class SwordUpgradeBadExample : MonoBehaviour
     {
-        public GameObject Sword;
+        public GameObject sword;
         private DamageTrigger _damage;
-        private WeaponAnimation _animationspeed;
-        private int WeaponLevel;
+        private WeaponAnimation _animationSpeed;
+        private int _weaponLevel;
 
         public UpgradeCardScriptableObject cardinfo;
         void Start()
@@ -31,9 +31,9 @@ namespace TA
             {
                 if (I.gameObject.name.Contains("SwordAttack"))
                 {
-                    Sword = I.gameObject;
+                    sword = I.gameObject;
                     _damage = I.GetComponent<DamageTrigger>();
-                    _animationspeed = I.GetComponent<WeaponAnimation>();
+                    _animationSpeed = I.GetComponent<WeaponAnimation>();
                 }
             }
         }
@@ -45,7 +45,7 @@ namespace TA
 
         private void UpgradeSword()
         {
-            _damage.Damage *= 1.15f;
+        //    _damage.Damage *= 1.15f;
         }
     }
 

@@ -6,10 +6,9 @@ namespace TA
 {
     public class WeaponAnimation : MonoBehaviour
     {
-        [SerializeField] private GameObject SpriteHolder;
         public float attackAnimationCooldown = 1f;
         public float attackAnimationSpeed = 1f;
-        private Animator Animator;
+        [SerializeField] private Animator Animator;
     
         void Start()
         {
@@ -18,8 +17,7 @@ namespace TA
         }
         private void SetupComponent()
         {
-            Animator = SpriteHolder.GetComponent<Animator>();
-            SpriteHolder.SetActive(false);
+            Animator.gameObject.SetActive(false);
             Animator.speed = attackAnimationSpeed;
         }
         private void SwingSword()
@@ -29,10 +27,10 @@ namespace TA
         }
         private IEnumerator SwingSwordSequence()
         {
-            SpriteHolder.SetActive(true);
+            Animator.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(attackAnimationSpeed);
-            SpriteHolder.SetActive(false);
+            Animator.gameObject.SetActive(false);
 
             yield return new WaitForSeconds(attackAnimationCooldown);
             SwingSword();
