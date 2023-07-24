@@ -9,7 +9,7 @@ namespace TA
         public float skillCooldownTime = 5f;
         public float dashForce;
         
-        Rigidbody2D rigidbody2D;
+        Rigidbody2D rb;
         EnemyMove enemyMove;
 
         void Start()
@@ -19,7 +19,7 @@ namespace TA
         }
         void SetComponent()
         {
-            rigidbody2D = GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
             enemyMove = GetComponent<EnemyMove>();
         }
         void EnemyActiveSkill()

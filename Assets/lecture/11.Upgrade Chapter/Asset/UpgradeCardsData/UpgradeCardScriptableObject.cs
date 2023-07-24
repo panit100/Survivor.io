@@ -10,7 +10,7 @@ namespace TA
     {
         public Sprite image;
         public Vector3 imageSize;
-        public string name;
+        public string weaponName;
         public string description;
     }
 }

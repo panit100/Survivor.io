@@ -8,8 +8,9 @@ namespace TA
     {
         ShurikenAttack shurikenAttack;
         public float multiplier;
-        private void Start()
+        override protected void Start()
         {
+            base.Start();
             shurikenAttack = GetComponent<ShurikenAttack>();
         }
 

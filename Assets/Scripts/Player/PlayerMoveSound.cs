@@ -7,7 +7,7 @@ namespace TA
     public class PlayerMoveSound : MonoBehaviour
     {
         PlayerMove playerMove;
-        public AudioSource audio;
+        public AudioSource audioSource;
 
         void Start()
         {
@@ -25,12 +25,12 @@ namespace TA
             
             // if(playerMove.direction == Vector2.zero)
             // {
-            //     audio.Stop();
+            //     audioSource.Stop();
             //     return;
             // }
 
-            // if(!audio.isPlaying)
-            //     audio.Play();
+            // if(!audioSource.isPlaying)
+            //     audioSource.Play();
         }
     }
 }

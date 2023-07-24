@@ -9,8 +9,9 @@ namespace TA
         ThrowAttack throwAttack;
         public float multiplier;
 
-        private void Start()
+        override protected void Start()
         {
+            base.Start();
             throwAttack = GetComponent<ThrowAttack>();
         }
 

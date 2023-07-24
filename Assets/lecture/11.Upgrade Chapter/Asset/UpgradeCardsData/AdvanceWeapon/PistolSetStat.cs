@@ -9,8 +9,9 @@ namespace TA
         PistolShootAttack pistolShootAttack;
         public float multiplier;
 
-        void Start()
+        override protected void Start()
         {
+            base.Start();
             pistolShootAttack = GetComponent<PistolShootAttack>();
         }
 

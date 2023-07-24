@@ -10,7 +10,7 @@ namespace TA
    public class UpgradeCard : MonoBehaviour
    {
       public Image image;
-      public TMP_Text name;
+      public TMP_Text weaponName;
       public TMP_Text info;
       public TMP_Text level;
       public Button UpgradeButton;
@@ -32,7 +32,7 @@ namespace TA
          image.sprite = baseAttack.WeaponInfo.image;
          image.SetNativeSize();
          image.transform.localScale = baseAttack.WeaponInfo.imageSize;
-         name.text = baseAttack.WeaponInfo.name;
+         weaponName.text = baseAttack.WeaponInfo.weaponName;
          info.text = baseAttack.WeaponInfo.description;
          level.text = "LV. :" + (baseAttack.currentlevel+1);
          
@@ -48,7 +48,7 @@ namespace TA
          image.sprite = hpcardINFO.image;
          image.SetNativeSize();
          image.transform.localScale = hpcardINFO.imageSize;
-         name.text =hpcardINFO.name;
+         weaponName.text =hpcardINFO.weaponName;
          info.text = hpcardINFO.description;
          level.text = "";
          UpgradeButton.onClick.AddListener(Heal);

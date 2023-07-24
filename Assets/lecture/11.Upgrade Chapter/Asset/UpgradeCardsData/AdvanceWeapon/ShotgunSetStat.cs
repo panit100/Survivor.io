@@ -9,8 +9,9 @@ namespace TA
         ShotgunAttack shotgunAttack;
         public float multiplier;
 
-        void Start()
+        override protected void Start()
         {
+            base.Start();
             shotgunAttack = GetComponent<ShotgunAttack>();
         }
 

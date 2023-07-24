@@ -6,7 +6,7 @@ public class BackgroundParallax : MonoBehaviour
 {
     private float length;
     private float startPos;
-    public GameObject camera;
+    public GameObject _camera;
     public float parallaxEffectValue;
 
     void Start()
@@ -21,8 +21,8 @@ public class BackgroundParallax : MonoBehaviour
 
     void FixedUpdate() 
     {
-        float temp = (camera.transform.position.x * (1 - parallaxEffectValue));
-        float distance = (camera.transform.position.x * parallaxEffectValue);
+        float temp = (_camera.transform.position.x * (1 - parallaxEffectValue));
+        float distance = (_camera.transform.position.x * parallaxEffectValue);
 
         transform.position = new Vector3(startPos + distance, transform.position.y, transform.position.z);
 

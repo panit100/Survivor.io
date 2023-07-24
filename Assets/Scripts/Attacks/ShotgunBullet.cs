@@ -8,7 +8,7 @@ namespace TA
     {
         [SerializeField] private float bulletDamage = 8f;
         [SerializeField] private float bulletSpeed = .5f;
-        [SerializeField] private float bulletPushForce = 100f;
+        // [SerializeField] private float bulletPushForce = 100f;
         [SerializeField] private float bulletSelfDestroyTime = 0.5f;
 
         public void SetupBulletProperty(float damage)
