@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1770df1-2f2e-4b6f-adfa-17c84af18afd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/AnimationBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/AnimationBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/CustomEditors.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/CustomEditors.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/PrefabBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/PrefabBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/S2USettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/S2USettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlImportOptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlImportOptions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlPostProcessor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlPostProcessor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlSupport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/ScmlSupport.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/Settings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Editor/Settings.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/EntityRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/EntityRenderer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/SortingOrderUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/SortingOrderUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/TextureController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Spriter2UnityDX/Runtime/TextureController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +100,8 @@
       <workItem from="1689601360092" duration="4602000" />
       <workItem from="1689658410645" duration="3974000" />
       <workItem from="1690139672124" duration="717000" />
+      <workItem from="1690219861085" duration="258000" />
+      <workItem from="1690220419661" duration="343000" />
     </task>
     <servers />
   </component>
