@@ -21,7 +21,7 @@ namespace TA
         }
         void SetupUI()
         {
-            healthBarFill = transform.Find("Health Bar Fill").GetComponent<Image>();
+            healthBarFill = transform.Find("HPBar").GetComponent<Image>();
         }
 
         void Update()
