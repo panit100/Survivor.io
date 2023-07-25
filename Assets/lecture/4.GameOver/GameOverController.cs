@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+// เรียกใช้ Scene Management
 
 namespace TA
 {
@@ -59,11 +60,13 @@ namespace TA
 
         public void RestartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
         public void QuitToMainMenu()
         {
             SceneManager.LoadScene(0);
+
+            // continue time
             Time.timeScale = 1;
         }
         public void ExitGame()
