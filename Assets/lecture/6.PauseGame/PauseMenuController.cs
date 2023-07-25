@@ -55,26 +55,23 @@ namespace TA
 
         void PauseGame()
         {
-            pauseGameUI.gameObject.SetActive(true);
-            Time.timeScale = 0;                     // Time ใช้จัดการเวลาใน Unity, timeScale ใช้กำหนดเวลาเกม 1 = เวลาปกติ, 0 = หยุดเวลา, 2 = เร็วขึ้นสองเท่า
+            
         }
         void ResumeGame()
         {
-            pauseGameUI.gameObject.SetActive(false);
-            Time.timeScale = 1;
+            
         }
         void RestartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }
         void QuitToMenu()
         {
-            SceneManager.LoadScene("Main Menu");
-            Time.timeScale = 1;
+            
         }
         void ExitGame()
         {
-            Application.Quit();
+            
         }
     }
 }
