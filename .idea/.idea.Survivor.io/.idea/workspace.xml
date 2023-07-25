@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1770df1-2f2e-4b6f-adfa-17c84af18afd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Survivor.io/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemyPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemyPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemySet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemySet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemySetDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unused/Scripts/Enemy/Enemy Spawner/EnemySetDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/Scene Elements/BackgroundMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unused/Scripts/Scene Elements/BackgroundMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/Scene Elements/BackgroundParallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unused/Scripts/Scene Elements/BackgroundParallax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/UI/Menu Script/MainMenuScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unused/Scripts/UI/Menu Script/MainMenuScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lecture/7.EnemySpawner/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lecture/7.EnemySpawner/EnemySpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +109,7 @@
       <workItem from="1690139672124" duration="717000" />
       <workItem from="1690219861085" duration="258000" />
       <workItem from="1690220419661" duration="343000" />
+      <workItem from="1690301086198" duration="325000" />
     </task>
     <servers />
   </component>

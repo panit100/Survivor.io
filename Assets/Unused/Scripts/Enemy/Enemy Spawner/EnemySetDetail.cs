@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TA
+namespace TA.pooling
 {
     [System.Serializable]
     public class EnemySetDetail
