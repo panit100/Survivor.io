@@ -34,11 +34,9 @@ namespace TA
 
         void Shoot()
         {
-            //UnComment When EnemyMove Finish
-
-            // Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            // projectile.damage = enemyAttack.enemyDamage;
-            // projectile.direction = enemyMove.playerTransform.position - transform.position;
+            Projectile projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            projectile.damage = enemyAttack.enemyDamage;
+            projectile.direction = enemyMove.playerTransform.position - transform.position;
         }
     }
 }

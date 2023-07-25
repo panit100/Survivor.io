@@ -29,10 +29,8 @@ namespace TA
 
         void EnemyDash()
         {
-            //Uncomment When EnemyMove Finish
-
-            // Vector2 dashDirection = enemyMove.playerTransform.position - transform.position;
-            // rigidbody2D.AddForce(dashDirection * dashForce);
+            Vector2 dashDirection = enemyMove.playerTransform.position - transform.position;
+            rb.AddForce(dashDirection * dashForce);
         }
     }
 }
