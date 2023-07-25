@@ -4223,7 +4223,7 @@ GameObject:
   - component: {fileID: 2367328118653379026}
   - component: {fileID: 2367328118653379027}
   m_Layer: 0
-  m_Name: Bordered Ground
+  m_Name: Map Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
