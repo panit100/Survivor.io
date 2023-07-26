@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 493348993579866062}
   - component: {fileID: 493348993579866064}
   - component: {fileID: 3061503351956683691}
+  - component: {fileID: 1042949790232703699}
   - component: {fileID: 26330632273379621}
   - component: {fileID: 2123240397041277620}
-  - component: {fileID: 1042949790232703699}
   m_Layer: 7
   m_Name: Boss-1
   m_TagString: Enemy
@@ -74,6 +74,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 1
   playerTransform: {fileID: 0}
+--- !u!114 &1042949790232703699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493348993579866066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
 --- !u!114 &26330632273379621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,19 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDamage: 20
---- !u!114 &1042949790232703699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493348993579866066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
 --- !u!1 &1349103066217382754
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,9 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5205690008327745838, guid: efc87893aff87984881d5bac5277f406, type: 3}
+    - {fileID: 1741586872583767810, guid: efc87893aff87984881d5bac5277f406, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efc87893aff87984881d5bac5277f406, type: 3}
 --- !u!4 &6459025733880200544 stripped
 Transform:

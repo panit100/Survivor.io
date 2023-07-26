@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 7115889805951290243}
   - component: {fileID: 6448001877573002624}
   - component: {fileID: 7115889805951290241}
-  - component: {fileID: 5357555566848469568}
   - component: {fileID: 2181216670719635514}
-  - component: {fileID: -3125839328076625322}
+  - component: {fileID: 5357555566848469568}
   - component: {fileID: 8843833958973378638}
   - component: {fileID: 5156666821066109897}
   - component: {fileID: 7330302840857541550}
@@ -142,20 +141,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5357555566848469568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115889805951290242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004c63795a11f8349a1adf30d4029b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5082712823132664269, guid: 0bc0d9742d5b4104f88cf4919c633501, type: 3}
-  fireRate: 5
 --- !u!95 &2181216670719635514
 Animator:
   serializedVersion: 5
@@ -176,7 +161,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-3125839328076625322
+--- !u!114 &5357555566848469568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,10 +170,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7115889805951290242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec4d42f7c155c94fb748ff25b37d241, type: 3}
+  m_Script: {fileID: 11500000, guid: 004c63795a11f8349a1adf30d4029b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasRepos: 0
+  projectilePrefab: {fileID: 5082712823132664269, guid: 0bc0d9742d5b4104f88cf4919c633501, type: 3}
+  fireRate: 5
 --- !u!114 &8843833958973378638
 MonoBehaviour:
   m_ObjectHideFlags: 0

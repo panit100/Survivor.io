@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 493348993579866062}
   - component: {fileID: 493348993579866064}
-  - component: {fileID: 4861419464175276141}
   - component: {fileID: 4165442038957565250}
+  - component: {fileID: 4861419464175276141}
   - component: {fileID: 6222972421231393987}
   - component: {fileID: 8952320579552028756}
   m_Layer: 7
@@ -60,19 +60,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4861419464175276141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493348993579866066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
 --- !u!114 &4165442038957565250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +73,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeedDefault: 1.2
+  playerTransform: {fileID: 0}
+--- !u!114 &4861419464175276141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493348993579866066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ad4c1de16b67b48b4858f8bfde88fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
 --- !u!114 &6222972421231393987
 MonoBehaviour:
@@ -280,7 +280,9 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114863668308178332, guid: b24da4b6bec86904e9cec22e755658de, type: 3}
+    - {fileID: 114279467686251672, guid: b24da4b6bec86904e9cec22e755658de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b24da4b6bec86904e9cec22e755658de, type: 3}
 --- !u!4 &2199691259269542924 stripped
 Transform:

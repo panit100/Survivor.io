@@ -48,37 +48,7 @@ MonoBehaviour:
   player: {fileID: 0}
   gameTime: 0
   enemySetCount: 0
-  enemySet:
-  - timeWave: 5
-    enemySetDetail:
-    - enemyTag: Enemy1
-      enemySpawnTotal: 0
-      enemySpawnEverySecond: 0
-    - enemyTag: Enemy2
-      enemySpawnTotal: 0
-      enemySpawnEverySecond: 0
-  - timeWave: 10
-    enemySetDetail:
-    - enemyTag: Enemy1
-      enemySpawnTotal: 0
-      enemySpawnEverySecond: 0
-    - enemyTag: Enemy3
-      enemySpawnTotal: 0
-      enemySpawnEverySecond: 0
-  - timeWave: 1
-    enemySetDetail:
-    - enemyTag: Enemy2
-      enemySpawnTotal: 0
-      enemySpawnEverySecond: 0
+  enemySet: []
   enemyContainer: []
-  enemyPoolList:
-  - tag: Enemy1
-    enemyPrefab: {fileID: 2925479885468574148, guid: 03edf11867061aa4f8a963710e74b9a3, type: 3}
-    amount: 100
-  - tag: Enemy2
-    enemyPrefab: {fileID: 7115889805951290242, guid: a9135450aeebc9e479e9368889480c71, type: 3}
-    amount: 100
-  - tag: Enemy3
-    enemyPrefab: {fileID: 2925479885468574148, guid: debbcc66173113a4583527ccc95077d1, type: 3}
-    amount: 100
+  enemyPoolList: []
   enemyWaveTimeList: []
